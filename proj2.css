@@ -1,0 +1,40 @@
+/**** learnTrail CSS ****/
+.learnTrailParagraph{
+	margin-left: 10em;
+	margin-right: 10em;
+	margin-top: 5em;
+	text-align: left;
+}
+
+#paragraphHead{
+	text-align: center;
+}
+
+.spaceToContinue{
+	text-align: center;
+}
+/**** END learnTrail CSS ****/
+
+
+/**** HOMESCREEN CSS ****/
+#homescreenOptionsList{
+	margin-left: 4em; /* tabbed over */
+}
+
+#homescreenOptions{
+	font-family: Courier, monospace;
+	text-align: left;
+	margin-left: 25em;
+	margin-top: 5em;
+}
+
+.title{
+	text-align: center;
+	font-family: Rockwell, monospace;
+}
+/**** END HOMESCREEN CSS ****/
+
+
+p{
+	font-family: Courier, monospace;
+}
