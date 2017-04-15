@@ -15,7 +15,7 @@
 
 <body>
 
-	<div id="managementOptionsTitle" class="title">
+	<div class="titleNormal">
 		<h2>
 			The Oregon Trail<br><br>
 			Management Options

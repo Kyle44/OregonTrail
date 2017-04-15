@@ -42,7 +42,12 @@ body{
 	color: white;
 }
 
-p, tr, th, td, #originalTopTenTitle{
+.titleNormal{
+	text-align: center;
+	font-family: Courier, monospace;	
+}
+
+p, tr, th, td{
 	font-family: Courier, monospace;
 }
 
