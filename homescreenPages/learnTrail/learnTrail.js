@@ -7,8 +7,8 @@ document.body.onkeyup = function(e){
         		paragraph.innerHTML = "How will you cross the rivers? If you have money, you might take a ferry (if there is a ferry).  Or, you can ford the river and hope you and your wagon aren't swallowed alive!";
         		break;
         	case 3:
-				paragraph.innerHTML = "What about supplies?  Well, if you're low on food you can hunt.  You might get a buffalo...you might.  And there are bear in the mountains.";
-				break;
+        		paragraph.innerHTML = "What about supplies?  Well, if you're low on food you can hunt.  You might get a buffalo...you might.  And there are bear in the mountains.";
+        		break;
         	case 4:
         		paragraph.innerHTML = "At the Dalles, you can try navigating the Columbia River, but if running the rapids with a makeshift raft makes you queasy, better take the Barlow Road.";
         		break;
@@ -26,11 +26,11 @@ document.body.onkeyup = function(e){
         	case 8:
         		paragraphHead.innerHTML = "The software team responsible for creation of this product include: <br><br>	";
         		paragraph.setAttribute("style", "text-align: center");
-        		paragraph.innerHTML = "Kyle Fritz<br>David Leiberg<br>	Kush Patel<br> Daniel Schomisch<br><br><br>";
+        		paragraph.innerHTML = "Kyle Fritz<br>David Leiberg<br>Kush Patel<br>Daniel Schomisch<br><br><br>";
 
         		break;
         	default: // if something fails, or pageNum > 8...
-	        	location.replace("../../proj2.html"); // ... go back to homescreen
+	        	location.replace("../../proj2.php"); // ... go back to homescreen
 	        	break;
 
         }
@@ -39,6 +39,6 @@ document.body.onkeyup = function(e){
 
 
 
-var pageNum = 1;
-var paragraph = document.getElementById('learnTrailDesc');
-var paragraphHead = document.getElementById('paragraphHead');
+var pageNum = 1; // learnTrail.html is pageNum = 1
+var paragraph = document.getElementById('learnTrailDesc'); // to change the paragraph
+var paragraphHead = document.getElementById('paragraphHead'); // as a header to the paragraph

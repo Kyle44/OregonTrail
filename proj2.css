@@ -18,13 +18,13 @@
 
 /**** HOMESCREEN CSS ****/
 #homescreenOptionsList{
-	margin-left: 4em; /* tabbed over */
+	margin-left: 1.5em; /* tabbed over */
 }
 
 #homescreenOptions{
 	font-family: Courier, monospace;
 	text-align: left;
-	margin-left: 25em;
+	margin-left: 32em;
 	margin-top: 5em;
 }
 
@@ -34,6 +34,16 @@
 }
 /**** END HOMESCREEN CSS ****/
 
+.centerParagraph{
+	margin-left: 25em;
+	margin-right: 25em;
+
+}
+
+body{
+	background-color: black;
+	color: white;
+}
 
 p{
 	font-family: Courier, monospace;
