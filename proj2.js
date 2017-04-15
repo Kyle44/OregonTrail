@@ -2,20 +2,21 @@ function checkEnteredValue(e)
 {
 	var choice = parseInt(document.getElementById('optionsChoice').value); // get chosen value
 
-    if (e.keyCode == 13){ // enter key
+    if (e.keyCode == enterKey){ // enter key
     	if(choice != NaN && choice <= 6 && choice >= 1){
     		switch(choice){
 				case 1:
 					break;
 				case 2:
-					location.replace("homescreenPages/learnTrail/learnTrail.html")
+					location.replace("homescreenPages/learnTrail/learnTrail.html");
 					break;
 				case 3:
 					break;
 				case 4:
-					location.replace("homescreenPages/sound/sound.php")
+					location.replace("homescreenPages/sound/sound.php");
 					break;
 				case 5:
+					location.replace("homescreenPages/managementOptions/managementOptions.php");
 					break;
 				case 6:
 					location.replace("homescreenPages/end.html");
@@ -26,3 +27,5 @@ function checkEnteredValue(e)
     	}
     }
 }
+
+var enterKey = 13;

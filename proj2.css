@@ -9,19 +9,10 @@
 #paragraphHead{
 	text-align: center;
 }
-
-.spaceToContinue{
-	text-align: center;
-}
 /**** END learnTrail CSS ****/
 
 
-/**** HOMESCREEN CSS ****/
-#homescreenOptionsList{
-	margin-left: 1.5em; /* tabbed over */
-}
-
-#homescreenOptions{
+.options{
 	font-family: Courier, monospace;
 	text-align: left;
 	margin-left: 32em;
@@ -32,12 +23,18 @@
 	text-align: center;
 	font-family: Rockwell, monospace;
 }
-/**** END HOMESCREEN CSS ****/
+
+.optionsList{
+	margin-left: 1.5em; /* tabbed over */
+}
 
 .centerParagraph{
 	margin-left: 25em;
 	margin-right: 25em;
+}
 
+.spaceToContinue{
+	text-align: center;
 }
 
 body{
@@ -45,6 +42,21 @@ body{
 	color: white;
 }
 
-p{
+p, tr, th, td, #originalTopTenTitle{
 	font-family: Courier, monospace;
+}
+
+table{
+	width:33%;
+	margin-left: 27em;
+}
+
+/* Row headings have space between itself and following row*/
+tr th{
+	padding-bottom: 20px;
+}
+
+tr, th, td{
+	width: auto;
+	text-align: center;
 }

@@ -37,17 +37,13 @@
 		</h2>
 	</div>
 
-	<div class="centerParagraph" id="homescreenOptions">
+	<div class="options">
 		You may: <br>
-		<p id="homescreenOptionsList" value="on">
+		<p class="optionsList">
 			1. Travel the trail <br>
 			2. Learn about the trail <br>
 			3. See the Oregon Top Ten <br>
-			4. Turn sound 
-			<?php
-				echo $_SESSION['isSound'];
-			?>
-			<br>
+			4. Turn sound <?php echo $_SESSION['isSound']; ?> <br> <!-- Turn sound on or off -->
 			5. Choose Management Options <br>
 			6. End <br><br>
 			What is your choice?

@@ -1,6 +1,6 @@
 document.body.onkeyup = function(e){
     if(e.keyCode == spacebarKey){ // spacebar
-    	location.replace("../../proj2.php");
+    	location.replace("../managementOptions.php");
     }
 }
 

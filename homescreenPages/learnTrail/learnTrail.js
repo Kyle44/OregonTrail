@@ -1,5 +1,5 @@
 document.body.onkeyup = function(e){
-    if(e.keyCode == 32){ // spacebar
+    if(e.keyCode == spacebarKey){ // spacebar
         pageNum++; // next page
 
         switch(pageNum){
@@ -42,3 +42,5 @@ document.body.onkeyup = function(e){
 var pageNum = 1; // learnTrail.html is pageNum = 1
 var paragraph = document.getElementById('learnTrailDesc'); // to change the paragraph
 var paragraphHead = document.getElementById('paragraphHead'); // as a header to the paragraph
+
+var spacebarKey = 32;
