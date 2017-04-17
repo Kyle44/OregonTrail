@@ -79,7 +79,7 @@
        ,
        {
            intro : "A lady, Marnie Stewart, tells you:" ;
-           script : "This prarie is might pretty with all the wild flowers and tall grasses. But there's too much of it! I miss not having a town nearby. I wonder how many days until I see a town -- a town with real shops, a church, people ..." ;
+           script : "This  is might pretty with all the wild flowers and tall grasses. But there's too much of it! I miss not having a town nearby. I wonder how many days until I see a town -- a town with real shops, a church, people ..." ;
        }
        ,
        {
@@ -240,9 +240,296 @@
        }
    ] ;
 
-    nextLandmarks : ["Green River crossing", "Fort Bridger"] ;
+    nextLandmarks : ["the Green River crossing", "Fort Bridger"] ;
     distances : [57, 125] ;
 }
+
+/**** South Pass branch 1 ****/
+
+{
+
+   name : "the Green River Crossing" ;
+
+   prices : null ;
+
+   people : [
+       {
+           intro : "A Shoshoni Indian tells you:" ;
+           script: "When wagons first started coming through here, we did not mind. We even found it good to trade game and fish with the travelers and help them cross the rivers. Now there are too many white men and too little land for grazing." ;
+       }
+       ,
+       {
+           intro : "Big Louie tells you:" ;
+           script : "Five dollars to ferry us over the Green River? Those ferrymen'll make a hundred dollars before breakfast! We'll keep down river until we find a place to ford our wagon and animals. What little money we have left, we'll keep!" ;
+       }
+       ,
+       {
+           intro : "A young boy tells you:" ;
+           script : "My family didn't buy enough food in Independence. We have been eating very small rations since Fort Laramie. Because of that our health is poor. My sister has mountain fever, so we're stopped here for a while." ;
+       }
+   ] ;
+
+    nextLandmarks : ["Soda Springs"] ;
+    distances : [143] ;
+}
+
+/**** South Pass branch 2 ****/
+
+{
+
+   name : "Fort Bridger" ;
+
+   prices : {
+       ox : 35 ;
+       clothing : 17.50 ;
+       ammo : 3.50 ;
+       wheel : 17.50 ;
+       axle : 17.50 ;
+       tongue : 17.50 ;
+       food : 0.35 ;
+   } ;
+
+   people : [
+       {
+           intro : "A trader tells you:" ;
+           script: "This fort was built by Jim Bridger. Jim was a mountain man before he put in this blacksmith shop and small store to supply the overlanders. Does a big trade in horses, Jim and his partner, Vasquez." ;
+       }
+       ,
+       {
+           intro : "Aunt Rebecca tells you:" ;
+           script : "We should've taken the Sublette Cutoff! Not enough at this fort worth the time it took to get here. And the outrageous prices! Food's no fit to eat, much less pay for. Some folks'd sell the clothes off our backs if we'd let them!" ;
+       }
+       ,
+       {
+           intro : "A tired-looking woman tells you:" ;
+           script : "One child drowned in a swollen creek east of Fort Laramie. My husband died of typhoid near Independence Rock. Now I travel alone with my five children. The eldest, Caleb, is eleven. I fear he'll be a man before we reach Oregon." ;
+       }
+   ] ;
+
+    nextLandmarks : ["Soda Springs"] ;
+    distances : [162] ;
+}
+
+/**** South Pass branch reunification ****/
+
+{
+
+   name : "Soda Springs" ;
+
+   prices : null ;
+
+   people : [
+       {
+           intro : "Celinda Hines tells you:" ;
+           script: "My, the Soda Springs are so pretty! Seem to spout at regular intervals. Felt good to just rest and not be jostled in the wagon all day. When I get to Oregon, I'll have a soft feather bed and never sleep in a wagon again!" ;
+       }
+       ,
+       {
+           intro : "A young boy tells you:" ;
+           script : "My job every day is to find wood for the cook fire. Sometimes it's very hard to find enough, so I store extra pieces in a box under the wagon. On the prairie I gathered buffalo chips to burn when there wasn't any wood." ;
+       }
+       ,
+       {
+           intro : "Miles Hendrick tells you:" ;
+           script : "I've heard it said that there are many cutoffs to take to shorten the journey -- that by taking all the shortcuts, you can save many days on the trail. And why not? Saving time and provisions is worth the risk!" ;
+       }
+   ] ;
+
+    nextLandmarks : ["Fort Hall"] ;
+    distances : [57] ;
+}
+
+{
+
+   name : "Fort Hall" ;
+
+   prices : {
+       ox : 40 ;
+       clothing : 20 ;
+       ammo : 4 ;
+       wheel : 20 ;
+       axle : 20 ;
+       tongue : 20 ;
+       food : 0.40 ;
+   } ;
+
+   people : [
+       {
+           intro : "Aunt Rebecca tells you:" ;
+           script: "Hear there's mountain sheep around here. Enough water too, but hardly a stick of wood. Thank heaven for Fort Hall! But I'm real sorry to be saying goodbye to cousin Miles and all the folks headed for California." ;
+       }
+       ,
+       {
+           intro : "A fellow traveler tells you:" ;
+           script : "Fort Hall is a busy fort! The wide stretches of meadow grass here are just what our tired animals need. As for me, I'll fix up the wagon leaks. Amanda's real anxious to wash all the clothes and linens in one of those clear streams." ;
+       }
+       ,
+       {
+           intro : "Miles Hendrick tells you:" ;
+           script : "Well, friend, this is where we part. I'm bound for California with an imposing desert to cross. And you -- you've got the Snake River to cross, which I hear is no picnic! Write us, you or the Missus, just as soon as you reach Oregon!" ;
+       }
+   ] ;
+
+    nextLandmarks : ["the Snake River crossing"] ;
+    distances : [182] ;
+}
+
+{
+
+   name : "the Snake River crossing" ;
+
+   prices : null ;
+
+   people : [
+       {
+           intro : "An overlander tells you:" ;
+           script: "Down there between those steep lava gorges, twisting and writhing, is the Snake River. So much water -- and so hard to get to! We've got many miles of desert before Oregon, so be sure to fill your water kegs at the crossing!" ;
+       }
+       ,
+       {
+           intro : "Big Louie tells you:" ;
+           script : "See that wild river? That's the Snake. Many a craft's been swamped in her foaming rapids. Her waters travel all the way to Oregon! We'll be crossing her soon, and then again after Fort Boise. Take care at the crossing!" ;
+       }
+       ,
+       {
+           intro : "A frantic wife tells you:" ;
+           script : "It says right here in the Shively guidebook: 'You must hire an Indian to pilot you at the crossings of the Snake river, it being dangerous if not perfectly understood.' But my husband insists on crossing without a guide!" ;
+       }
+   ] ;
+
+    nextLandmarks : ["Fort Boise"] ;
+    distances : [113] ;
+}
+
+{
+
+   name : "Fort Boise" ;
+
+   prices : {
+       ox : 45 ;
+       clothing : 22.50 ;
+       ammo : 4.50 ;
+       wheel : 22.50 ;
+       axle : 22.50 ;
+       tongue : 22.50 ;
+       food : 0.45 ;
+   } ;
+
+   people : [
+       {
+           intro : "Jacob Hofsteader tells you:" ;
+           script: "Every night, even though I ache from the day's toils, my head is filled with dreams of the rich farm land of the Willamette Valley. I will build myself a fine, handsome homestead -- and I'm certain I'll be rich within five years." ;
+       }
+       ,
+       {
+           intro : "A trader with 6 mules tells you:" ;
+           script : "You'll not get yer wagon over them Blue Mountains, mister. Leave it! Cross yer goods over with pack animals. Get yerself a couple of good mules. Pieces of wagons litter the trail -- left by them folks who don't heed good advice!" ;
+       }
+       ,
+       {
+           intro : "Aunt Rebecca tells you:" ;
+           script : "At every fort along the trail, prices have been higher than at the previous fort! This is outrageous! They're taking advantage of us! If I had the chance to do it again, I'd buy more supplies in Independence." ;
+       }
+   ] ;
+
+    nextLandmarks : ["the Blue Mountains"] ;
+    distances : [160] ;
+}
+
+{
+
+   name : "the Blue Mountains" ;
+
+   prices : null ;
+
+   people : [
+       {
+           intro : "A tired overlander tells you:" ;
+           script: "Since crossing the Snake at Fort Boise, it's been just mountains and desert. Dust deeper each day -- six inches at times. No tracks, just clouds of dust. Many cattle choked on the dust after swimming the river, then bled and died." ;
+       }
+       ,
+       {
+           intro : "Marnie Stewart tells you:" ;
+           script : "We followed the edge of the desert from Fort Boise to the forbidding wall of the Blue Mountains. The hills were dreadful steep! Locking both wheels and coming down slow, we got down safe. Poor animals! No grass or water for days." ;
+       }
+       ,
+       {
+           intro : "Jacob Hofsteader tells you:" ;
+           script : "This valley of the Grande Ronde is the most beautiful sight I've seen in months. Water and graze in abundance! And if this valley is so fine, the Willamette must be twice as fine! We'll be sittin' pretty in our new homestead!" ;
+       }
+   ] ;
+
+    nextLandmarks : ["Fort Walla Walla", "The Dalles"] ;
+    distances : [55, 125] ;
+}
+
+/**** Blue Mountains aside *****/
+
+{
+
+   name : "Fort Walla Walla" ;
+
+   prices : {
+       ox : 50 ;
+       clothing : 25 ;
+       ammo : 5 ;
+       wheel : 25 ;
+       axle : 25 ;
+       tongue : 25 ;
+       food : 0.50 ;
+   } ;
+
+   people : [
+       {
+           intro : "Amy Witherspoon tells you:" ;
+           script: "My cousin Catherine was one of six children orphaned and left at Whitman's Mission. Lived with them for three years -- until the massacre last November. She has survived snakebites, stampedes, falls, fights -- not to mention a massacre." ;
+       }
+       ,
+       {
+           intro : "A Cayuse Indian tells you:" ;
+           script : "You ask about the Whitman massacre. I ask you why Doctor Whitman's medicine did not cure my people's children? Many caught the measles from the stangers. Why did the medicine poison our children and cure the children of white people?" ;
+       }
+       ,
+       {
+           intro : "A young mother tells you:" ;
+           script : "I've traveled in fear of Indians since our journey began. As of yet we've seen few. Those we met helped us cross rivers or sold us vegetables. Still I fear. I've read grave markers and heard stories of killings in these mountains." ;
+       }
+   ] ;
+
+    nextLandmarks : ["The Dalles"] ;
+    distances : [120] ;
+}
+
+/**** Blue Mountains reunification *****/
+
+{
+
+   name : "The Dalles" ;
+
+   prices : null ;
+
+   people : [
+       {
+           intro : "Amy Witherspoon tells you:" ;
+           script: "My cousin Lydia engaged passage down the Columbia with Indians -- a canoe with 17 people and luggage! The wind blew so heavy they had to lay by. Near dark, high waves came up over their heads! Finally, they made it to shore safely." ;
+       }
+       ,
+       {
+           intro : "A toll collector tells you:" ;
+           script : "I collect the tolls for the Barlow Road -- a bargain at twice the price! Until last year the overlander had no choice -- everyone floated the Columbia. Now with Mr. Barlow's new road, you can drive your wagon right into Oregon City!" ;
+       }
+       ,
+       {
+           intro : "A mountain man tells you:" ;
+           script : "These last hundred miles to the Willamette Valley are the roughest -- either rafting down the swift and turbulent Columbia River or driving your wagon over the steep Cascade Mountains. Hire an Indian buide if you take the river." ;
+       }
+   ] ;
+
+    nextLandmarks : ["Columbia River, the Willamette Valley"] ;
+    distances : [??, 100] ;
+}
+
+/*
 
 /**** Template  *****
 {
