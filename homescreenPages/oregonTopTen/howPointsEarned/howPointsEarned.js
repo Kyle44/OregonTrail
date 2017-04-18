@@ -1,8 +1,8 @@
 $('body').keyup(function(e){
    if(e.keyCode == spacebarKey){
-   		count++;
-    	switch(count){
-    		case 1:
+		count++;
+		switch(count){
+			case 1:
 				$('#pointsInfoParagraph').text('The resources you arrive with will help you get started in the new land.  You receive points for each item you bring safely to Oregon.');
 				$('#tableHeader1').text('Resources of Party');
 				$('#tableHeader2').text('Points per Item');
