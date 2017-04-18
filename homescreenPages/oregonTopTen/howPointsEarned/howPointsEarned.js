@@ -7,11 +7,14 @@ $('body').keyup(function(e){
     			$('#tableHeader1').text('Resources of Party');
     			$('#tableHeader2').text('Points per Item');
     			$("#pointsTable").find("tr:gt(0)").remove();
-    			//$('#pointsTable tr:last').after('<td><tr>wagon</tr><tr></tr><tr>50</tr></td>');
-    			//$('#pointsTable tr:last').after('<td><tr>ox</tr><tr></tr><tr>4</tr></td>');
-    			//$('#pointsTable tr:last').after('<td><tr>spare wagon part</tr><tr></tr><tr>2</tr></td>');
-    			//$('#pointsTable tr:last').after('<td><tr>set of clothing</tr><tr></tr><tr>2</tr></td><tr><td>bullets (each 50)</td><td></td><td>1</td></tr><tr><td>food (each 25 pounds)</td><td></td><td>1</td></tr><tr><td>cash (each 50)</td><td></td><td>1</td></tr>');
-    			break;
+    			$('#pointsTable tr:last').after('<tr><td>wagon</td><td></td><td>50</td></tr>');
+	  			$('#pointsTable tr:last').after('<tr><td>ox</td><td></td><td>4</td></tr>');
+    			$('#pointsTable tr:last').after('<tr><td>spare wagon part</td><td></td><td>2</td></tr>');
+    			$('#pointsTable tr:last').after('<tr><td>set of clothing</td><td></td><td>2</td></tr>');
+				$('#pointsTable tr:last').after('<tr><td>bullets (each 50)</td><td></td><td>1</td></tr>');
+				$('#pointsTable tr:last').after('<tr><td>food (each 25 pounds)</td><td></td><td>1</td></tr>');
+				$('#pointsTable tr:last').after('<tr><td>cash (each 50)</td><td></td><td>1</td></tr>');		
+				break;
     		case 2:
     			$('#pointsInfoParagraph').text('You receive points for your occupation in the new land.  Because more farmers and carpenters were needed than bankers, you receive double points arriving in Oregon as a carpenter, and triple points for arriving as a farmer.');
     			$('#pointsTable').remove();
