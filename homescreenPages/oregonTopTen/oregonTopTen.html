@@ -1,23 +1,23 @@
 <!-- Name: Kyle Fritz
-	 File: originalTopTen.html
-	 Date Created: 4/15/17
-	 Description: Original Top Ten (Hardcoded)
+	 File: oregonTopTen.html
+	 Date Created: 4/17/17
+	 Description: Oregon Top Ten, using database
 -->
 
-<!-- PHP WILL BE USED IN THE FUTURE -->
+<!-- HARDCODED FOR NOW, NEEDS TO USE FUTURE DATABASE -->
 
 
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="../../../proj2.css"> 
+	<link rel="stylesheet" type="text/css" href="../../proj2.css"> 
 </head>
 
 <body>
 
 	<div class="titleNormal">
 		<h2>
-			Original Top Ten List<br><br>
+			The Oregon Top Ten<br><br>
 		</h2>
 	</div>
 
@@ -80,11 +80,16 @@
 			</tr>
 		</table>
 	</div>
+	<br>
 
-	<p class="spaceToContinue">
-		Press SPACE BAR to continue 
-	</p>
+	<div class="bordered">
+		Would you like to see how points are earned?
+		<input id="inputPointsEarned" type="text" onkeypress="checkEnteredValue(event)"></input>
+	</div>
 
-	<script src="topTen.js" type="text/javascript"></script>
+
+
+	<script src="oregonTopTen.js" type="text/javascript"></script>
+
 </body>
 </html>

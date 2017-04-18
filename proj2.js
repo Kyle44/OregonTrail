@@ -1,5 +1,4 @@
-function checkEnteredValue(e)
-{
+function checkEnteredValue(e){
 	var choice = parseInt(document.getElementById('optionsChoice').value); // get chosen value
 
     if (e.keyCode == enterKey){ // enter key
@@ -11,6 +10,7 @@ function checkEnteredValue(e)
 					location.replace("homescreenPages/learnTrail/learnTrail.html");
 					break;
 				case 3:
+					location.replace("homescreenPages/oregonTopTen/oregonTopTen.html");
 					break;
 				case 4:
 					location.replace("homescreenPages/sound/sound.php");

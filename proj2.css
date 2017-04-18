@@ -65,3 +65,19 @@ tr, th, td{
 	width: auto;
 	text-align: center;
 }
+
+.bordered{
+	border: solid white 2px;
+	margin-left: 32em;
+	margin-right: 32em;
+}
+
+.negativeColor{
+	color: black;
+	background-color: white;
+}
+
+.middleParagraph{
+	width:33%;
+	margin-left: 27em;
+}
