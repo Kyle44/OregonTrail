@@ -1,62 +1,3 @@
-/**** learnTrail CSS ****/
-.learnTrailParagraph{
-	margin-left: 10em;
-	margin-right: 10em;
-	margin-top: 5em;
-	text-align: left;
-}
-
-#paragraphHead{
-	text-align: center;
-}
-/**** END learnTrail CSS ****/
-
-.optionInput {
-	font-family: Courier, monospace;
-	background-color: black;
-	color: white;
-	border: none;
-}
-
-.options{
-	font-family: Courier, monospace;
-	text-align: left;
-	margin-left: 32em;
-	margin-top: 5em;
-}
-
-.title{
-	text-align: center;
-	font-family: Rockwell, monospace;
-}
-
-.optionsList{
-	margin-left: 1.5em; /* tabbed over */
-}
-
-.centerParagraph{
-	margin-left: 25em;
-	margin-right: 25em;
-}
-
-.spaceToContinue{
-	text-align: center;
-}
-
-body{
-	background-color: black;
-	color: white;
-}
-
-.titleNormal{
-	text-align: center;
-	font-family: Courier, monospace;
-}
-
-p, tr, th, td{
-	font-family: Courier, monospace;
-}
-
 table{
 	width:33%;
 	margin-left: 27em;
@@ -69,7 +10,52 @@ tr, th{
 
 tr, th, td{
 	width: auto;
+}
+
+/* Fonts for everything generic */
+p, tr, th, td, .options, .optionInput, .titleNormal  {
+	font-family: Courier, monospace;
+}
+
+/* Everything that needs to be centered */
+tr, th, td, .title, .titleNormal, .spaceToContinue, #paragraphHead{
 	text-align: center;
+}
+
+
+.learnTrailParagraph{
+	margin-left: 10em;
+	margin-right: 10em;
+	margin-top: 5em;
+}
+
+.optionInput {
+	background-color: black;
+	color: white;
+	border: none;
+}
+
+.options{
+	margin-left: 32em;
+	margin-top: 5em;
+}
+
+.title{
+	font-family: Rockwell, monospace;
+}
+
+.optionsList{
+	margin-left: 1.5em; /* tabbed over */
+}
+
+.centerParagraph{
+	margin-left: 25em;
+	margin-right: 25em;
+}
+
+body{
+	background-color: black;
+	color: white;
 }
 
 .bordered{
