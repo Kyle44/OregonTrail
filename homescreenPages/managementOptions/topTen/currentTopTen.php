@@ -1,23 +1,23 @@
 <!-- Name: Kyle Fritz
-	 File: oregonTopTen.html
+	 File: currentTopTen.php
 	 Date Created: 4/17/17
-	 Description: Oregon Top Ten, using database
+	 Description: Current Top Ten (Hardcoded for now)
 -->
 
-<!-- HARDCODED FOR NOW, NEEDS TO USE FUTURE DATABASE -->
+<!-- PHP WILL BE USED IN THE FUTURE -->
 
 
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="../../proj2.css"> 
+	<link rel="stylesheet" type="text/css" href="../../../proj2.css"> 
 </head>
 
 <body>
 
 	<div class="titleNormal">
 		<h2>
-			The Oregon Top Ten<br><br>
+			Current Top Ten List<br><br>
 		</h2>
 	</div>
 
@@ -80,16 +80,11 @@
 			</tr>
 		</table>
 	</div>
-	<br>
 
-	<div class="bordered">
-		Would you like to see how points are earned?
-		<input class="optionInput" id="inputPointsEarned" type="text"
-		onkeypress="checkEnteredValue(event)" autofocus></input>
-	</div>
+	<p class="spaceToContinue">
+		Press SPACE BAR to continue 
+	</p>
 
-
-	<script src="oregonTopTen.js" type="text/javascript"></script>
-
+	<script src="topTen.js" type="text/javascript"></script>
 </body>
 </html>

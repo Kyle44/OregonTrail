@@ -12,8 +12,13 @@ tr, th, td{
 	width: auto;
 }
 
+body{
+	background-color: black;
+	color: white;
+}
+
 /* Fonts for everything generic */
-p, tr, th, td, .options, .optionInput, .titleNormal  {
+p, tr, th, td, .options, .optionInput, .titleNormal, .bordered, #eraseTopTenQuestion {
 	font-family: Courier, monospace;
 }
 
@@ -21,7 +26,6 @@ p, tr, th, td, .options, .optionInput, .titleNormal  {
 tr, th, td, .title, .titleNormal, .spaceToContinue, #paragraphHead{
 	text-align: center;
 }
-
 
 .learnTrailParagraph{
 	margin-left: 10em;
@@ -48,14 +52,9 @@ tr, th, td, .title, .titleNormal, .spaceToContinue, #paragraphHead{
 	margin-left: 1.5em; /* tabbed over */
 }
 
-.centerParagraph{
+.centerParagraph, #eraseTopTenQuestion{
 	margin-left: 25em;
 	margin-right: 25em;
-}
-
-body{
-	background-color: black;
-	color: white;
 }
 
 .bordered{

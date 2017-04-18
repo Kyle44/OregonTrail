@@ -6,11 +6,13 @@ function checkEnteredValue(e)
     	if(choice != NaN && choice <= 6 && choice >= 1){
     		switch(choice){
 				case 1:
+					location.replace("topTen/currentTopTen.php");
 					break;
 				case 2:
 					location.replace("topTen/originalTopTen.html");
 					break;
 				case 3:
+					location.replace("topTen/eraseTopTen.php");
 					break;
 				case 4:
 					break;
