@@ -23,7 +23,7 @@
 	<div id="eraseTopTenQuestion">
 		<p>If you erase the current Top Ten list, the names and scores will be replaced by those on the original list.</p><br><br>
 		Do you want to do this? 
-		<input id="inputEraseTopTen" class="optionInput" type="text" name="quantity" autofocus>
+		<input id="inputEraseTopTen" class="optionInput" type="text" name="quantity" onblur="this.focus()" autofocus>
 	</div>
 
 	<script src="eraseTopTen.js" type="text/javascript"></script>

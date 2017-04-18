@@ -47,7 +47,7 @@
 			5. Choose Management Options <br>
 			6. End <br><br>
 			What is your choice?
-			<input class="optionInput" id="optionsChoice" type="text" name="quantity" min="1" max="6" onkeypress="checkEnteredValue(event)" autofocus>
+			<input class="optionInput" id="optionsChoice" type="text" name="quantity" min="1" max="6" onkeypress="checkEnteredValue(event)" onblur="this.focus()" autofocus>
 		</p>
 	</div>
 

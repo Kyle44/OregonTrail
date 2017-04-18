@@ -33,7 +33,7 @@
 			6. Return to the main menu<br><br>
 			What is your choice?
 			<input class="optionInput" id="managementOptionsChoice" type="text"
-			name="quantity" min="1" max="6" onkeypress="checkEnteredValue(event)" autofocus>
+			name="quantity" min="1" max="6" onkeypress="checkEnteredValue(event)" onblur="this.focus()" autofocus>
 		</p>
 	</div>
 
