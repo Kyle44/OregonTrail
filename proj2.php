@@ -26,10 +26,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="proj2.css"> 
+	<link rel="stylesheet" type="text/css" href="proj2.css">
 </head>
 
-<body>
+<body onkeypress="directInput()">
 
 	<div class="title">
 		<h2>
@@ -47,7 +47,7 @@
 			5. Choose Management Options <br>
 			6. End <br><br>
 			What is your choice?
-			<input id="optionsChoice" type="text" name="quantity" min="1" max="6" onkeypress="checkEnteredValue(event)">
+			<input class="optionInput" id="optionsChoice" type="text" name="quantity" min="1" max="6" onkeypress="checkEnteredValue(event)" autofocus>
 		</p>
 	</div>
 

@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="../../proj2.css"> 
+	<link rel="stylesheet" type="text/css" href="../../proj2.css">
 </head>
 
 <body>
@@ -32,7 +32,8 @@
 			5. Erase saved games<br>
 			6. Return to the main menu<br><br>
 			What is your choice?
-			<input id="managementOptionsChoice" type="text" name="quantity" min="1" max="6" onkeypress="checkEnteredValue(event)">
+			<input class="optionInput" id="managementOptionsChoice" type="text"
+			name="quantity" min="1" max="6" onkeypress="checkEnteredValue(event)" autofocus>
 		</p>
 	</div>
 

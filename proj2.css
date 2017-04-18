@@ -11,6 +11,12 @@
 }
 /**** END learnTrail CSS ****/
 
+.optionInput {
+	font-family: Courier, monospace;
+	background-color: black;
+	color: white;
+	border: none;
+}
 
 .options{
 	font-family: Courier, monospace;
@@ -44,7 +50,7 @@ body{
 
 .titleNormal{
 	text-align: center;
-	font-family: Courier, monospace;	
+	font-family: Courier, monospace;
 }
 
 p, tr, th, td{
@@ -57,7 +63,7 @@ table{
 }
 
 /* Row headings have space between itself and following row*/
-tr th{
+tr, th{
 	padding-bottom: 20px;
 }
 

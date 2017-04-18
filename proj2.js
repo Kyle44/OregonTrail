@@ -1,4 +1,8 @@
-function checkEnteredValue(e){
+function directInput() {
+	document.getElementById("optionsChoice").focus();
+}
+
+function checkEnteredValue(e) {
 	var choice = parseInt(document.getElementById('optionsChoice').value); // get chosen value
 
     if (e.keyCode == enterKey){ // enter key
