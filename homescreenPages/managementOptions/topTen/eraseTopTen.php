@@ -14,16 +14,16 @@
 </head>
 
 <body>
-	<div class="titleNormal">
+	<div class="titleNormal normalFont textAlignCenter">
 		<h2>
 			Erase Top Ten list<br><br>
 		</h2>
 	</div>
 
-	<div id="eraseTopTenQuestion">
+	<div class="centerParagraph normalFont">
 		<p>If you erase the current Top Ten list, the names and scores will be replaced by those on the original list.</p><br><br>
 		Do you want to do this? 
-		<input id="inputEraseTopTen" class="optionInput" type="text" name="quantity" onblur="this.focus()" autofocus>
+		<input id="inputEraseTopTen" class="optionInput normalFont" type="text" name="quantity" onblur="this.focus()" autofocus>
 	</div>
 
 	<script src="eraseTopTen.js" type="text/javascript"></script>

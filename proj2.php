@@ -31,13 +31,13 @@
 
 <body onkeypress="directInput()">
 
-	<div class="title">
+	<div class="title textAlignCenter">
 		<h2>
 			The Oregon Trail
 		</h2>
 	</div>
 
-	<div class="options">
+	<div class="options normalFont">
 		You may: <br>
 		<p class="optionsList">
 			1. Travel the trail <br>
@@ -47,7 +47,7 @@
 			5. Choose Management Options <br>
 			6. End <br><br>
 			What is your choice?
-			<input class="optionInput" id="optionsChoice" type="text" name="quantity" min="1" max="6" onkeypress="checkEnteredValue(event)" onblur="this.focus()" autofocus>
+			<input class="optionInput normalFont" id="optionsChoice" type="text" name="quantity" min="1" max="6" onkeypress="checkEnteredValue(event)" onblur="this.focus()" autofocus>
 		</p>
 	</div>
 

@@ -15,13 +15,13 @@
 
 <body>
 
-	<div class="titleNormal">
+	<div class="titleNormal normalFont textAlignCenter">
 		<h2>
 			Current Top Ten List<br><br>
 		</h2>
 	</div>
 
-	<div class="topTen">
+	<div>
 		<table>
 			<tr class="headerRow">
 			    <th>Name</th>
@@ -81,7 +81,7 @@
 		</table>
 	</div>
 
-	<p class="spaceToContinue">
+	<p class="spaceToContinue textAlignCenter">
 		Press SPACE BAR to continue 
 	</p>
 

@@ -15,14 +15,14 @@
 
 <body>
 
-	<div class="titleNormal">
+	<div class="titleNormal normalFont textAlignCenter">
 		<h2>
 			The Oregon Trail<br><br>
 			Management Options
 		</h2>
 	</div>
 
-	<div class="options">
+	<div class="options normalFont">
 		You may: <br>
 		<p class="optionsList">
 			1. See the current Top Ten list<br>
@@ -32,7 +32,7 @@
 			5. Erase saved games<br>
 			6. Return to the main menu<br><br>
 			What is your choice?
-			<input class="optionInput" id="managementOptionsChoice" type="text"
+			<input class="optionInput normalFont" id="managementOptionsChoice" type="text"
 			name="quantity" min="1" max="6" onkeypress="checkEnteredValue(event)" onblur="this.focus()" autofocus>
 		</p>
 	</div>
