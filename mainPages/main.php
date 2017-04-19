@@ -1,4 +1,4 @@
-<!--     Name: Kush Patel
+<!-- Name: Kush Patel
 	 File: main.php
 	 Date Created: 4/15/17
 	 Description: Main page
@@ -82,12 +82,12 @@
 
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="mainPages/main.css">
+	<link rel="stylesheet" type="text/css" href="../proj2.css">
 </head>
 
 <body onkeypress="directInput()">
 
-	<div class="title">
+	<div class="title textAlignCenter">
 		<h2>
 			<?php 
 				echo $_SESSION['name'] . "<br>";
@@ -98,14 +98,14 @@
 		</h2>
 	</div>
 
-	<div class="status">
+	<div class="status normalFont">
 		Weather: <?php echo $_SESSION['weather']; ?><br>
 		Health: <?php echo $_SESSION['health']; ?><br>
 		Pace: <?php echo $_SESSION['pace']; ?><br>
 		Rations: <?php echo $_SESSION['rations']; ?><br>
 	</div>
 	
-	<div class="options">
+	<div class="options normalFont">
 		You may: <br>
 		<p class="optionsList">
 			1. Continue on trail <br>
@@ -119,7 +119,7 @@
 			9. Buy supplies <br><br><br>
 
 			What is your choice?
-			<input class="optionInput" id="optionsChoice" 
+			<input class="optionInput normalFont" id="optionsChoice" 
 				type="text" name="quantity" min="1" max="9"
 				onkeypress="checkEnteredValue(event)" 
 				onblur="this.focus()" autofocus>
