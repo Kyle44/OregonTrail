@@ -15,6 +15,7 @@ function checkEnteredValue(e)
 					location.replace("topTen/eraseTopTen.php");
 					break;
 				case 4:
+					location.replace("eraseTombstoneMessages/eraseTombstoneMessages.php");
 					break;
 				case 5:
 					break;

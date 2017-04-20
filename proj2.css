@@ -73,6 +73,6 @@ tr, th, td, .textAlignCenter{
 	border: none;
     margin-right: 32em;
 	margin-left: 32em;
-	margin-bottom: 10px;
-	padding-left: 10px
+	margin-bottom: .5em;
+	padding-left: .5em;
 }
