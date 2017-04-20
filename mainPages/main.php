@@ -120,7 +120,7 @@
 
 			What is your choice?
 			<input class="optionInput normalFont" id="optionsChoice" 
-				type="text" name="quantity" min="1" max="9"
+				type="text" name="mainVal" min="1" max="9"
 				onkeypress="checkEnteredValue(event)" 
 				onblur="this.focus()" autofocus>
 		</p>
