@@ -14,7 +14,7 @@ function checkEnteredValue(e) {
 					location.replace("homescreenPages/learnTrail/learnTrail.html");
 					break;
 				case 3:
-					location.replace("homescreenPages/oregonTopTen/oregonTopTen.html");
+					location.replace("homescreenPages/oregonTopTen/oregonTopTen.php");
 					break;
 				case 4:
 					location.replace("homescreenPages/sound/sound.php");
