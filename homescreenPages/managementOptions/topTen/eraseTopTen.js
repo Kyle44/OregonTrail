@@ -1,3 +1,10 @@
+/* Name: Dan Schomisch
+	 File: eraseTopTen.js
+	 Date Modified: 4/22/17
+	 Description: Added db functionality to erase current top ten list, 
+				  and restore original list(db_update4_22).
+*/
+
 document.body.onkeyup = function(e){
 	var choice = document.getElementById('inputEraseTopTen').value; // get chosen value
 
@@ -10,14 +17,10 @@ document.body.onkeyup = function(e){
 				location.replace("../managementOptions.php");
 				break;
 			case 'y':
-				// TODO: ERASE THE TOP TEN
-				// TODO: REPLACE WITH ORIGINAL TOP TEN
-				location.replace("../managementOptions.php");
+				location.replace("eraseProcess.php");
 				break;
 			case 'yes':
-				// TODO: ERASE THE TOP TEN
-				// TODO: REPLACE WITH ORIGINAL TOP TEN
-				location.replace("../managementOptions.php");							
+				location.replace("eraseProcess.php");							
 				break;
 			default:
 				;

@@ -9,7 +9,7 @@ function checkEnteredValue(e)
 					location.replace("topTen/currentTopTen.php");
 					break;
 				case 2:
-					location.replace("topTen/originalTopTen.html");
+					location.replace("topTen/originalTopTen.php");
 					break;
 				case 3:
 					location.replace("topTen/eraseTopTen.php");

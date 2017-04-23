@@ -2,9 +2,12 @@
 	 File: currentTopTen.php
 	 Date Created: 4/17/17
 	 Description: Current Top Ten (Hardcoded for now)
+	 
+	 Name: Dan Schomisch
+	 File: currentTopTen.php
+	 Date Modified: 4/22/17
+	 Description: Added db functionality (db_update4_22).
 -->
-
-<!-- PHP WILL BE USED IN THE FUTURE -->
 
 
 <!DOCTYPE html>
@@ -14,74 +17,52 @@
 </head>
 
 <body>
+<?php
+	$servername = "studentdb-maria.gl.umbc.edu";
+	$username = "dschom1";
+	$password = "dschom1";
+	$dbname = "dschom1";
 
-	<div class="titleNormal normalFont textAlignCenter">
-		<h2>
-			Current Top Ten List<br><br>
-		</h2>
-	</div>
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error ." <br><br>Did you use the right username/password/dbname?");
+	} 
 
-	<div>
-		<table>
-			<tr class="headerRow">
-			    <th>Name</th>
-			    <th>Points</th> 
-			    <th>Rating</th>
-			</tr>
-			<tr>
-				<td>Stephen Meek</td>
-				<td>7650</td> 
-				<td>Trail Guide</td>
-			</tr>
-			<tr>
-				<td>Celinda Hines</td>
-				<td>5694</td> 
-				<td>Adventurer</td>
-			</tr>
-			<tr>
-				<td>Andrew Sublette</td>
-				<td>4138</td> 
-				<td>Adventurer</td>
-			</tr>
-			<tr>
-				<td>David Hastings</td>
-				<td>2945</td> 
-				<td>Adventurer</td>
-			</tr>
-			<tr>
-				<td>Ezra Meeker</td>
-				<td>2052</td> 
-				<td>Greenhorn</td>
-			</tr>
-			<tr>
-				<td>William Vaughn</td>
-				<td>1401</td> 
-				<td>Greenhorn</td>
-			</tr>
-			<tr>
-				<td>Mary Bartlett</td>
-				<td>937</td> 
-				<td>Greenhorn</td>
-			</tr>
-			<tr>
-				<td>William Wiggins</td>
-				<td>615</td> 
-				<td>Greenhorn</td>
-			</tr>
-			<tr>
-				<td>Charles Hopper</td>
-				<td>396</td> 
-				<td>Greenhorn</td>
-			</tr>
-			<tr>
-				<td>Stephen Meek</td>
-				<td>250</td> 
-				<td>Greenhorn</td>
-			</tr>
-		</table>
-	</div>
-
-	<p class="spaceToContinue textAlignCenter">
+	$sql = "SELECT name, points, rating FROM scoreboard ORDER BY points DESC LIMIT 10";
+	$result = $conn->query($sql);
+	
+	echo '<div class="titleNormal normalFont textAlignCenter">
+			<h2>
+				Current Top Ten List<br><br>
+			</h2>
+		</div>';
+	
+	if ($result->num_rows > 0) {
+    echo '<div>
+			<table>
+				<tr class="headerRow">
+					<th>Name</th>
+					<th>Points</th>
+					<th>Rating</th>
+				</tr>';
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "	<tr>
+					<td>".$row["name"]."</td>
+					<td>".$row["points"]."</td>
+					<td>".$row["rating"]."</td>
+				</tr>";
+    }
+    echo "	</table>
+		</div>";
+	} else {
+		echo "0 results";
+	}
+	$conn->close();
+?>
+		<p class="spaceToContinue textAlignCenter">
 		Press SPACE BAR to continue 
 	</p>
 
