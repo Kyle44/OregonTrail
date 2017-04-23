@@ -1,3 +1,9 @@
+/* Name: Dan Schomisch
+	 File: eraseTombstoneMessages.js
+	 Date Modified: 4/23/17
+	 Description: Added db functionality to erase tombstone messages(db_update4_23).
+*/
+
 document.body.onkeyup = function(e){
 	var choice = document.getElementById('inputEraseTombstoneMessages').value; // get chosen value
 
@@ -10,12 +16,10 @@ document.body.onkeyup = function(e){
 				location.replace("../managementOptions.php");
 				break;
 			case 'y':
-				// TODO: ERASE TOMBSTONE MESSAGES
-				location.replace("../managementOptions.php");
+				location.replace("eraseTombstoneMessagesProcess.php");
 				break;
 			case 'yes':
-				// TODO: ERASE TOMBSTONE MESSAGES
-				location.replace("../managementOptions.php");							
+				location.replace("eraseTombstoneMessagesProcess.php");							
 				break;
 			default:
 				;
