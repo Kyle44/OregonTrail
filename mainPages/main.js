@@ -13,7 +13,7 @@ function checkEnteredValue(e) {
 				location.replace("supplies/supplies.php");
 				break;
 			case 3:
-				location.replace("map/map.php");
+				location.replace("map.html");
 				break;
 			case 4:
 				location.replace("pace/pace.php");
@@ -37,4 +37,30 @@ function checkEnteredValue(e) {
 				location.replace("main.php");
 		}
     	}
+}
+function changePace(e) {
+	var choice = parseInt(document.getElementById('optionsChoice').value);
+    	if(!isNaN(choice) && choice <= 4 && choice >= 1){
+
+		if (choice == 4) {
+			location.replace("paceDesc.html");
+                }
+		else {
+        		var xmlhttp = new XMLHttpRequest();
+        		xmlhttp.open("GET", "getPace.php?p=" + choice, true);
+        		xmlhttp.send();
+			location.replace("../main.php");
+		}
+	}
+}
+
+function changeRats(e) {
+	var choice = parseInt(document.getElementById('optionsChoice').value);
+    	if(!isNaN(choice) && choice <= 3 && choice >= 1){
+
+        	var xmlhttp = new XMLHttpRequest();
+        	xmlhttp.open("GET", "getRations.php?p=" + choice, true);
+        	xmlhttp.send();
+		location.replace("../main.php");
+	}
 }
