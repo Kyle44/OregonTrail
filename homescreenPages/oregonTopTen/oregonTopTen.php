@@ -72,6 +72,8 @@
 		onkeypress="checkEnteredValue(event)" onblur="this.focus()" autofocus></input>
 	</div>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://swe.umbc.edu/~fritzk1/OregonTrail/changeSound.js" type="text/javascript"></script>
 	<script src="oregonTopTen.js" type="text/javascript"></script>
 
 </body>

@@ -16,8 +16,8 @@ document.body.onkeyup = function(e){
         		paragraph.innerHTML = "If for some reason you don't survive -- your wagon burns, or thieves steal you oxen, or you run out of provisions, or you die of cholera -- don't give up!  Try again...and again...until your name is up with the others on The Oregon Top Ten.";
         		break;
         	case 6:
-        		paragraphHead.innerHTML = "Control-S key";
-        		paragraph.innerHTML = "You may turn the sound on or off during the program by perssing Control-S.";
+        		paragraphHead.innerHTML = "'S' key";
+        		paragraph.innerHTML = "You may turn the sound on or off during the program by pressing 'S'.";
         		break;
         	case 7:
         		paragraphHead.innerHTML = "Esc key";
