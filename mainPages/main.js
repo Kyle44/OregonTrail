@@ -27,7 +27,7 @@ function checkEnteredValue(e) {
 				location.replace("trade/trade.php");
 				break;
 			case 8:
-				location.replace("talk.php");
+				location.replace("talk/talk.php");
 				break;
 			case 9:
 				location.replace("buy/buy.php");
