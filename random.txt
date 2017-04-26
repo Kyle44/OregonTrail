@@ -6,3 +6,4 @@ trades
 problems with oxen
 river crossing events (semi-random for fording)
 fishing
+distance traveled (semi-random, may be based on # of oxen)
