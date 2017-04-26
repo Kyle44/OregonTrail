@@ -1,0 +1,8 @@
+weather (rain affects river depth/width) (month)
+ailments
+robbed
+water status
+trades
+problems with oxen
+river crossing events (semi-random for fording)
+fishing
