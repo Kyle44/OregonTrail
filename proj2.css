@@ -71,8 +71,29 @@ tr, th, td, .textAlignCenter{
 	background-color: white;
 	color: black;
 	border: none;
-    margin-right: 32em;
+    	margin-right: 32em;
 	margin-left: 32em;
 	margin-bottom: .5em;
 	padding-left: .5em;
+}
+
+.rest{
+	background-color: black;
+	color: white;
+  	border-color: white;
+   	border-style: solid;
+    	border-width: 5px;
+	margin-right: 38em;
+	margin-left: 38em;
+}
+
+.talk{
+    	margin-right: 32em;
+	margin-left: 32em;
+	margin-top: 30px;
+}
+
+.buy{
+	margin-left: 39em;
+	margin-top: 30px;
 }
