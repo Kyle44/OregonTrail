@@ -515,5 +515,5 @@ var Dalles = {
     ],
 
     nextLandmarks : ["Columbia River, the Willamette Valley"],
-    distances : [??, 100]
+    distances : [0, 100]
 }
