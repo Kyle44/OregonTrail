@@ -35,7 +35,7 @@ function checkEnteredValue(e) {
 			default:
 				location.replace("main.php");
 		}
-    	}
+	}
 }
 
 function changePace(e) {

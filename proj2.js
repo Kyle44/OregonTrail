@@ -9,7 +9,7 @@ function checkEnteredValue(e) {
     	if(choice != NaN && choice <= 6 && choice >= 1){
     		switch(choice){
 				case 1:
-					location.replace("gameSetup/jobSetup.php");
+					location.replace("gameSetup/jobSetup.html");
 					break;
 				case 2:
 					location.replace("homescreenPages/learnTrail/learnTrail.html");
