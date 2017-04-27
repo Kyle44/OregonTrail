@@ -5,7 +5,7 @@
 https://thedalles.slack.com/
 # Actual Oregon Trail Game
 https://archive.org/details/msdos_Oregon_Trail_The_1990
-https://www.gamefaqs.com/pc/577345-the-oregon-trail/faqs/56073
+Script-> https://www.gamefaqs.com/pc/577345-the-oregon-trail/faqs/56073
 
 # Game Pages:
 Kyle -> https://swe.umbc.edu/~fritzk1/OregonTrail/proj2.php
