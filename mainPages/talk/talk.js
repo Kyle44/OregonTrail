@@ -12,6 +12,9 @@ function talk(town) {
 		if (town == "the Kansas River crossing") {
 			document.getElementById("talk").innerHTML = KansasRC.people[num].intro + "<br>" + KansasRC.people[num].script;
 		}
+        if (town == "the Big Blue River crossing") {
+			document.getElementById("talk").innerHTML = BlueRC.people[num].intro + "<br>" + BlueRC.people[num].script;
+		}
 		if (town == "Fort Kearney") {
 			document.getElementById("talk").innerHTML = KearneyF.people[num].intro + "<br>" + KearneyF.people[num].script;
 		}
@@ -55,4 +58,3 @@ function talk(town) {
 			document.getElementById("talk").innerHTML = Dalles.people[num].intro + "<br>" + Dalles.people[num].script;
 		}
 }
-
