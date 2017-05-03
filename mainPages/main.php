@@ -9,19 +9,6 @@
 	sleep(1);
 	session_start();
 	
-	if(!isset($_SESSION['name'])){
-		$_SESSION['name'] = 'Independence';
-	}
-	if(!isset($_SESSION['month'])){
-		$_SESSION['month'] = 4;
-	}
-	if(!isset($_SESSION['day'])){
-		$_SESSION['day'] = 1;
-	}
-	if(!isset($_SESSION['year'])){
-		$_SESSION['year'] = 1848;
-	}
-	
 	if(!isset($_SESSION['weather'])){
 		$_SESSION['weather'] = 'cool';
 	}
@@ -34,51 +21,8 @@
 	if(!isset($_SESSION['rations'])){
 		$_SESSION['rations'] = 'filling';
 	}
-	
-	$_SESSION['lastPage'] = 'main.php';
-	
-	function displayMonth() {
-		$month = $_SESSION['month'];
 		
-		switch($month) {
-			case 1:
-				echo "January";
-				break;
-			case 2:
-				echo "February";
-				break;
-			case 3:
-				echo "March";
-				break;
-			case 4:
-				echo "April";
-				break;
-			case 5:
-				echo "May";
-				break;
-			case 6:
-				echo "June";
-				break;
-			case 7:
-				echo "July";
-				break;
-			case 8:
-				echo "August";
-				break;
-			case 9:
-				echo "September";
-				break;
-			case 10:
-				echo "October";
-				break;
-			case 11:
-				echo "November";
-				break;
-			case 12:
-				echo "December";
-				break;
-		}
-	}
+	include 'func.php';
 ?>
 
 <html>
