@@ -19,8 +19,8 @@
 			$startingMonth = "July";
 			break;
 		default:
-			alert("ERROR Getting month");
+			echo "ERROR Getting month";
 			break;
 	}
-	$_SESSION['startingMonth'] = $startingMonth;
+	$_SESSION['month'] = $startingMonth;
 ?>

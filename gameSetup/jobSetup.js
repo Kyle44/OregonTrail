@@ -15,7 +15,7 @@ $(document).ready(function(){
 		        		xmlhttp.open("GET", "getJob.php?p=" + choice, true);
 		        		xmlhttp.send();
 		        		try{
-							location.replace("setNames/setLeaderName/setLeaderName.html");
+							location.replace("setNames/setNames.html");
 		        		}
 		        		catch(err){
 		        			alert("error");
