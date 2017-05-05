@@ -17,12 +17,16 @@ $(document).ready(function(){
                 case 4:
                     paragraph.html("- plenty of food for the trip<br>- ammunition for your rifles<br>- spare parts for your wagon");
                     break;
+                case 5:
+                    
                 default: 
                     location.replace("../store.php"); 
                     break;
 
             } // end switch
         } // end if
+
+
     };
 };
 
