@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	var enterKey = 13;
 	$(document).keydown(function(e){
-
  		if(e.keyCode == enterKey){
 			var choice = parseInt($('#optionsChoice').val()); // get chosen value
 			if(choice != NaN && choice <= 6 && choice >= 1){
@@ -15,8 +14,7 @@ $(document).ready(function(){
 		        		xmlhttp.open("GET", "getMonth.php?p=" + choice, true);
 		        		xmlhttp.send();
 		        		try{
-		        			// TODO: Go to next screen
-							// location.replace("");
+							location.replace("../store/storeSetup/storeSetup.html");
 		        		}
 		        		catch(err){
 		        			alert("error");

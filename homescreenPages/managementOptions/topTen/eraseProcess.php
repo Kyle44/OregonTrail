@@ -12,25 +12,25 @@
 </head>
 
 <body>
-<?php
-	$servername = "studentdb-maria.gl.umbc.edu";
-	$username = "dschom1";
-	$password = "dschom1";
-	$dbname = "dschom1";
+	<?php
+		$servername = "studentdb-maria.gl.umbc.edu";
+		$username = "dschom1";
+		$password = "dschom1";
+		$dbname = "dschom1";
 
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	// Check connection
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error ." <br><br>Did you use the right username/password/dbname?");
-	} 
+		// Create connection
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		// Check connection
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error ." <br><br>Did you use the right username/password/dbname?");
+		} 
 
-	//delete current scoreboard
-	$sql = "DELETE from scoreboard WHERE original <> 1";
-	$result = $conn->query($sql);
+		//delete current scoreboard
+		$sql = "DELETE from scoreboard WHERE original <> 1";
+		$result = $conn->query($sql);
 
-	$conn->close();
-?>
+		$conn->close();
+	?>
 	<div class="titleNormal normalFont textAlignCenter">
 		<h2>
 			Erase Top Ten list<br><br>
