@@ -1,5 +1,4 @@
 <?php
-
 	function displayMonth() {
 		$month = $_SESSION['month'];
 		

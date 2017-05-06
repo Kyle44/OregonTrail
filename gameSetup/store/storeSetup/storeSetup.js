@@ -1,8 +1,5 @@
 $(document).ready(function(){
-    var spacebarKey = 32;
-    var pageNum = 1; // storeSetup.html is pageNum = 1
-    var paragraph = $('#text'); // to change the paragraph
-    var paragraphHead = $('#paragraphHead');
+
     $(document).keydown(function(e){
         if(e.keyCode == spacebarKey){
             pageNum++;
@@ -18,15 +15,17 @@ $(document).ready(function(){
                     paragraph.html("- plenty of food for the trip<br>- ammunition for your rifles<br>- spare parts for your wagon");
                     break;
                 case 5:
-                    
+
                 default: 
                     location.replace("../store.php"); 
                     break;
 
             } // end switch
         } // end if
-
-
+    var spacebarKey = 32;
+    var pageNum = 1; // storeSetup.html is pageNum = 1
+    var paragraph = $('#text'); // to change the paragraph
+    var paragraphHead = $('#paragraphHead');
     };
 };
 

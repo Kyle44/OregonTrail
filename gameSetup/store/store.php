@@ -24,12 +24,13 @@
 </head>
 <body>
 
-	<div class="title">
+	<div class="title textAlignCenter">
 		<h2>
 			<?php 
 				echo "Matt's General Store<br>
-				Independence, Missouri"
+				Independence, Missouri<br>";
 				displayMonth();
+
 				echo " " .$_SESSION['day'];
 				echo ", " . $_SESSION['year'];
 			?>
@@ -37,38 +38,142 @@
 	</div>
 	
 
-	<div class="options">
-		<p class="optionsList">
-			1. Oxen
-			<p id="oxenBill" class="cash">$0.00</p><br>
-			2. Food
-			<p id="foodBill" class="cash">$0.00</p><br>
-			3. Clothing
-			<p id="clothingBill" class="cash">$0.00</p><br>
-			4. Ammunition
-			<p id="ammunitionBill" class="cash">$0.00</p><br>
-			5. Wagon wheels
-			<p id="wheelBill" class="cash">$0.00</p><br>
-			6. Wagon axles
-			<p id="axleBill" class="cash">$0.00</p><br>
-			7. Wagon tongues
-			<p id="tongueBill" class="cash">$0.00</p><br>
-			Total bill:
-			<p id="totalBill" class="cash">$0.00</p><br>
-			Amount you have:
-			<p id="totalBill" class="cash">$400.00</p><br>
-			<br>
-			Which item would you like to buy? 
-			<input class="optionInput" id="optionsChoice" 
-			type="text" name="quantity" min="1" max="7"
-			onblur="this.focus()" autofocus>
+	<div id="mainOptions">
+			<table id="storeTable">
+				<tr>
+					<th>1. Oxen</th>
+					<th>$0.00</th>
+				</tr>
+				<tr>
+					<th>2. Food</th>
+					<th>$0.00</th>
+				</tr>
+				<tr>
+					<th>3. Clothing</th>
+					<th>$0.00</th>
+				</tr>
+				<tr>
+					<th>4. Ammunition</th>
+					<th>$0.00</th>
+				</tr>
+				<tr>
+					<th>5. Wagon Wheels</th>
+					<th>$0.00</th>
+				</tr>
+				<tr>
+					<th>6. Wagon axles</th>
+					<th>$0.00</th>
+				</tr>
+				<tr>
+					<th>7. Wagon tongues</th>
+					<th>$0.00</th>
+				</tr>
+				<tr>
+					<th>Total bill: &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+					<th>$0.00</th>
+				</tr>
+				<tr>
+					<th>Amount you have: &emsp;&emsp;&emsp;</th>
+					<th>$400.00</th>
+				</tr>
+			</table>
+			<p class="centerParagraph">
+				<br>
+				Which item would you like to buy? 
+				<input class="optionInput" id="optionsChoice" 
+				type="text" name="quantity" min="1" max="7"
+				onblur="this.focus()" autofocus>
+			</p>
+
+
+		<br>
+		<p class="spaceToContinue textAlignCenter">
+			Press SPACE BAR to leave store 
 		</p>
     </div>
 
+    <div id="errorPage" style="display: none">
+		<p class="centerParagraph">
+			That's a little much.  I see that you only have $400.  We'd better go over the list again.<br>
+		</p>
+		<p class="spaceToContinue textAlignCenter">
+			Press SPACE BAR to go back to the store 
+		</p>
+	</div>
 
-	<p class="spaceToContinue textAlignCenter">
-		Press SPACE BAR to leave store 
-	</p>
+	<div id="afterPage" style="display: none">
+		<p class="centerParagraph">
+			Well then, you're ready to start.  Good luck!  You have a long and difficult journey ahead of you.<br>
+		</p>
+		<p class="spaceToContinue textAlignCenter">
+			Press SPACE BAR to continue
+		</p>
+	</div>
+
+
+	<div id="buyOxen" style="display: none">
+    	<p class="centerParagraph">
+    		There are 2 oxen in a yoke;  I recommend at least 3 yoke.  I charge $40 a yoke.<br>
+    		How many yoke do you want? 
+    		<input class="optionInput" id="inputBuyOxen" type="text" name="quantity" min="1" max="9"
+			onblur="this.focus()" autofocus>
+			<br><br>
+    	</p>
+	</div>
+	<div id="buyFood" style="display: none">
+    	<p class="centerParagraph">
+    		I recommend you take at least 200 pounds of food for each person in your family.  I see that you have 5 people in all.  You'll need flour, sugar, bacon, and coffee.  My price is 20 cents a pound.<br>
+    		How many pounds of food do you want? 
+    		<input class="optionInput" id="inputBuyFood" type="text" name="quantity" min="0" max="2000"
+			onblur="this.focus()" autofocus>
+			<br><br>
+    	</p>
+	</div>
+	<div id="buyClothing" style="display: none">
+    	<p class="centerParagraph">
+    		You'll need warm clothing in the mountains.  I recommend taking at least 2 sets of clothes per person.  Each set is $10.00.<br>
+    		How many sets of clothes do you want? 
+    		<input class="optionInput" id="inputBuyClothing" type="text" name="quantity" min="0" max="99"
+			onblur="this.focus()" autofocus>
+			<br><br>
+    	</p>
+	</div>
+	<div id="buyAmmunition" style="display: none">
+    	<p class="centerParagraph">
+    		I sell ammunition in boxes of 20 bullets.  Each box costs $2.00.<br>
+    		How many boxes do you want? 
+    		<input class="optionInput" id="inputBuyAmmunition" type="text" name="quantity" min="0" max="99"
+			onblur="this.focus()" autofocus>
+			<br><br>
+    	</p>
+	</div>
+	<div id="buyWheels" style="display: none">
+    	<p class="centerParagraph">
+    		It's a good idea to have a few spare parts for your wagon.  Each wheel costs $10.00.<br>
+    		How many wagon wheels do you want? 
+    		<input class="optionInput" id="inputBuyWheels" type="text" name="quantity" min="0" max="3"
+			onblur="this.focus()" autofocus>
+			<br><br>
+    	</p>
+	</div>
+	<div id="buyAxles" style="display: none">
+    	<p class="centerParagraph">
+    		It's a good idea to have a few spare parts for your wagon.  Each axle costs $10.00.<br>
+    		How many wagon axles do you want?
+    		<input class="optionInput" id="inputBuyAxles" type="text" name="quantity" min="0" max="3"
+			onblur="this.focus()" autofocus>
+			<br><br>
+    	</p>
+	</div>
+	<div id="buyTongues" style="display: none">
+    	<p class="centerParagraph">
+    		It's a good idea to have a few spare parts for your wagon.  Each tongue costs $10.00.<br>
+    		How many wagon tongues do you want? 
+    		<input class="optionInput" id="inputBuyTongues" type="text" name="quantity" min="0" max="3"
+			onblur="this.focus()" autofocus>
+			<br><br>
+    	</p>
+	</div>
 
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>

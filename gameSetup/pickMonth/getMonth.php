@@ -4,19 +4,19 @@
 
 	switch ($p) {
 		case 1:
-			$startingMonth = "March";
+			$startingMonth = 3;
 			break;
 		case 2:
-			$startingMonth = "April";
+			$startingMonth = 4;
 			break;
 		case 3:
-			$startingMonth = "May";
+			$startingMonth = 5;
 			break;
 		case 4:
-			$startingMonth = "June";
+			$startingMonth = 6;
 			break;
 		case 5:
-			$startingMonth = "July";
+			$startingMonth = 7;
 			break;
 		default:
 			echo "ERROR Getting month";
