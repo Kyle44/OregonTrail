@@ -22,12 +22,9 @@ $(document).ready(function(){
 
             } // end switch
         } // end if
+    });
     var spacebarKey = 32;
     var pageNum = 1; // storeSetup.html is pageNum = 1
     var paragraph = $('#text'); // to change the paragraph
     var paragraphHead = $('#paragraphHead');
-    };
-};
-
-
-
+});
