@@ -12,114 +12,87 @@ $(document).ready(function(){
 	  page.attr("style", "display: block");
 	}
 
+	function focusOnInput(input) {
+		if(input != null){
+			$(input).val(""); // reset it
+			$(input).focus();
+		}
+	}
+
 	// Display the main options page of the store
-	function displayHome() {
+	function displayHome(pageToRemove) {
+		calculateNewBill(); // calculate for the homescreen
+		removePage(pageToRemove);
 		displayPage("#mainOptions");
-		$('#optionsChoice').focus();
-		$("#optionsChoice").val(""); // reset it
+		focusOnInput("#optionsChoice");
 		currentPage = "mainPage";
 	}
 
-	function errorPage() {
+	function displayNewPage(pageToDisplay, input, currPage) {
 		removePage("#mainOptions");
-		displayPage("#errorPage");
-		currentPage = "errorPage";
+		displayPage(pageToDisplay);
+		focusOnInput(input);
+		currentPage = currPage;
 	}
 
-	function afterPage(argument) {
-		removePage("#mainOptions");
-		displayPage("#afterPage");
-		currentPage = "afterPage";
-	}
-
-	function getTotalBill() {
-		return totalBill;
-	}
-
-	function buyOxen() {
-		removePage("#mainOptions");
-		displayPage("#buyOxen");
-		$('#inputBuyOxen').focus();		
-		currentPage = "oxenPage";
-	}
-
-	function buyFood() {
-		removePage("#mainOptions");
-		displayPage("#buyFood");
-		$('#inputBuyFood').focus();		
-		currentPage = "foodPage";
-	}
-
-	function buyClothing() {
-		removePage("#mainOptions");
-		displayPage("#buyClothing");
-		$('#inputBuyClothing').focus();		
-		currentPage = "clothingPage";
-	}
-
-	function buyAmmunition() {
-		removePage("#mainOptions");
-		displayPage("#buyAmmunition");
-		$('#inputBuyAmmunition').focus();		
-		currentPage = "ammunitionPage";
-	}
-
-	function buyWheels() {
-		removePage("#mainOptions");
-		displayPage("#buyWheels");
-		$('#inputBuyWheels').focus();		
-		currentPage = "wheelsPage";
-	}
-
-	function buyAxles() {
-		removePage("#mainOptions");
-		displayPage("#buyAxles");
-		$('#inputBuyAxles').focus();		
-		currentPage = "axlesPage";
-	}
-
-	function buyTongues() {
-		removePage("#mainOptions");
-		displayPage("#buyTongues");
-		$('#inputBuyTongues').focus();		
-		currentPage = "tonguesPage";
+	function calculateNewBill() {
+		totalBill = numOxen * oxenPrice + numFood * foodPrice + numClothing * clothingPrice + numAmmunition * ammunitionPrice + (numWheels + numAxles + numTongues) * partsPrice;
+		$("#storeTable")[0].rows[7].cells[1].innerHTML = "$" + (totalBill.toFixed(2)).toString();
 	}
 
 	// Sets the cost on the HTML page, given the row number of the item that is being bought and the price (numItem * itemPrice)
 	function setHTML(rowNum, price){
 		$("#storeTable")[0].rows[rowNum].cells[1].innerHTML = "$" + (price.toFixed(2)).toString();
-		$("#storeTable")[0].rows[7].cells[1].innerHTML = "$" + (getTotalBill().toFixed(2)).toString();
 	}
 
-	function calculateNewBill() {
-		totalBill = numOxen * oxenPrice + numFood * foodPrice + numClothing * clothingPrice + numAmmunition * ammunitionPrice + (numWheels + numAxles + numTongues) * partsPrice;
+	// Check if the user has bought oxen or not. User can only leave the store if oxen has been bought.
+	function checkHasOxen(inputId) {
+		if(numOxen >= 1){
+			return true;
+		}
+		return false;
+	}
+
+	// Get the user input for the amount of the item that they want from the store, and setting up the html for it on the store page
+	function getValuesAndSetupHomepage(inputId, itemPrice, min, max, rowIndex){
+		amount = parseInt($(inputId).val());
+		if(amount != NaN && amount <= max && amount >= min){
+			setHTML(rowIndex, itemPrice * amount);
+			return amount;
+		} // end if
+		return -1;
+	}
+
+	function checkValue(numItem, pageToDisplay) {
+		if(numItem != -1){
+			displayHome(pageToDisplay);
+		}
 	}
 
     $(document).keydown(function(e){
         if(e.keyCode == spacebarKey){
-        	if(currentPage == "mainPage" && hasOxen){
+        	if(currentPage == "mainPage" && checkHasOxen()){
 	        	if (totalBill > 400){
-	        		errorPage();
+	        		displayNewPage("#errorPage", null, "errorPage");
 	        	}
 	        	else{
 	        		var money = 400 - totalBill;
+	        		
 	        		// Send PHP
 					var xmlhttp = new XMLHttpRequest();
 					xmlhttp.open("GET", "setVars.php?ox=" + numOxen + "f=" + numFood + "c=" + numClothing + "ammo="
 					+ numAmmunition + "w=" + numWheels + "ax=" + numAxles + "t=" + numTongues + "m=" + money, true);
 					xmlhttp.send();
-					afterPage();
+					displayNewPage("#afterPage", null, "afterPage");
 	        	}
 
         	} // end inner if
         	else if(currentPage == "errorPage"){
-        		removePage("#errorPage");
-        		displayHome();
+        		displayHome("#errorPage");
         	}
         	else if(currentPage == "afterPage"){
         		location.replace("../../mainPages/indep.php"); 
         	}
-
 
         } // end spacebarKey if
 
@@ -129,127 +102,67 @@ $(document).ready(function(){
 				if(choice != NaN && choice <= 7 && choice >= 1){
 					switch(choice){
 						case 1:
-							buyOxen();
+							displayNewPage("#buyOxen", "#inputBuyOxen", "oxenPage");
 							break;
 						case 2:
-							buyFood();
+							displayNewPage("#buyFood", "#inputBuyFood", "foodPage");
 							break;
 						case 3:
-							buyClothing();
+							displayNewPage("#buyClothing", "#inputBuyClothing", "clothingPage");
 							break;
 						case 4:
-							buyAmmunition();
+							displayNewPage("#buyAmmunition", "#inputBuyAmmunition", "ammunitionPage");
 							break;
 						case 5: 
-							buyWheels();
+							displayNewPage("#buyWheels", "#inputBuyWheels", "wheelsPage");
 							break;
 						case 6:
-							buyAxles();
+							displayNewPage("#buyAxles", "#inputBuyAxles", "axlesPage");
 							break;
 						case 7:
-							buyTongues();
+							displayNewPage("#buyTongues", "#inputBuyTongues", "tonguesPage");
 							break;
-
 						default:
 							;
 					} // end switch
 				} // end inner if
 			} // end currentPage if
 			else if(currentPage == "oxenPage"){
-				amount = parseInt($("#inputBuyOxen").val());
-				$("#inputBuyOxen").val("");
-				if(amount != NaN && amount <= 9 && amount >= 1){
-					numOxen = amount;
-					hasOxen = true;
-					calculateNewBill();
-					setHTML(0, oxenPrice * numOxen);
-					removePage("#buyOxen");
-					displayHome();
-				} // end if
+				numOxen = getValuesAndSetupHomepage("#inputBuyOxen", oxenPrice, 1, 9, 0);
+				checkValue(numOxen, "#buyOxen");
 			} // end currentPage if
 			else if(currentPage == "foodPage"){
-				amount = parseInt($("#inputBuyFood").val());
-				$("#inputBuyFood").val("");
-				if(amount != NaN && amount <= 2000 && amount >= 0){
-					numFood = amount;
-					calculateNewBill();
-					setHTML(1, foodPrice * numFood);
-					removePage("#buyFood");
-					displayHome();
-				} // end if
+				numFood = getValuesAndSetupHomepage("#inputBuyFood", foodPrice, 0, 2000, 1);
+				checkValue(numFood, "#buyFood");
 			} // end currentPage if
 			else if(currentPage == "clothingPage"){
-				amount = parseInt($("#inputBuyClothing").val());
-				$("#inputBuyClothing").val("");
-				if(amount != NaN && amount <= 99 && amount >= 0){
-					numClothing = amount;
-					calculateNewBill();
-					setHTML(2, clothingPrice * numClothing);
-					removePage("#buyClothing");
-					displayHome();
-				} // end if
+				numClothing = getValuesAndSetupHomepage("#inputBuyClothing", clothingPrice, 0, 99, 2);
+				checkValue(numClothing, "#buyClothing");
 			} // end currentPage if
 			else if(currentPage == "ammunitionPage"){
-				amount = parseInt($("#inputBuyAmmunition").val());
-				$("#inputBuyAmmunition").val("");
-				if(amount != NaN && amount <= 99 && amount >= 0){
-					numAmmunition = amount;
-					calculateNewBill();
-					setHTML(3, ammunitionPrice * numAmmunition);
-					removePage("#buyAmmunition");
-					displayHome();
-				} // end if
+				numAmmunition = getValuesAndSetupHomepage("#inputBuyAmmunition", ammunitionPrice, 0, 99, 3);
+				checkValue(numAmmunition, "#buyAmmunition");
 			} // end currentPage if
 			else if(currentPage == "wheelsPage"){
-				amount = parseInt($("#inputBuyWheels").val());
-				$("#inputBuyWheels").val("");
-				if(amount != NaN && amount <= 3 && amount >= 0){
-					numWheels = amount;
-					calculateNewBill();
-					setHTML(4, partsPrice * numWheels);
-					removePage("#buyWheels");
-					displayHome();
-				} // end if
+				numWheels = getValuesAndSetupHomepage("#inputBuyWheels", partsPrice, 0, 3, 4);
+				checkValue(numWheels, "#buyWheels");
 			} // end currentPage if
 			else if(currentPage == "axlesPage"){
-				amount = parseInt($("#inputBuyAxles").val());
-				$("#inputBuyAxles").val("");
-				if(amount != NaN && amount <= 3 && amount >= 0){
-					numAxles = amount;
-					calculateNewBill();
-					setHTML(5, partsPrice * numAxles);
-					removePage("#buyAxles");
-					displayHome();
-				} // end if
+				numAxles = getValuesAndSetupHomepage("#inputBuyAxles", partsPrice, 0, 3, 5);
+				checkValue(numAxles, "#buyAxles");
 			} // end currentPage if
 			else if(currentPage == "tonguesPage"){
-				amount = parseInt($("#inputBuyTongues").val());
-				$("#inputBuyTongues").val("");
-				if(amount != NaN && amount <= 3 && amount >= 0){
-					numTongues = amount;
-					calculateNewBill();
-					setHTML(6, partsPrice * numTongues);
-					removePage("#buyTongues");
-					displayHome();
-				} // end if
+				numTongues = getValuesAndSetupHomepage("#inputBuyTongues", partsPrice, 0, 3, 6);
+				checkValue(numTongues, "#buyTongues");
 			} // end currentPage if
-
-
 		} // end enterKey else if
-
 
     }); // end keydown
 
 
-
     var currentPage = "mainPage";
-	var spacebarKey = 32;
-	var enterKey = 13;
-	var hasOxen = false; // needs to be true to leave the store
+	var spacebarKey = 32, enterKey = 13;
 	var numOxen = 0, numFood = 0, numClothing = 0, numAmmunition = 0, numWheels = 0, numAxles = 0, numTongues = 0;
 	var oxenPrice = 40, foodPrice = 0.2, clothingPrice = 10, ammunitionPrice = 2, partsPrice = 10;
 	var totalBill = 0.00;
 });
-
-
-
