@@ -23,7 +23,7 @@ p, tr, th, td, .normalFont {
 }
 
 /* Everything that needs to be centered */
-tr, th, td, .textAlignCenter{
+tr, th, td, .textAlignCenter, .title{
 	text-align: center;
 }
 
