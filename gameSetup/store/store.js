@@ -80,9 +80,8 @@ $(document).ready(function(){
 	        		
 	        		// Send PHP
 					var xmlhttp = new XMLHttpRequest();
-					xmlhttp.open("GET", "setVars.php?ox=" + numOxen + "f=" + numFood + "c=" + numClothing + "ammo="
-					+ numAmmunition + "w=" + numWheels + "ax=" + numAxles + "t=" + numTongues + "m=" + money, true);
-					xmlhttp.send();
+					xmlhttp.open("GET", "setVars.php?ox=" + numOxen + "&f=" + numFood + "&c=" + numClothing + "&ammo="
+					+ numAmmunition + "&w=" + numWheels + "&ax=" + numAxles + "&t=" + numTongues + "&m=" + money, true);					xmlhttp.send();
 					displayNewPage("#afterPage", null, "afterPage");
 	        	}
 
