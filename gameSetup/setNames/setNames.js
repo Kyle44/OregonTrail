@@ -28,8 +28,7 @@ $(document).ready(function(){
 			var userResponse = $('#nameInput').val(); // is the name correct
 			if(userResponse == "y" || userResponse == "yes"){
 
-				game.party.push[name];
-
+				game.party.push(name);
 				if(count < 5){
 					$('#text').html('What is the name of the next member of your party?<br><input class="optionInput normalFont" id="nameInput" type="text" onblur="this.focus()" autofocus>'); // setup for next name
 					$('#nameInput').focus();

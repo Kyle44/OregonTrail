@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+    var game = JSON.parse(window.sessionStorage.game);
+    $("#playerMoney").text("$" + (game.money.toFixed(2)).toString()); 
+
     $(document).keydown(function(e){
         if(e.keyCode == spacebarKey){
             pageNum++;
@@ -16,8 +19,8 @@ $(document).ready(function(){
                     break;
                 case 5:
 
-                default: 
-                    location.replace("../store.php"); 
+                default:
+                    location.replace("../store.php");
                     break;
 
             } // end switch

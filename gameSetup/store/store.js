@@ -1,5 +1,30 @@
 $(document).ready(function(){
 
+	// pull game variables from session storage
+	var game = JSON.parse(window.sessionStorage.game);
+
+	// display how much money the player has
+	$("#playerMoney").text("$" + (game.money.toFixed(2)).toString());
+
+	// always start on the first of month, map month name to number
+	switch(game.month) {
+		case 3:
+			$("#month").text("March");
+			break;
+		case 4:
+			$("#month").text("April");
+			break;
+		case 5:
+			$("#month").text("May");
+			break;
+		case 6:
+			$("#month").text("June");
+			break;
+		case 7:
+			$("#month").text("July");
+			break;
+	}
+
 	// Remove a page from view, using input string pageId
 	function removePage(pageId) {
 	  var page = $(pageId);
@@ -72,16 +97,21 @@ $(document).ready(function(){
     $(document).keydown(function(e){
         if(e.keyCode == spacebarKey){
         	if(currentPage == "mainPage" && checkHasOxen()){
-	        	if (totalBill > 400){
+	        	if (totalBill > game.money){
 	        		displayNewPage("#errorPage", null, "errorPage");
 	        	}
 	        	else{
-	        		var money = 400 - totalBill;
-	        		
-	        		// Send PHP
-					var xmlhttp = new XMLHttpRequest();
-					xmlhttp.open("GET", "setVars.php?ox=" + numOxen + "&f=" + numFood + "&c=" + numClothing + "&ammo="
-					+ numAmmunition + "&w=" + numWheels + "&ax=" + numAxles + "&t=" + numTongues + "&m=" + money, true);					xmlhttp.send();
+	        		game.money -= totalBill;
+	        		game.oxen = numOxen * 2;
+					game.food = numFood;
+					game.clothing = numClothing;
+					game.ammo = numAmmunition * 20;
+					game.wheels = numWheels;
+					game.axles = numAxles;
+					game.tongues = numTongues;
+
+					window.sessionStorage.game = JSON.stringify(game);
+
 					displayNewPage("#afterPage", null, "afterPage");
 	        	}
 
@@ -90,7 +120,8 @@ $(document).ready(function(){
         		displayHome("#errorPage");
         	}
         	else if(currentPage == "afterPage"){
-        		location.replace("../../mainPages/indep.php"); 
+				alert(window.sessionStorage.game);
+        		location.replace("../../mainPages/indep.php");
         	}
 
         } // end spacebarKey if
@@ -112,7 +143,7 @@ $(document).ready(function(){
 						case 4:
 							displayNewPage("#buyAmmunition", "#inputBuyAmmunition", "ammunitionPage");
 							break;
-						case 5: 
+						case 5:
 							displayNewPage("#buyWheels", "#inputBuyWheels", "wheelsPage");
 							break;
 						case 6:

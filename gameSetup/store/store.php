@@ -3,8 +3,7 @@
 	 Date Created: 5/5/17
 	 Description: The store where you can make all your initial purchases
 -->
-
-
+<!--
 <?php
 	session_start();
 	if(!isset($_SESSION['month'])){
@@ -17,7 +16,8 @@
 		$_SESSION['year'] = 1848;
 	}
 	include 'func.php';
-?>
+?> -->
+
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="https://swe.umbc.edu/~fritzk1/OregonTrail/proj2.css">
@@ -25,18 +25,20 @@
 <body>
 
 	<div class="title textAlignCenter">
-		<h2>
-			<?php 
+		<h2>Matt's General Store<br>
+			Independence, Missouri<br>
+			<span id="month"></span> 1, 1848
+			<!-- <?php
 				echo "Matt's General Store<br>
 				Independence, Missouri<br>";
 				displayMonth();
 
 				echo " " .$_SESSION['day'];
 				echo ", " . $_SESSION['year'];
-			?>
+			?> -->
 		</h2>
 	</div>
-	
+
 
 	<div id="mainOptions">
 			<table id="storeTable">
@@ -74,13 +76,13 @@
 				</tr>
 				<tr>
 					<th>Amount you have: &emsp;&emsp;&emsp;</th>
-					<th>$400.00</th>
+					<th id="playerMoney"></th>
 				</tr>
 			</table>
 			<p class="centerParagraph">
 				<br>
-				Which item would you like to buy? 
-				<input class="optionInput" id="optionsChoice" 
+				Which item would you like to buy?
+				<input class="optionInput" id="optionsChoice"
 				type="text" name="quantity" min="1" max="7"
 				onblur="this.focus()" autofocus>
 			</p>
@@ -88,7 +90,7 @@
 
 		<br>
 		<p class="spaceToContinue textAlignCenter">
-			Press SPACE BAR to leave store 
+			Press SPACE BAR to leave store
 		</p>
     </div>
 
@@ -97,7 +99,7 @@
 			That's a little much.  I see that you only have $400.  We'd better go over the list again.<br>
 		</p>
 		<p class="spaceToContinue textAlignCenter">
-			Press SPACE BAR to go back to the store 
+			Press SPACE BAR to go back to the store
 		</p>
 	</div>
 
@@ -114,7 +116,7 @@
 	<div id="buyOxen" style="display: none">
     	<p class="centerParagraph">
     		There are 2 oxen in a yoke;  I recommend at least 3 yoke.  I charge $40 a yoke.<br>
-    		How many yoke do you want? 
+    		How many yoke do you want?
     		<input class="optionInput" id="inputBuyOxen" type="text" name="quantity" min="1" max="9"
 			onblur="this.focus()" autofocus>
 			<br><br>
@@ -123,7 +125,7 @@
 	<div id="buyFood" style="display: none">
     	<p class="centerParagraph">
     		I recommend you take at least 200 pounds of food for each person in your family.  I see that you have 5 people in all.  You'll need flour, sugar, bacon, and coffee.  My price is 20 cents a pound.<br>
-    		How many pounds of food do you want? 
+    		How many pounds of food do you want?
     		<input class="optionInput" id="inputBuyFood" type="text" name="quantity" min="0" max="2000"
 			onblur="this.focus()" autofocus>
 			<br><br>
@@ -132,7 +134,7 @@
 	<div id="buyClothing" style="display: none">
     	<p class="centerParagraph">
     		You'll need warm clothing in the mountains.  I recommend taking at least 2 sets of clothes per person.  Each set is $10.00.<br>
-    		How many sets of clothes do you want? 
+    		How many sets of clothes do you want?
     		<input class="optionInput" id="inputBuyClothing" type="text" name="quantity" min="0" max="99"
 			onblur="this.focus()" autofocus>
 			<br><br>
@@ -141,7 +143,7 @@
 	<div id="buyAmmunition" style="display: none">
     	<p class="centerParagraph">
     		I sell ammunition in boxes of 20 bullets.  Each box costs $2.00.<br>
-    		How many boxes do you want? 
+    		How many boxes do you want?
     		<input class="optionInput" id="inputBuyAmmunition" type="text" name="quantity" min="0" max="99"
 			onblur="this.focus()" autofocus>
 			<br><br>
@@ -150,7 +152,7 @@
 	<div id="buyWheels" style="display: none">
     	<p class="centerParagraph">
     		It's a good idea to have a few spare parts for your wagon.  Each wheel costs $10.00.<br>
-    		How many wagon wheels do you want? 
+    		How many wagon wheels do you want?
     		<input class="optionInput" id="inputBuyWheels" type="text" name="quantity" min="0" max="3"
 			onblur="this.focus()" autofocus>
 			<br><br>
@@ -168,16 +170,16 @@
 	<div id="buyTongues" style="display: none">
     	<p class="centerParagraph">
     		It's a good idea to have a few spare parts for your wagon.  Each tongue costs $10.00.<br>
-    		How many wagon tongues do you want? 
+    		How many wagon tongues do you want?
     		<input class="optionInput" id="inputBuyTongues" type="text" name="quantity" min="0" max="3"
 			onblur="this.focus()" autofocus>
 			<br><br>
     	</p>
 	</div>
 
-	
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	<script src="https://swe.umbc.edu/~fritzk1/OregonTrail/changeSound.js" type="text/javascript"></script>	
+	<script src="https://swe.umbc.edu/~fritzk1/OregonTrail/changeSound.js" type="text/javascript"></script>
 	<script src="store.js"></script>
 </body>
 </html>

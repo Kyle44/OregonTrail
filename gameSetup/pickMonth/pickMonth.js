@@ -49,7 +49,6 @@ $(document).ready(function(){
 					case 1: case 2: case 3: case 4: case 5:
 						game.month += choice;
 						window.sessionStorage.game = JSON.stringify(game);
-						alert(game.job);
 						location.replace("../store/storeSetup/storeSetup.html");
 						break;
 					case 6:
