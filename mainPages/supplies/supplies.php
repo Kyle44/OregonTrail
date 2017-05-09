@@ -11,46 +11,46 @@
             Your Supplies
 		</h2>
 	</div>
-	
+
 	<div id="mainOptions">
 			<table id="storeTable">
 				<tr>
-					<th>1. Oxen</th>
+					<th>Oxen</th>
 					<th><?php echo $_SESSION['oxen'];?></th>
 				</tr>
 				<tr>
-					<th>2. Food</th>
+					<th>Food</th>
 					<th><?php echo $_SESSION['food'];?></th>
 				</tr>
 				<tr>
-					<th>3. Clothing</th>
+					<th>Clothing</th>
 					<th><?php echo $_SESSION['clothing'];?></th>
 				</tr>
 				<tr>
-					<th>4. Ammunition</th>
+					<th>Ammunition</th>
 					<th><?php echo $_SESSION['ammo'];?></th>
 				</tr>
 				<tr>
-					<th>5. Wagon Wheels</th>
+					<th>Wagon Wheels</th>
 					<th><?php echo $_SESSION['wheels'];?></th>
 				</tr>
 				<tr>
-					<th>6. Wagon axles</th>
+					<th>Wagon axles</th>
 					<th><?php echo $_SESSION['axles'];?></th>
 				</tr>
 				<tr>
-					<th>7. Wagon tongues</th>
+					<th>Wagon tongues</th>
 					<th><?php echo $_SESSION['tongues'];?></th>
 				</tr>
 				<tr>
-					<th>Amount you have: &emsp;&emsp;&emsp;</th>
-					<th><?php echo $_SESSION['money'];?></th>
+					<th>Money left: &emsp;&emsp;&emsp;</th>
+					<th>$<?php echo $_SESSION['money'];?></th>
 				</tr>
 			</table>
 
 		<br>
 		<p class="spaceToContinue textAlignCenter">
-			Press SPACE BAR to continue 
+			Press SPACE BAR to continue
 		</p>
     </div>
 

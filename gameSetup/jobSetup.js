@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	// creatin a new game object
+	var game = {job : ""};
 	var enterKey = 13;
 	$(document).keydown(function(e){
 
@@ -7,20 +9,19 @@ $(document).ready(function(){
 			if(choice != NaN && choice <= 4 && choice >= 1){
 				switch(choice){
 					case 1:
-						// fall through
+						game.job = "banker";
+						window.sessionStorage.game = JSON.stringify(game);
+						location.replace("setNames/setNames.html");
+						break;
 					case 2:
-						// fall through
+						game.job = "carptenter";
+						window.sessionStorage.game = JSON.stringify(game);
+						location.replace("setNames/setNames.html");
+						break;
 					case 3:
-						var xmlhttp = new XMLHttpRequest();
-		        		xmlhttp.open("GET", "getJob.php?p=" + choice, true);
-		        		xmlhttp.send();
-		        		try{
-							location.replace("setNames/setNames.html");
-		        		}
-		        		catch(err){
-		        			alert("error");
-		        			// error
-						}
+						game.job = "farmer";
+						window.sessionStorage.game = JSON.stringify(game);
+						location.replace("setNames/setNames.html");
 						break;
 					case 4:
 						location.replace("jobExplanation/jobExplanation.html");

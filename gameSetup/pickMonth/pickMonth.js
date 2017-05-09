@@ -1,4 +1,12 @@
 $(document).ready(function(){
+
+	// get the game session out of session storage
+	var game = JSON.parse(window.sessionStorage.game);
+	game.month = 2;
+	game.day = 1;
+	game.year = 1848;
+
+
 	// Remove a page from view, using input string pageId
 	function removePage(pageId) {
 		var page = $(pageId);
@@ -38,23 +46,15 @@ $(document).ready(function(){
 			var choice = parseInt($('#optionsChoice').val()); // get chosen value
 			if(choice != NaN && choice <= 6 && choice >= 1){
 				switch(choice){
-					case 1:
-					case 2:
-					case 3:
-					case 4:
-					case 5: 
-						var xmlhttp = new XMLHttpRequest();
-		        		xmlhttp.open("GET", "getMonth.php?p=" + choice, true);
-		        		xmlhttp.send();
-		        		try{
-							location.replace("../store/storeSetup/storeSetup.html");
-		        		}
-		        		catch(err){
-		        			alert("error");
-						}
+					case 1: case 2: case 3: case 4: case 5:
+						game.month += choice;
+						window.sessionStorage.game = JSON.stringify(game);
+						alert(game.job);
+						location.replace("../store/storeSetup/storeSetup.html");
 						break;
 					case 6:
-						displayNewPage("explanationPage", null)
+						displayNewPage("explanationPage", null);
+						break;
 					default:
 						;
 				}
