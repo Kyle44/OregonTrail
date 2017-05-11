@@ -30,7 +30,7 @@ function checkEnteredValue(e) {
 				location.replace("talk/talk.php");
 				break;
 			case 9:
-				location.replace("buy/buy.php");
+				location.replace("buy/set.php");
 				break;
 			default:
 				location.replace("main.php");
