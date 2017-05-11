@@ -1,4 +1,11 @@
 var game = JSON.parse(window.sessionStorage.game);
+var numOxen = 0;
+var numClothing = 0;
+var numAmmunition = 0;
+var numWheels = 0;
+var numAxles = 0;
+var numTongues = 0;
+var numFood = 0;
 
 function price() {
 
@@ -93,7 +100,6 @@ function price() {
 	}
 }
 	function checkEnteredValue(e, money, town) {
-		var numOxen, numClothing, numAmmunition, numWheels, numAxles, numTongues, numFood = 0;
 		var choice = parseInt(document.getElementById('optionsChoice').value);
     		if(!isNaN(choice) && choice <= 8 && choice >= 1){
     			switch(choice){
