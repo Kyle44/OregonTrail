@@ -1,12 +1,14 @@
 function directInput() {
 	document.getElementById("optionsChoice").focus();
 }
+var game = JSON.parse(window.sessionStorage.game);
 
 function checkEnteredValue(e) {
 	var choice = parseInt(document.getElementById('optionsChoice').value);
     	if(!isNaN(choice) && choice <= 9 && choice >= 1){
     		switch(choice){
 			case 1:
+				location.replace("trail/trail.php");
 				break;
 			case 2:
 				location.replace("supplies/supplies.php");
@@ -30,7 +32,7 @@ function checkEnteredValue(e) {
 				location.replace("talk/talk.php");
 				break;
 			case 9:
-				location.replace("buy/buy.php");
+				location.replace("buy/set.php");
 				break;
 			default:
 				location.replace("main.php");
