@@ -23,7 +23,7 @@ $(document).ready(function(){
 			} // end inner if
 		} // end outer if
 
-		// confirmi name input
+		// confirm name input
 		if(e.keyCode == enterKey && isNameChosen){ // check for correct name
 			var userResponse = $('#nameInput').val(); // is the name correct
 			if(userResponse == "y" || userResponse == "yes"){

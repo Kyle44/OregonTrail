@@ -97,10 +97,11 @@ $(document).ready(function(){
     $(document).keydown(function(e){
         if(e.keyCode == spacebarKey){
         	if(currentPage == "mainPage" && checkHasOxen()){
-	        	if (totalBill > game.money){
+
+				if (totalBill > game.money){
 	        		displayNewPage("#errorPage", null, "errorPage");
 	        	}
-	        	else{
+	        	else {
 	        		game.money -= totalBill;
 	        		game.oxen = numOxen * 2;
 					game.food = numFood;
@@ -111,16 +112,15 @@ $(document).ready(function(){
 					game.tongues = numTongues;
 
 					window.sessionStorage.game = JSON.stringify(game);
-
 					displayNewPage("#afterPage", null, "afterPage");
-	        	}
+
+				}
 
         	} // end inner if
         	else if(currentPage == "errorPage"){
         		displayHome("#errorPage");
         	}
         	else if(currentPage == "afterPage"){
-				alert(window.sessionStorage.game);
         		location.replace("../../mainPages/indep.php");
         	}
 
@@ -190,9 +190,9 @@ $(document).ready(function(){
     }); // end keydown
 
 
-    var currentPage = "mainPage";
-	var spacebarKey = 32, enterKey = 13;
-	var numOxen = 0, numFood = 0, numClothing = 0, numAmmunition = 0, numWheels = 0, numAxles = 0, numTongues = 0;
-	var oxenPrice = 40, foodPrice = 0.2, clothingPrice = 10, ammunitionPrice = 2, partsPrice = 10;
-	var totalBill = 0.00;
+  var currentPage = "mainPage";
+  var spacebarKey = 32, enterKey = 13;
+  var numOxen = 0, numFood = 0, numClothing = 0, numAmmunition = 0, numWheels = 0, numAxles = 0, numTongues = 0;
+  var oxenPrice = 40, foodPrice = 0.2, clothingPrice = 10, ammunitionPrice = 2, partsPrice = 10;
+  var totalBill = 0.00;
 });

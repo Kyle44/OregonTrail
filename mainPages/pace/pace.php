@@ -1,6 +1,6 @@
-<?php
+<!-- <?php
 	session_start();
-?>
+?> -->
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="../../proj2.css">
@@ -14,7 +14,7 @@
 			(currently "<?php echo $_SESSION['pace'];?>")<br>
 		</h2>
 	</div>
-	
+
 	<div class="options">
 		The pace at which you travel<br>
 		can change. Your choices are:<br>
@@ -26,9 +26,9 @@
 			different paces mean<br><br><br>
 
 			What is your choice?
-			<input class="optionInput" id="optionsChoice" 
+			<input class="optionInput" id="optionsChoice"
 				type="text" name="quantity" min="1" max="4"
-				onkeypress="changePace(event)" 
+				onkeypress="changePace(event)"
 				onblur="this.focus()" autofocus>
 		</p>
 	</div>
