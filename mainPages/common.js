@@ -16,6 +16,10 @@
     day -> food | weather -> health
 */
 
+function getDate(game) {
+    
+}
+
 function calcWeather(game) {
 
 }

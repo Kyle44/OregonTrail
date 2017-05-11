@@ -55,7 +55,7 @@
 					<th>$0.00</th>
 				</tr>
 				<tr>
-					<th>4. Ammunition</th>
+					<th>4. Fishing poles</th>
 					<th>$0.00</th>
 				</tr>
 				<tr>
@@ -140,11 +140,11 @@
 			<br><br>
     	</p>
 	</div>
-	<div id="buyAmmunition" style="display: none">
+	<div id="buyPoles" style="display: none">
     	<p class="centerParagraph">
-    		I sell ammunition in boxes of 20 bullets.  Each box costs $2.00.<br>
-    		How many boxes do you want?
-    		<input class="optionInput" id="inputBuyAmmunition" type="text" name="quantity" min="0" max="99"
+    		Fishing will let you supplement your food supply.  I sell fishing poles for $2.00 each.<br>
+    		How many fishing poles do you want?
+    		<input class="optionInput" id="inputBuyPoles" type="text" name="quantity" min="0" max="99"
 			onblur="this.focus()" autofocus>
 			<br><br>
     	</p>

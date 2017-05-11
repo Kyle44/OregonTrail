@@ -6,28 +6,31 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="../../proj2.css">
 </head>
-<body onload="talk('<?php echo $_SESSION["name"]; ?>')">
+<body>
 	<div class="title">
 		<h2>
-			<?php 
+			<!-- <?php
 				echo $_SESSION['name'] . "<br>";
 				displayMonth();
 				echo " " .$_SESSION['day'];
 				echo ", " . $_SESSION['year'];
-			?>
+			?> -->
 		</h2>
 	</div>
 
-	<div id="talk" class="buy"></div>
+	<div id="prices" class="buy"></div>
 	<div class="options">
 		<p class="optionsList">
-			You have  to spend<br>
-			What would you like to buy?
-			<input class="optionInput" id="optionsChoice" 
+			You have $<span id="playerMoney"></span> to spend.<br>
+			Which number?
+			<input class="optionInput" id="optionsChoice"
 				type="text" name="quantity" min="1" max="8"
-				onkeypress="checkEnteredValue(event)" 
 				onblur="this.focus()" autofocus>
 		</p>
+		<p id="amountInput" style="display: none">
+			How many <span id="itemName"></span>?
+			<input class="optionInput" id="amount" type="text" onblur="this.focus()" autofocus>
+
 	</div>
 
 	<script src="../../landmarkInfo.js" type="text/javascript"></script>

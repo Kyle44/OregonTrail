@@ -8,7 +8,7 @@
 <?php
 	sleep(1);
 	session_start();
-	
+
 	if(!isset($_SESSION['weather'])){
 		$_SESSION['weather'] = 'cool';
 	}
@@ -21,7 +21,7 @@
 	if(!isset($_SESSION['rations'])){
 		$_SESSION['rations'] = 'filling';
 	}
-		
+
 	include 'func.php';
 ?>
 
@@ -34,7 +34,7 @@
 
 	<div class="title textAlignCenter">
 		<h2>
-			<?php 
+			<?php
 				echo $_SESSION['name'] . "<br>";
 				displayMonth();
 				echo " " .$_SESSION['day'];
@@ -49,30 +49,32 @@
 		Pace: <?php echo $_SESSION['pace']; ?><br>
 		Rations: <?php echo $_SESSION['rations']; ?><br>
 	</div>
-	
+
 	<div class="options normalFont">
 		You may: <br>
 		<p class="optionsList">
 			1. Continue on trail <br>
 			2. Check supplies <br>
 			3. Look at map <br>
-			4. Change pace <br> 
+			4. Change pace <br>
 			5. Change food rations <br>
 			6. Stop to rest <br>
 			7. Attempt to trade <br>
-			8. Talk to people <br>
-			9. Buy supplies <br><br><br>
+			<span id="inTown" style="display: none">8. Talk to people <br> 9. Buy supplies </span>
+			<span id="onTrail" style="display: none">8. Fish for food </span>
+			<br><br><br>
 
 			What is your choice?
-			<input class="optionInput normalFont" id="optionsChoice" 
+			<input class="optionInput normalFont" id="optionsChoice"
 				type="text" name="mainVal" min="1" max="9"
-				onkeypress="checkEnteredValue(event)" 
+				onkeypress="checkEnteredValue(event)"
 				onblur="this.focus()" autofocus>
 		</p>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script src="https://swe.umbc.edu/~fritzk1/OregonTrail/changeSound.js" type="text/javascript"></script>
+	<script src="../landmarkInfo.js" type="text/javascript"></script>
 	<script src="main.js" type="text/javascript"></script>
 </body>
 </html>

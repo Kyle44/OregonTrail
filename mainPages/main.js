@@ -2,10 +2,14 @@ function directInput() {
 	document.getElementById("optionsChoice").focus();
 }
 
+
 $(document).ready(function(){
 
 	var game = JSON.parse(window.sessionStorage.game);
 
+	var inTown =
+
+	// get option set
 	$("#optionsChoice").keydown(function(e) {
 		var choice = parseInt($(this).val());
 				if(!isNaN(choice) && choice <= 9 && choice >= 1){
@@ -31,9 +35,11 @@ $(document).ready(function(){
 						location.replace("trade/trade.php");
 						break;
 					case 8:
+						if
 						location.replace("talk/talk.php");
 						break;
 					case 9:
+						if ()
 						location.replace("buy/buy.php");
 						break;
 					default:

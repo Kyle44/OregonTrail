@@ -1,0 +1,33 @@
+game object keys : values {
+
+    job : str
+    money : int
+
+    // the following have corresponding ordering
+    party : array[str]
+    health : array[int]
+    ailment : array[int]
+    //
+
+    day : int
+    month : int
+    year : int
+
+    // supplies
+    oxen : int
+    food : int
+    clothing : int
+    poles : int
+    wheels : int
+    tongues : int
+    axles : int
+
+    location : str
+    visited : array[str]
+    next : str
+    miles : int
+    toGo : int
+
+
+
+}
