@@ -21,6 +21,57 @@
 		$_SESSION['isSound'] = 'off'; // first set it to off
 	}
 	$_SESSION['lastPage'] = 'proj2.php';
+
+
+
+	/* For getting tombstone messages */
+	$servername = "studentdb-maria.gl.umbc.edu";
+	$username = "dschom1";
+	$password = "dschom1";
+	$dbname = "dschom1";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error ." <br><br>Did you use the right username/password/dbname?");
+	} 
+
+	$sql = "SELECT * FROM tombstone";
+	$result = $conn->query($sql);
+	
+	echo "<script>
+			var tombstones = [];
+		</script>";
+	
+    // Data of each row in the tombstone table from the db
+	while($tombstoneRow = $result->fetch_assoc()){
+    	$name = $tombstoneRow["name"];
+    	$message = $tombstoneRow["message"];
+    	$sector = $tombstoneRow["sector"];
+/*    	$mile = $tombstoneRow["mile"]; // The current mile on the current sector  */
+
+		echo "<script>
+			var name = ". json_encode($name).";
+			var message = ". json_encode($message).";
+			var sector = ". json_encode($sector).";
+			var currentTombstone = {
+				'name' : name,
+				'message' : message,
+				'sector' : sector
+			};
+			tombstones.push(currentTombstone);
+		</script>";
+    }
+
+    // Set the tombstones sessionStorage variable up
+    echo "<script>
+    	 window.sessionStorage.tombstones = JSON.stringify(tombstones);
+    	 </script>";
+   	// UNCOMMENT NEXT LINE TO SEE WHAT tombstones HOLDS
+   	// echo "<script> alert(window.sessionStorage.tombstones); </script>";
+
+	$conn->close();
 ?>
 
 <!DOCTYPE html>
