@@ -10,10 +10,10 @@
 	<div class="title">
 		<h2>
 			Change food rations<br>
-			(currently "<?php echo $_SESSION['rations'];?>")<br>
+			(currently "<span id="currentRations"></span>")<br>
 		</h2>
 	</div>
-	
+
 	<div class="options">
 		The amount of food the people in
 		your party eat each<br> day can change.
@@ -26,15 +26,15 @@
 			 everyone stays hungry.<br><br>
 
 			What is your choice?
-			<input class="optionInput" id="optionsChoice" 
+			<input class="optionInput" id="optionsChoice"
 				type="text" name="quantity" min="1" max="3"
-				onkeypress="changeRats(event)" 
+				onkeypress="changeRats(event)"
 				onblur="this.focus()" autofocus>
 		</p>
 	</div>
 
 	<script src="../main.js" type="text/javascript">
-	
+
 	</script>
 </body>
 </html>

@@ -5,26 +5,6 @@
 	 URL: https://swe.umbc.edu/~pak2/OregonTrail/main.php
 -->
 
-<?php
-	sleep(1);
-	session_start();
-
-	if(!isset($_SESSION['weather'])){
-		$_SESSION['weather'] = 'cool';
-	}
-	if(!isset($_SESSION['health'])){
-		$_SESSION['health'] = 'good';
-	}
-	if(!isset($_SESSION['pace'])){
-		$_SESSION['pace'] = 'steady';
-	}
-	if(!isset($_SESSION['rations'])){
-		$_SESSION['rations'] = 'filling';
-	}
-
-	include 'func.php';
-?>
-
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="../proj2.css">

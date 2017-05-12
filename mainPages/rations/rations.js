@@ -2,6 +2,8 @@ $(document).ready(function(){
 
     var game = JSON.parse(window.sessionStorage.game);
 
+    $("#currentRations").text=(game.rations);
+
     $("#optionsChoice").keydown( function (e) {
         var choice = parseInt($(this).val());
             if(!isNaN(choice) && choice <= 3 && choice >= 1){
@@ -20,5 +22,4 @@ $(document).ready(function(){
                 location.replace("../main.php");
             }
     });
-
 });

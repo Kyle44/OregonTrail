@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 	// get the game session out of session storage
 	var game = JSON.parse(window.sessionStorage.game);
-	game.month = 2;
+	game.month = "";
 	game.day = 1;
 	game.year = 1848;
 
@@ -45,18 +45,31 @@ $(document).ready(function(){
  		if(e.keyCode == enterKey && currentPage == "mainPage"){
 			var choice = parseInt($('#optionsChoice').val()); // get chosen value
 			if(choice != NaN && choice <= 6 && choice >= 1){
-				switch(choice){
-					case 1: case 2: case 3: case 4: case 5:
-						game.month += choice;
-						window.sessionStorage.game = JSON.stringify(game);
-						location.replace("../store/storeSetup/storeSetup.html");
-						break;
-					case 6:
-						displayNewPage("explanationPage", null);
-						break;
-					default:
-						;
+				if (choice == 6) {
+					displayNewPage("explanationPage", null);
 				}
+				else {
+				switch(choice){
+					case 1:
+						game.month = "March";
+						break;
+					case 2:
+						game.month += "April";
+						break;
+					case 3:
+						game.month += "May";
+						break;
+					case 4:
+						game.month += "June";
+						break;
+					case 5:
+						game.month += "July";
+						break;
+				}
+
+				window.sessionStorage.game = JSON.stringify(game);
+				location.replace("../store/storeSetup/storeSetup.html");
+
 			}
 
 		} // end enterKey if
