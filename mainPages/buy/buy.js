@@ -74,19 +74,22 @@ $(document).ready(function () {
 					window.sessionStorage.game = JSON.stringify(game);
 					location.replace("../main.php");
 				}
-				// display the
+				// display the amount input
 				else {
 					$("#amountInput").css("display", "inline");
 					$(this).prop("disabled", true);
 					$("#itemName").text(items[itemSelect]);
+
+					// enable input and clear the text space
 					$("#amount").prop("disabled", false);
+					$("#amount").text("");
 					$("#amount").focus();
 				}
 			}
 		}
 	});
 
-	// amount input selection
+	// amount input functions
 	$("#amount").keydown(function (e) {
 		if (e.keyCode == 13) {
 
@@ -104,24 +107,50 @@ $(document).ready(function () {
 						|| limit === null) {
 						game.money -= cost;
 						game[itemStr] += amountNum;
+
+						// enable input and clear the text space
+						$("#optionsChoice").prop("disabled", false);
+						$("#optionsChoice").text("");
+						$("#optionsChoice").focus();
+
 					}
 					//
 					else {
 						// no space, display carry error
+						$("#carryError").css("display", "inline");
+						$("#limit").text(limit);
+						$("#carryItme").text(itemStr);
+						$(document).keydown(function (e) {
+							if (e.keyCode == 32) {
+								$("#carryError").css("display", "none");
+								// enable input and clear the text space
+								$("#optionsChoice").prop("disabled", false);
+								$("#optionsChoice").text("");
+								$("#optionsChoice").focus();
+								$(document).off("keydown");
+							}
+						});
 
 					}
 				}
 				else {
 					// not enough money error
 					$("#costError").css("display", "inline");
+					$(document).keydown(function (e) {
+						if (e.keyCode == 32) {
+							$("#costError").css("display", "none");
+							// enable input and clear the text space
+							$("#optionsChoice").prop("disabled", false);
+							$("#optionsChoice").text("");
+							$("#optionsChoice").focus();
+							$(document).off("keydown");
+						}
+					});
 				}
 			}
 
 			$("#amountInput").css("display", "none");
 			$(this).prop("disabled", true);
-			$("#optionsChoice").prop("disabled", false);
-			$("#optionsChoice").focus();
-
 		}
 	});
 

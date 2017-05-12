@@ -3,8 +3,8 @@ $(document).ready(function() {
     var game = JSON.parse(window.sessionStorage.game);
 
     $("#optionsChoice").keydown(function (e) {
-
-        var choice = parseInt($(this).val());
+        if (e.keycode == 13) {
+            var choice = parseInt($(this).val());
 
             if(!isNaN(choice) && choice <= 4 && choice >= 1) {
                 if (choice == 4) {
@@ -22,9 +22,10 @@ $(document).ready(function() {
                             game.pace = "grueling";
                             break;
                     }
-                    window.sessionStorage.game = JSON.stringify(game);
-                    location.replace("../main.php");
+                window.sessionStorage.game = JSON.stringify(game);
+                location.replace("../main.php");
                 }
             }
-      });
+        }
+    });
 });

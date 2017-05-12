@@ -5,7 +5,8 @@ $(document).ready(function(){
     $("#currentRations").text=(game.rations);
 
     $("#optionsChoice").keydown( function (e) {
-        var choice = parseInt($(this).val());
+        if (e.keyCode == 13) {
+            var choice = parseInt($(this).val());
             if(!isNaN(choice) && choice <= 3 && choice >= 1){
                 switch (choice) {
                     case 1:
@@ -21,5 +22,6 @@ $(document).ready(function(){
                 window.sessionStorage.game = JSON.stringify(game);
                 location.replace("../main.php");
             }
+        }
     });
 });

@@ -245,7 +245,7 @@ var SouthP = {
 
 var GreenRC = {
 
-   name : "the Green River Crossing",
+   name : "the Green River crossing",
 
    prices : null,
 

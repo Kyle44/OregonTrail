@@ -10,7 +10,7 @@ $(document).ready(function() {
 
     $("#oxen").text(game.oxen);
     $("#food").text(game.food);
-    $("#clothing").text(game.clothing);
+    $("#clothing").text(game.sets);
     $("#poles").text(game.poles);
     $("#axles").text(game.axles);
     $("#wheels").text(game.wheels);
@@ -18,7 +18,7 @@ $(document).ready(function() {
     $("#money").text(game.money);
 
 
-    $(body).keyup(function(e){
+    $(document).keyup(function(e){
         if(e.keyCode == 32){
             location.replace("../main.php");
         }
