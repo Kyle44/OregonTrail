@@ -7,7 +7,23 @@ $(document).ready(function(){
 	$("#playerMoney").text("$" + (game.money.toFixed(2)).toString());
 
 	// always start on the first of month, map month name to number
-	$("#month").text(game.month);
+	switch (game.month) {
+		case 3:
+			$("#month").text("March");
+			break;
+		case 4:
+			$("#month").text("April");
+			break;
+		case 5:
+			$("#month").text("May");
+			break;
+		case 6:
+			$("#month").text("June");
+			break;
+		case 7:
+			$("#month").text("July");
+			break;
+	}
 
 	// Remove a page from view, using input string pageId
 	function removePage(pageId) {

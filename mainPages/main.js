@@ -17,7 +17,7 @@ $(document).ready(function(){
 					case 1:
 						break;
 					case 2:
-						location.replace("supplies/supplies.php");
+						location.replace("supplies/supplies.html");
 						break;
 					case 3:
 						location.replace("map.html");
@@ -35,11 +35,9 @@ $(document).ready(function(){
 						location.replace("trade/trade.php");
 						break;
 					case 8:
-						if
 						location.replace("talk/talk.php");
 						break;
 					case 9:
-						if ()
 						location.replace("buy/buy.php");
 						break;
 					default:

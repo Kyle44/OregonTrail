@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 	// get the game session out of session storage
 	var game = JSON.parse(window.sessionStorage.game);
-	game.month = "";
+	game.month = 2;
 	game.day = 1;
 	game.year = 1848;
 
@@ -50,21 +50,8 @@ $(document).ready(function(){
 				}
 				else {
 				switch(choice){
-					case 1:
-						game.month = "March";
-						break;
-					case 2:
-						game.month += "April";
-						break;
-					case 3:
-						game.month += "May";
-						break;
-					case 4:
-						game.month += "June";
-						break;
-					case 5:
-						game.month += "July";
-						break;
+					case 1: case 2: case 3: case 4: case 5:
+						game.month += choice;
 				}
 
 				window.sessionStorage.game = JSON.stringify(game);
