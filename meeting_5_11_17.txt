@@ -1,0 +1,30 @@
+Duties:
+
+	Kyle:
+		Sound
+		Tombstone Implementation in AJAX
+		Fishing game (0 to 100 lbs)
+
+	Kush:
+		River game
+		Traveling Trail animation
+		PHP to JS 
+
+	Dan:
+		Random events implementation
+		Tombstone db (Sector name, mile that the player is on in sector)
+
+	David:
+		Map location track
+		Traveling rates
+		PHP to JS 
+
+	Anybody:
+		Ending supplies/points page to top ten page
+
+
+Times for Demo:
+	Kyle -> 2:00 - 4:00 , help setup at 10:00
+	Kush -> 12:00 - 2:00
+	David -> 10:00 - 12:00
+	Daniel -> 11:00 - 1:00

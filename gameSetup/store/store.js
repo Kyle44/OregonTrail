@@ -105,7 +105,7 @@ $(document).ready(function(){
 	        		game.money -= totalBill;
 	        		game.oxen = numOxen * 2;
 					game.food = numFood;
-					game.clothing = numClothing;
+					game.sets = numClothing;
 					game.poles = numPoles;
 					game.wheels = numWheels;
 					game.axles = numAxles;

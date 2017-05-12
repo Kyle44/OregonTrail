@@ -16,8 +16,13 @@
     day -> food | weather -> health
 */
 
+var months = ["monthsList", "January", "February", "March", "April", "May", "June",
+              "July", "August", "September", "October", "November", "December"];
+
+// create full date string from integer representation
 function getDate(game) {
-    
+    var month = months[game.month];
+    return month + " " + game.day.toString() + ", " + game.year.toString;
 }
 
 function calcWeather(game) {
