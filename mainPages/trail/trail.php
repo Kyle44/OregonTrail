@@ -1,5 +1,15 @@
 <?php
 	session_start();
+	if ($_SESSION['name'] == 'South Pass' && $_SESSION['branch'] == 1) {
+		$_SESSION['branch'] = 0;
+		header('Location: branch/branch.php');
+		exit;
+	}
+	if ($_SESSION['name'] == 'the Blue Mountains' && $_SESSION['branch'] == 1) {
+		$_SESSION['branch'] = 0;
+		header('Location: branch/branch.php');
+		exit;
+	}
 	include '../func.php';
 	sleep(2);
 
@@ -24,7 +34,7 @@
 			?><br>
 		Weather: <?php echo $_SESSION['weather']; ?><br>
 		Health: <?php echo $_SESSION['health']; ?><br>
-		Food:<br>
+		Food: <?php echo $_SESSION['food']; ?><br>
 		Next landmark: <?php echo $_SESSION['nexLand']; ?><br>
 		Miles travelled: <?php echo $_SESSION['miles']; ?><br>
 	</div>
