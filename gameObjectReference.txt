@@ -22,7 +22,8 @@ game object keys : values {
     tongues : int
     axles : int
 
-    location : str
+
+    name : str // current location
     visited : array[str]
     next : str
     miles : int

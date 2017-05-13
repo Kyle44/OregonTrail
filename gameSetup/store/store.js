@@ -126,7 +126,7 @@ $(document).ready(function(){
         		displayHome("#errorPage");
         	}
         	else if(currentPage == "afterPage"){
-        		location.replace("../../mainPages/indep.php");
+        		location.replace("../../mainPages/trail/landmark.html");
         	}
 
         } // end spacebarKey if

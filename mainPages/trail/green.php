@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$_SESSION['name'] = 'the Green River Crossing';
+	$_SESSION['name'] = 'the Green River crossing';
 	$_SESSION['nexName'] = 'Soda Springs';
 
 	$_SESSION['nexLand'] = 143;
@@ -13,13 +13,13 @@
 
 <style>
 .map{
-    background-image: url("images/kansas.png");
+    background-image: url("images/green.png");
 }
 </style>
 </head>
 <body>
-	<canvas class="map" width="700" height="300"
-			 style="margin-left:25em">
+	<canvas class="map" width="680" height="390"
+			 style="margin-left:26em">
 	</canvas>
 	<div class="title">
 		<h2>

@@ -23,19 +23,19 @@ $(document).ready(function() {
 
     var game = JSON.parse(window.sessionStorage.game);
     // whatever the location variable is
-    var loc = game.loc;
+    var name = game.location;
     var fullDate = getDate(game);
-    var locationImage = "url(" + imgMap[loc] + ")";
+    var locationImage = "url(" + imgMap[name] + ")";
 
     // sets the canvas background to the image specified
     $("#picture").css("background-image", locationImage);
     // set the location and date titling
-    $("#dateLocation").html(loc + "<br>" + fullDate);
+    $("#dateLocation").html(name + "<br>" + fullDate);
 
 
     $(document).keydown(function(e) {
         if (e.keyCode == 32) {
-            location.replace("../main.php");
+            location.replace("../main.html");
         }
     });
 

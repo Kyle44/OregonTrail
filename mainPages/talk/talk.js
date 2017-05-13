@@ -8,9 +8,9 @@ function getScript(town) {
 
     var game = JSON.parse(window.sessionStorage.game);
     // whatever the location variable is
-    var town = game.loc;
+    var town = game.location;
 	var num = Math.floor(Math.random() * 3);
-    
+
 	if (town == "Independence") {
 		document.getElementById("talk").innerHTML = Independence.people[num].intro + "<br>" + Independence.people[num].script;
 	}

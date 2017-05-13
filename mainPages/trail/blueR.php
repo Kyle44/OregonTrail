@@ -13,13 +13,13 @@
 
 <style>
 .map{
-    background-image: url("images/kansas.png");
+    background-image: url("images/blueR.png");
 }
 </style>
 </head>
 <body>
-	<canvas class="map" width="700" height="300"
-			 style="margin-left:25em">
+	<canvas class="map" width="680" height="390"
+			 style="margin-left:26em">
 	</canvas>
 	<div class="title">
 		<h2>

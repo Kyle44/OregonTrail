@@ -144,12 +144,12 @@ function robbed() {
 	var oxenCount = 18;
 	var rand = Math.random();
 	if(rand > 0.999) {
-		var intro = "A theif comes during the <br> night and steals ";
+		var intro = "A thief comes during the <br> night and steals ";
 		var amount;
 		var outcome;
 		var rand2 = Math.floor((Math.random()*4) + 1);
 		switch (rand2) {
-				case 1: 
+				case 1:
 					amount = Math.floor((Math.random()*foodCount) + 1);
 					outcome = " pounds of food.";
 					break;
@@ -167,8 +167,7 @@ function robbed() {
 					break;
 				default:
 			}
-	document.getElementById("robbed").innerHTML = intro +amount +outcome;	
+//	document.getElementById("robbed").innerHTML = intro +amount +outcome;
 	}
-	
-}
 
+}

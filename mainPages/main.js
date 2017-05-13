@@ -1,3 +1,4 @@
+
 function directInput() {
 	document.getElementById("optionsChoice").focus();
 }
@@ -6,7 +7,7 @@ $(document).ready(function(){
 
 	var game = JSON.parse(window.sessionStorage.game);
 
-	var inTown = ///
+	var inTown =
 
 	// get option set
 	$("#optionsChoice").keydown(function(e) {
@@ -53,107 +54,3 @@ $(document).ready(function(){
 	});
 
 });
-
-	function go(miles, name) {
-
-        	var xmlhttp = new XMLHttpRequest();
-       	 	xmlhttp.open("GET", "getInfo.php", true);
-       	 	xmlhttp.send();
-		miles -= 20;
-
-		if (miles <= 0) {
-			if (name == 'Independence') {
-				game.name = "None";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("kansas.php");
-			}
-			if (name == 'the Kansas River crossing') {
-				game.name = "None";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("blueR.php");
-			}
-			if (name == 'the Big Blue River crossing') {
-				game.name = "Fort Kearney";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("kearney.php");
-			}
-			if (name == 'Fort Kearney') {
-				game.name = "None";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("chimney.php");
-			}
-			if (name == 'Chimney Rock') {
-				game.name = "Fort Laramie";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("laramie.php");
-			}
-			if (name == 'Fort Laramie') {
-				game.name = "None";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("indepr.php");
-			}
-			if (name == 'Independence Rock') {
-				game.name = "None";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("south.php");
-			}
-			if (name == 'South Pass') {
-				game.name = "None";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("green.php");
-			}
-			if (name == 'South Pass') {
-				game.name = "Fort Bridger";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("bridger.php");
-			}
-			if (name == 'the Green River crossing') {
-				game.name = "None";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("soda.php");
-			}
-			if (name == 'Fort Bridger') {
-				game.name = "None";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("soda.php");
-			}
-			if (name == 'Soda Springs') {
-				game.name = "Fort Hall";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("hall.php");
-			}
-			if (name == 'Fort Hall') {
-				game.name = "None";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("snake.php");
-			}
-			if (name == 'the Snake River crossing') {
-				game.name = "Fort Boise";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("boise.php");
-			}
-			if (name == 'Fort Boise') {
-				game.name = "None";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("blueM.php");
-			}
-			if (name == 'the Blue Mountains') {
-				game.name = "Fort Walla Walla";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("walla.php");
-			}
-			if (name == 'the Blue Mountains') {
-				game.name = "None";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("dalles.php");
-			}
-			if (name == 'Fort Walla Walla') {
-				game.name = "None";
- 				window.sessionStorage.game = JSON.stringify(game);
-				location.replace("dalles.php");
-			}
-		}
-		else {
-			location.replace("go.php");
-		}
-	}

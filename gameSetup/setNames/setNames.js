@@ -34,7 +34,9 @@ $(document).ready(function(){
 					$('#nameInput').focus();
 				}
 				else{ // all names gotten
-					// save name variables in JS session storage game variable
+					// save party variables in JS session storage game variable
+					game.health = [9, 9, 9, 9, 9];
+					game.ailment = [0, 0, 0, 0, 0];
 					window.sessionStorage.game = JSON.stringify(game);
 					location.replace("../pickMonth/pickMonth.html");
 				}
