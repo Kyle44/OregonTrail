@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../../../proj2.css">
+</head>
+<body onload="animateCross()">
+
+<div id ="riverCrossCanvas">
+<div id ="ford"></div>
+</div>
+
+<script>
+	function animateCross() {
+  		var ford = document.getElementById("ford");   
+  		var start = 100;
+ 		var time = setInterval(frame, 15);
+
+ 		function frame() {
+    			if (start == -250) {
+      				clearInterval(time);
+				location.replace("../trail.php");
+    			}
+    			else {
+     				start--; 
+      				ford.style.top = start + 'px'; 
+      				ford.style.left = start + 'px'; 
+    			}
+  		}
+	}
+</script>
+
+</body>
+</html>
