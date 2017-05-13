@@ -5,6 +5,8 @@
 	$_SESSION['nexName2'] = 'Fort Bridger';
 	$_SESSION['nexLand'] = 57;
 	$_SESSION['nexLand2'] = 125;
+	$_SESSION['branch'] = 1;
+
 	include '../func.php';
 ?>
 
@@ -19,8 +21,8 @@
 </style>
 </head>
 <body>
-	<canvas class="map" width="900" height="500"
-			 style="margin-left:20em">
+	<canvas class="map" width="680" height="390"
+			 style="margin-left:26em">
 	</canvas>
 	<div class="title">
 		<h2>
