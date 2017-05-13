@@ -35,7 +35,7 @@
 	<script>
 		document.body.onkeyup = function(e){
     			if(e.keyCode == 13){
-				location.replace("../main.php");
+				location.replace("stop/stop.php");
     			}
 		};
 	</script>
