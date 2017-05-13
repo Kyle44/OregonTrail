@@ -2,8 +2,32 @@
 	session_start();
 
 	$_SESSION['day'] += 1;
-	$_SESSION['miles'] += 20;
-	$_SESSION['nexLand'] -= 20;
+	if ($_SESSION['pace'] = 'strenuous') {
+		$_SESSION['miles'] += 30;
+		$_SESSION['nexLand'] -= 30;
+	}
+	elseif ($_SESSION['pace'] = 'grueling') {
+		$_SESSION['miles'] += 40;
+		$_SESSION['nexLand'] -= 40;
+	}
+	else {
+		$_SESSION['miles'] += 20;
+		$_SESSION['nexLand'] -= 20;
+	}
+
+	if ($_SESSION['rations'] = 'meager') {
+		$_SESSION['food'] -= 10;
+	}
+	elseif ($_SESSION['rations'] = 'bare bones') {
+		$_SESSION['food'] -= 5;
+	}
+	else {
+		$_SESSION['food'] -= 20;
+	}
+
+	if ($_SESSION['food'] <= 0) {
+		$_SESSION['food'] = 0;
+	}
 
 	$m = $_SESSION['month'];
 	$y = $_SESSION['year'];
