@@ -112,13 +112,29 @@ tr, th, td, .textAlignCenter, .title{
     margin-left: 24em;
 }
 
+#wagon {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  margin-left: 170px;
+  margin-top: 30px;
+  background-image: url("mainPages/trail/images/ford.png");
+}
+
+#wheelCanvas {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin-top: 70px;
+}
+
 #ford {
   position: absolute;
   width: 150px;
   height: 150px;
-  background-image: url("mainPages/trail/images/ford.png");
   margin-left: 350px;
   margin-top: 350px;
+  background-image: url("mainPages/trail/images/ford.png");
 }
 
 #riverCrossCanvas {
@@ -128,5 +144,58 @@ tr, th, td, .textAlignCenter, .title{
   border-color: white;
   width: 1000px;
   height: 600px;
+  margin-left:250px;
   background-image: url("mainPages/trail/images/riverCross.png");
+}
+
+.trailCanvas{
+  position: relative;
+  width: 900px;
+  height: 300px;
+  margin-left: 300px;
+  background-image: url("mainPages/trail/images/trail.jpg");
+
+}
+
+.front {
+  position: absolute;
+  border-radius: 50%;
+  width: 23px;
+  height: 23px;
+  left: 210px;
+  top: 135px;
+}
+.back {
+  position: absolute;
+  border-radius: 50%;
+  width: 23px;
+  height: 23px;
+  left: 262px;
+  top: 135px;
+}
+
+.moveWheel{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation-iteration-count: infinite;
+  background-image: url("mainPages/trail/images/wheel.png");
+
+}
+
+.front .moveWheel {
+  -webkit-animation: clockwise 12s;
+}
+.back .moveWheel {
+  -webkit-animation: clockwise 12s;
+}
+
+@-webkit-keyframes clockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
