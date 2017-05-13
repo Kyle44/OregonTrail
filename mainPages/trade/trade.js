@@ -4,10 +4,10 @@ document.body.onkeyup = function(e){
 	if (e.keyCode == enterKey){ // enter key
 		switch(choice){
 			case 'n':
-				location.replace("../main.php");
+				location.replace("../main.html");
 				break;
 			case 'no':
-				location.replace("../main.php");
+				location.replace("../main.html");
 				break;
 			case 'y':
 				location.replace("tradeProcess.php");
