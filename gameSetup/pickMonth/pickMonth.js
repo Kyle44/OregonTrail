@@ -64,6 +64,7 @@ $(document).ready(function(){
 		if(e.keyCode == spacebarKey && currentPage == "explanationPage"){
             displayHome("#explanationPage");
         } // end spacebarKey if
+	}
 	}); // end keydown
 
 	var currentPage = "mainPage";

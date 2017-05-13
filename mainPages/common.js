@@ -22,7 +22,7 @@ var months = ["monthsList", "January", "February", "March", "April", "May", "Jun
 // create full date string from integer representation
 function getDate(game) {
     var month = months[game.month];
-    return month + " " + game.day.toString() + ", " + game.year.toString;
+    return month + " " + game.day.toString() + ", " + game.year.toString();
 }
 
 function calcWeather(game) {

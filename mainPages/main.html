@@ -1,7 +1,7 @@
 <!-- Name: Kush Patel
-	 File: main.php
+	 File: main.html
 	 Date Created: 4/15/17
-	 Description: Main page
+	 Description: Main page, converted from php to html (MOD by: David Leiberg)
 	 URL: https://swe.umbc.edu/~pak2/OregonTrail/main.php
 -->
 
@@ -13,21 +13,14 @@
 <body onkeypress="directInput()">
 
 	<div class="title textAlignCenter">
-		<h2>
-			<?php
-				echo $_SESSION['name'] . "<br>";
-				displayMonth();
-				echo " " .$_SESSION['day'];
-				echo ", " . $_SESSION['year'];
-			?>
-		</h2>
+		<h2 id="dateLocation"></h2>
 	</div>
 
 	<div class="status normalFont">
-		Weather: <?php echo $_SESSION['weather']; ?><br>
-		Health: <?php echo $_SESSION['health']; ?><br>
-		Pace: <?php echo $_SESSION['pace']; ?><br>
-		Rations: <?php echo $_SESSION['rations']; ?><br>
+		Weather: <span id="weather"></span> <br>
+		Health: <span id="health"></span> <br>
+		Pace: <span id="pace"></span> <br>
+		Rations: <span id="rations"></span> <br>
 	</div>
 
 	<div class="options normalFont">
@@ -40,8 +33,9 @@
 			5. Change food rations <br>
 			6. Stop to rest <br>
 			7. Attempt to trade <br>
-			<span id="inTown" style="display: none">8. Talk to people <br> 9. Buy supplies </span>
-			<span id="onTrail" style="display: none">8. Fish for food </span>
+			<span id="inTown" style="display: none">8. Talk to people <br> </span>
+			<span id="onTrail" style="display: none">8. Fish for food <br> </span>
+			<span id="canShop" style="display: none">9. Buy supplies <br> </span>
 			<br><br><br>
 
 			What is your choice?

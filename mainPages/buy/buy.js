@@ -24,13 +24,13 @@ function getPrices(location) {
 
 // null indicates no limit
 var supplyLimits = {
-	"oxen" : 20;
-	"sets" : null;
-	"poles" : null;
-	"wheels" : 3;
-	"axles" : 3;
-	"tongues" : 3;
-	"pounds" : 2000;
+	"oxen" : 20 ,
+	"sets" : null ,
+	"poles" : null ,
+	"wheels" : 3 ,
+	"axles" : 3 ,
+	"tongues" : 3 ,
+	"pounds" : 2000
 };
 
 var items = ["itemslist", "oxen", "sets", "poles", "wheels", "axles", "tongues", "pounds"];
@@ -72,7 +72,7 @@ $(document).ready(function () {
 				// exit option
 				if (itemSelect == 8){
 					window.sessionStorage.game = JSON.stringify(game);
-					location.replace("../main.php");
+					location.replace("../main.html");
 				}
 				// display the amount input
 				else {
@@ -102,6 +102,7 @@ $(document).ready(function () {
 
 				// check enough money
 				if (cost < game.money) {
+
 					// check space limit agaisnt current carry
 					if (limit < (amountNum + game[itemStr])
 						|| limit === null) {

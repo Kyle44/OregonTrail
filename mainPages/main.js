@@ -107,7 +107,7 @@ $(document).ready(function(){
  				window.sessionStorage.game = JSON.stringify(game);
 				location.replace("bridger.php");
 			}
-			if (name == 'the Green River Crossing') {
+			if (name == 'the Green River crossing') {
 				game.name = "None";
  				window.sessionStorage.game = JSON.stringify(game);
 				location.replace("soda.php");
@@ -157,4 +157,3 @@ $(document).ready(function(){
 			location.replace("go.php");
 		}
 	}
->>>>>>> master

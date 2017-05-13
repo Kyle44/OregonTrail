@@ -1,9 +1,3 @@
-// document.body.onkeyup = function(e){
-//         if(e.keyCode == 32){
-//         location.replace("../main.php");
-//         }
-// }
-
 $(document).ready(function() {
 
     var game = JSON.parse(window.sessionStorage.game);
@@ -18,7 +12,7 @@ $(document).ready(function() {
     $("#money").text(game.money);
 
 
-    $(document).keyup(function(e){
+    $(document).keydown(function(e){
         if(e.keyCode == 32){
             location.replace("../main.php");
         }

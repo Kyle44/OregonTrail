@@ -146,7 +146,7 @@ $(document).ready(function(){
 							displayNewPage("#buyClothing", "#inputBuyClothing", "clothingPage");
 							break;
 						case 4:
-							displayNewPage("#buyPoles", "#inputBuyPoles", "polePage");
+							displayNewPage("#buyPoles", "#inputBuyPoles", "polesPage");
 							break;
 						case 5:
 							displayNewPage("#buyWheels", "#inputBuyWheels", "wheelsPage");

@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     var game = JSON.parse(window.sessionStorage.game);
-    $("#playerMoney").text("$" + (game.money.toFixed(2)).toString()); 
+    $("#playerMoney").text("$" + (game.money.toFixed(2)).toString());
 
     $(document).keydown(function(e){
         if(e.keyCode == spacebarKey){
@@ -20,7 +20,7 @@ $(document).ready(function(){
                 case 5:
 
                 default:
-                    location.replace("../store.php");
+                    location.replace("../store.html");
                     break;
 
             } // end switch

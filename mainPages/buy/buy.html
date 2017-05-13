@@ -1,12 +1,3 @@
-<?php
-	sleep(1);
-
-	session_start();
-
-	include '../func.php';
-	sleep(2);
-
-?>
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="../../proj2.css">
@@ -20,13 +11,13 @@
 	<div class="options">
 		<p class="optionsList">
 
-			1. <span id="oxPrice"></span> per ox<br>
-			2. <span id="clothingPrice"></span> per set<br>
-			3. <span id="polePrice"></span> per box<br>
-			4. <span id="wheelPrice"></span> per wheel<br>
-			5. <span id="axlePrice"></span> per axle<br>
-			6. <span id="tonguePrice"></span> per tongue<br>
-			7. <span id="foodPrice"></span> per pound<br>
+			1. Oxen ............. <span id="oxPrice"></span> per ox<br>
+			2. Clothing ......... <span id="clothingPrice"></span> per set<br>
+			3. Fishing poles ....  <span id="polePrice"></span> per pole<br>
+			4. Wagon wheels .....  <span id="wheelPrice"></span> per wheel<br>
+			5. Wagon axles ......  <span id="axlePrice"></span> per axle<br>
+			6. Wagon tongues ....  <span id="tonguePrice"></span> per tongue<br>
+			7. Food .............  <span id="foodPrice"></span> per pound<br>
 			8. Leave Store <br>
 			<br>
 			You have $<span id="playerMoney"></span> to spend.<br>
@@ -49,13 +40,13 @@
 		<p id="carryError" style="display: none">
 			You can only carry <span id="limit"></span> <span id="carryItem"></span>.
 			<br>
-			Press Space to continue.
+			Press SPACE BAR to continue.
 		</p>
 
 		<p id="costError" style="display: none">
 			You cannot afford that.
 			<br>
-			Press Space to continue.
+			Press SPACE BAR to continue.
 		</p>
 
 	</div>

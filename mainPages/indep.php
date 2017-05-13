@@ -33,7 +33,7 @@
 	</canvas>
 	<div class="title">
 		<h2>
-			<?php 
+			<?php
 				echo $_SESSION['name'] . "<br>";
 				displayMonth();
 				echo " " .$_SESSION['day'];
@@ -46,7 +46,7 @@
 	<script>
 		document.body.onkeyup = function(e){
     			if(e.keyCode == 32){
-				location.replace("main.php");
+				location.replace("main.html");
     			}
 		}
 	</script>
