@@ -9,7 +9,7 @@ var numFood = 0;
 
 function price() {
 
-	town = game.name;
+	town = game.location;
 	if (town == "Independence" || town == "Fort Kearney" || town == "Fort Laramie" || town == "Fort Bridger" || town == "Fort Hall" || town == "Fort Boise" || town == "Fort Walla Walla") {
 		if (town == "Independence") {
 			game.priceOxen = Independence.prices.ox;
