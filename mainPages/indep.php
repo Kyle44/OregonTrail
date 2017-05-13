@@ -5,15 +5,6 @@
 	if(!isset($_SESSION['name'])){
 		$_SESSION['name'] = 'Independence';
 	}
-	if(!isset($_SESSION['month'])){
-		$_SESSION['month'] = 3;
-	}
-	if(!isset($_SESSION['day'])){
-		$_SESSION['day'] = 1;
-	}
-	if(!isset($_SESSION['year'])){
-		$_SESSION['year'] = 1848;
-	}
 	include 'func.php';
 ?>
 
@@ -28,8 +19,8 @@
 </style>
 </head>
 <body>
-	<canvas class="map" width="900" height="500"
-			 style="margin-left:20em">
+	<canvas class="map" width="680" height="390"
+			 style="margin-left:26em">
 	</canvas>
 	<div class="title">
 		<h2>
@@ -44,6 +35,9 @@
 	<div class="title">Press SPACE BAR to continue</div>
 
 	<script>
+		var game = JSON.parse(window.sessionStorage.game);
+		game.location = "Independence";
+ 		window.sessionStorage.game = JSON.stringify(game);
 		document.body.onkeyup = function(e){
     			if(e.keyCode == 32){
 				location.replace("main.php");
