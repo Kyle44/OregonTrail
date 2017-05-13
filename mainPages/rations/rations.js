@@ -20,7 +20,7 @@ $(document).ready(function(){
                         break;
                 }
                 window.sessionStorage.game = JSON.stringify(game);
-                location.replace("../main.php");
+                location.replace("../main.html");
             }
         }
     });

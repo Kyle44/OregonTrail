@@ -27,7 +27,7 @@ function checkEnteredValue(e) {
 					location.replace("homescreenPages/end.html");
 					break;
 				default:
-					location.replace("proj2.php");
+					;
 				}
     	}
     }

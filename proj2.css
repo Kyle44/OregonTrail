@@ -27,6 +27,10 @@ tr, th, td, .textAlignCenter, .title{
 	text-align: center;
 }
 
+.marginTop{
+	margin-top: 5em;
+}
+
 .learnTrailParagraph{
 	margin-left: 10em;
 	margin-right: 10em;
@@ -100,6 +104,12 @@ tr, th, td, .textAlignCenter, .title{
 
 .cash{
 	margin-left: 5em;
+}
+
+.fishing{
+    background-image: url("https://swe.umbc.edu/~fritzk1/OregonTrail/mainPages/images/fishing.png");
+    margin-bottom: 5em;
+    margin-left: 24em;
 }
 
 #ford {
