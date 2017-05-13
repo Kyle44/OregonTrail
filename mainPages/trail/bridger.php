@@ -18,8 +18,8 @@
 </style>
 </head>
 <body>
-	<canvas class="map" width="700" height="400"
-			 style="margin-left:25em">
+	<canvas class="map" width="680" height="390"
+			 style="margin-left:26em">
 	</canvas>
 	<div class="title">
 		<h2>
