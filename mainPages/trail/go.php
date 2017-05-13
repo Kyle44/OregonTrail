@@ -24,7 +24,7 @@
 			?><br>
 		Weather: <?php echo $_SESSION['weather']; ?><br>
 		Health: <?php echo $_SESSION['health']; ?><br>
-		Food:<br>
+		Food: <?php echo $_SESSION['food']; ?><br>
 		Next landmark: <?php echo $_SESSION['nexLand']; ?><br>
 		Miles travelled: <?php echo $_SESSION['miles']; ?><br>
 	</div>
