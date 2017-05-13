@@ -23,7 +23,7 @@ game object keys : values {
     axles : int
 
 
-    name : str // current location
+    location : str // current location
     visited : array[str]
     next : str
     miles : int
