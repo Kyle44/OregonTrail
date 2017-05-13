@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$_SESSION['name'] = 'the Green River Crossing';
+	$_SESSION['name'] = 'the Green River crossing';
 	$_SESSION['nexName'] = 'Soda Springs';
 
 	$_SESSION['nexLand'] = 143;
