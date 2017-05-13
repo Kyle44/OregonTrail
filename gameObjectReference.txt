@@ -22,13 +22,15 @@ game object keys : values {
     tongues : int
     axles : int
 
-
+    weather : str
     location : str // current location
-    visited : array[str]
+    visited : array[str] // used for map drawing
     next : str
     miles : int
     toGo : int
 
+    pace : str
+    rations : str
 
 
 }

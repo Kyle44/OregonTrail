@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     var game = JSON.parse(window.sessionStorage.game);
 
-    $("#currentRations").text=(game.rations);
+    $("#currentRations").text(game.rations);
 
     $("#optionsChoice").keydown( function (e) {
         if (e.keyCode == 13) {
@@ -20,7 +20,7 @@ $(document).ready(function(){
                         break;
                 }
                 window.sessionStorage.game = JSON.stringify(game);
-                location.replace("../main.php");
+                location.replace("../main.html");
             }
         }
     });

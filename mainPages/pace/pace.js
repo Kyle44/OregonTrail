@@ -1,11 +1,14 @@
+function directInput() {
+	document.getElementById("optionsChoice").focus();
+}
+
 $(document).ready(function() {
 
     var game = JSON.parse(window.sessionStorage.game);
-
+    $("#currentPace").text(game.pace);
     $("#optionsChoice").keydown(function (e) {
-        if (e.keycode == 13) {
+        if (e.keyCode == 13) {
             var choice = parseInt($(this).val());
-
             if(!isNaN(choice) && choice <= 4 && choice >= 1) {
                 if (choice == 4) {
                     location.replace("paceDesc.html");
@@ -23,7 +26,7 @@ $(document).ready(function() {
                             break;
                     }
                 window.sessionStorage.game = JSON.stringify(game);
-                location.replace("../main.php");
+                location.replace("../main.html");
                 }
             }
         }

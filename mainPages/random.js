@@ -74,7 +74,7 @@ function updateWeather(month) {
 	if(tempRand > warmUB)cond = "hot";
 	if(preciptRand < preciptChance && cond == "cool" || preciptRand < preciptChance && cond == "warm"|| preciptRand < preciptChance && cond == "hot")cond = "rainy";
 	if(preciptRand < preciptChance && cond == "cold")cond = "snowy";
-    document.getElementById("weather").innerHTML = cond;
+    //document.getElementById("weather").innerHTML = cond;
 	return cond;
 }
 
@@ -114,7 +114,7 @@ function ailments(person, weather, waterStatus) {
 				default:
 			}
 		}
-		document.getElementById("ailments").innerHTML = person +" has "+ ailment;
+		// document.getElementById("ailments").innerHTML = person +" has "+ ailment;
 	}
 }
 
@@ -133,7 +133,7 @@ function oxenStatus() {
 		problem = "One of your oxen has died.";
 		//--oxen
 	}
-	document.getElementById("oxen").innerHTML = problem;
+	// document.getElementById("oxen").innerHTML = problem;
 
 }
 

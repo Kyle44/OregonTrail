@@ -116,6 +116,10 @@ $(document).ready(function(){
 					game.visited = ["Independence"];
 					game.miles = 0;
 
+					game.weather = updateWeather(game.month);
+					game.pace = "steady";
+					game.rations = "filling";
+
 					window.sessionStorage.game = JSON.stringify(game);
 					displayNewPage("#afterPage", null, "afterPage");
 
