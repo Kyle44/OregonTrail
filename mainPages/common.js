@@ -41,8 +41,32 @@ function calcTravelEvent(game) {
 
 }
 
-function calcDays(game) {
+function calcDays(d, game) {
+	game.day += d;
+      	var m = game.month;
 
+	if ((game.day>31) && (m==1 || m==3 || m==5 || m==7 || m==8 || m==10 || m==12)){
+		
+		game.day -= 31;
+
+		if (m==12){
+			game.year += 1;
+			game.month = 1;
+		}
+		else {
+			game.month += 1;
+		}
+	}
+	else if ((game.day>30) && (m==4 || m==6 || m==9 || m==11)){
+		game.day -= 30;
+		game.month += 1;
+	}
+	else if ((game.day>28) && (m==2)){
+		game.day -= 28;
+		game.month += 1;
+	}
+	else {
+	}
 }
 
 function calcHealth(game) {
