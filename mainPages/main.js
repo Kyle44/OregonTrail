@@ -85,7 +85,7 @@ $(document).ready(function(){
 						location.replace("rations/rations.html");
 						break;
 					case 6:
-						// location.replace("rest/rest.php");
+						location.replace("rest/rest.html");
 						break;
 					case 7:
 						location.replace("trade/trade.php");
