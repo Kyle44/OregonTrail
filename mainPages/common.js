@@ -121,7 +121,22 @@ function calculateHealth(game) {
 }
 
 function calcMiles(game) {
+	if (game.pace == 'strenuous') {
+		game.miles += 30;
+		game.toGo -= 30;
+	}
+	else if (game.pace == 'grueling') {
+		game.miles += 40;
+		game.toGo -= 40;
+	}
+	else {
+		game.miles += 20;
+		game.toGo -= 20;
+	}
 
+	if (game.toGo < 0) {
+		game.toGo = 0;
+	}
 }
 
 function calcDays(d, game) {
