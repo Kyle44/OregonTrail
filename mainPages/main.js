@@ -109,7 +109,7 @@ $(document).ready(function(){
 						location.replace("rest/rest.html");
 						break;
 					case 7:
-						location.replace("trade/trade.php");
+						location.replace("trade/trade.html");
 						break;
 					case 8:
 						if (inTown) {
