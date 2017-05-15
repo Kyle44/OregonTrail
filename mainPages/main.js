@@ -59,6 +59,8 @@ $(document).ready(function(){
 	window.sessionStorage.game = JSON.stringify(game);
 
 	var inTown = game.inTown;
+	var loc = game.location;
+
 	if (inTown) {
   		document.getElementById("atLandmark").style.display="block";
   		document.getElementById("onTrail").style.display="hidden";
