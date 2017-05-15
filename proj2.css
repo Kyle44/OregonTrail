@@ -185,17 +185,17 @@ tr, th, td, .textAlignCenter, .title{
 }
 
 .front .moveWheel {
-  -webkit-animation: clockwise 12s;
+  -webkit-animation: anticlockwise 12s;
 }
 .back .moveWheel {
-  -webkit-animation: clockwise 12s;
+  -webkit-animation: anticlockwise 12s;
 }
 
-@-webkit-keyframes clockwise {
+@-webkit-keyframes anticlockwise {
   0% {
-    -webkit-transform: rotate(0deg);
+    -webkit-transform: rotate(360deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
+    -webkit-transform: rotate(0deg);
   }
 }
