@@ -54,9 +54,6 @@ $(document).ready(function() {
 		    if(game.location == 'The Dalles'){
             		location.replace("riverGameDesc.html");
 		    }
-		    else if(game.location == 'the Kansas River crossing' || game.location == 'the Big Blue River crossing' || game.location == 'the Green River crossing' || game.location == 'the Snake River crossing'){
-            		location.replace("crossing/crossing.html");
-		    }
 		    else{
             		location.replace("../main.html");
 		    }
