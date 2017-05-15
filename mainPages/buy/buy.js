@@ -98,7 +98,7 @@ $(document).ready(function () {
 			var limit = supplyLimits[itemStr];
 
  			amountNum = parseInt($(this).val());
-			if(!isNaN(choice) && choice >= 0) {
+			if(!isNaN(amountNum) && amountNum >= 0) {
 
 				// check enough money
 				if (cost < game.money) {
