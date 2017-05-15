@@ -32,6 +32,19 @@ $(document).ready(function() {
     // set the location and date titling
     $("#dateLocation").html(name + "<br>" + fullDate);
 
+    if(typeof game.isSound == 'undefined'){
+        game.isSound = true; // sound starts out as true
+    }
+
+    window.sessionStorage.game = JSON.stringify(game);
+
+
+    if(game.isSound){
+        var sound = new Audio();
+        sound.src = "https://swe.umbc.edu/~fritzk1/OregonTrail/sounds/new_place.mp3";
+        sound.play();
+    }
+
 
     $(document).keydown(function(e) {
         if (e.keyCode == 32) {

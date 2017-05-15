@@ -27,7 +27,7 @@
 
 	<p class="centerParagraph">
 		<?php
-		echo "The sound is now turned " . $_SESSION['isSound'] . ".<br><br>You may turn the sound on or off during the program by pressing 'S'.";
+		echo "The sound is now turned " . $_SESSION['isSound'] . ".<br><br>You may turn the sound on or off during the program by pressing '.'";
 		?>
 	</p>
 
