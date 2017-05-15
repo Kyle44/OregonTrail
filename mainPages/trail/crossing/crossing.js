@@ -9,31 +9,23 @@ $(document).ready(function(){
 			if(!isNaN(choice) && choice <= 5 && choice >= 1){
 				switch(choice) {
 					case 1:
-      		 				var xmlhttp = new XMLHttpRequest();
-        					xmlhttp.open("GET", "../getName.php?m=" + 0, true);
-        					xmlhttp.send();
 						location.replace("riverCross.html");
 						break;
 					case 2:
-      		 				var xmlhttp = new XMLHttpRequest();
-        					xmlhttp.open("GET", "../getName.php?m=" + 0, true);
-        					xmlhttp.send();
 						location.replace("riverCross.html");
 						break;
 					case 3:
-      		 				var xmlhttp = new XMLHttpRequest();
-        					xmlhttp.open("GET", "../getName.php?m=" + 5, true);
-        					xmlhttp.send();
-
-		 				var xmlhttp = new XMLHttpRequest();
-        					xmlhttp.open("GET", "../../rest/getDays.php?p=" + 5, true);
-        					xmlhttp.send();
+						var d = Math.floor(Math.random() * 5) + 1;
+						var m = Math.floor(Math.random() * 10) + 1;
+						game.money -= m;
+						calcDays(d, game);
+						window.sessionStorage.game = JSON.stringify(game);
 						location.replace("riverCross.html");
 						break;
 					case 4:
-       		 				var xmlhttp = new XMLHttpRequest();
-        					xmlhttp.open("GET", "../../rest/getDays.php?p=" + 1, true);
-        					xmlhttp.send();
+						var d = Math.floor(Math.random() * 5) + 1;
+						calcDays(d, game);
+						window.sessionStorage.game = JSON.stringify(game);
 						location.replace("crossing.php");
 						break;
 					case 5:
@@ -41,7 +33,7 @@ $(document).ready(function(){
 						break;
 
 					default:
-						location.replace("crossing.php");
+						location.replace("crossing.html");
 				}
 			}
 		}
