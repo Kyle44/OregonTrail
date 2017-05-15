@@ -30,10 +30,10 @@ var supplyLimits = {
 	"wheels" : 3 ,
 	"axles" : 3 ,
 	"tongues" : 3 ,
-	"pounds" : 2000
+	"food" : 2000
 };
 
-var items = ["itemslist", "oxen", "sets", "poles", "wheels", "axles", "tongues", "pounds"];
+var items = ["itemslist", "oxen", "sets", "poles", "wheels", "axles", "tongues", "food"];
 
 $(document).ready(function () {
 
@@ -82,7 +82,7 @@ $(document).ready(function () {
 
 					// enable input and clear the text space
 					$("#amount").prop("disabled", false);
-					$("#amount").text("");
+					$("#amount").val("");
 					$("#amount").focus();
 				}
 			}
@@ -93,26 +93,31 @@ $(document).ready(function () {
 	$("#amount").keydown(function (e) {
 		if (e.keyCode == 13) {
 
-			var itemStr = items[itemSelect];
-			var cost = priceList[itemSelect] * amountNum;
-			var limit = supplyLimits[itemStr];
 
- 			amountNum = parseInt($(this).val());
 			if(!isNaN(amountNum) && amountNum >= 0) {
+
+				amountNum = parseInt($(this).val());
+
+				var itemStr = items[itemSelect];
+				var cost = priceList[itemSelect] * amountNum;
+				var limit = supplyLimits[itemStr];
 
 				// check enough money
 				if (cost < game.money) {
 
 					// check space limit agaisnt current carry
-					if (limit < (amountNum + game[itemStr])
+					if (limit >= (amountNum + game[itemStr])
 						|| limit === null) {
 						game.money -= cost;
 						game[itemStr] += amountNum;
 
 						// enable input and clear the text space
 						$("#optionsChoice").prop("disabled", false);
-						$("#optionsChoice").text("");
+						$("#optionsChoice").val("");
 						$("#optionsChoice").focus();
+
+						$("#playerMoney").text(game.money.toFixed(2).toString());
+
 
 					}
 					//
@@ -126,7 +131,7 @@ $(document).ready(function () {
 								$("#carryError").css("display", "none");
 								// enable input and clear the text space
 								$("#optionsChoice").prop("disabled", false);
-								$("#optionsChoice").text("");
+								$("#optionsChoice").val("");
 								$("#optionsChoice").focus();
 								$(document).off("keydown");
 							}
@@ -142,7 +147,7 @@ $(document).ready(function () {
 							$("#costError").css("display", "none");
 							// enable input and clear the text space
 							$("#optionsChoice").prop("disabled", false);
-							$("#optionsChoice").text("");
+							$("#optionsChoice").val("");
 							$("#optionsChoice").focus();
 							$(document).off("keydown");
 						}
