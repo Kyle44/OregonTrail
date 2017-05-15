@@ -93,6 +93,12 @@ $(document).ready(function() {
 
 	var game = JSON.parse(window.sessionStorage.game);
 
+	// a day passes while attempting trade
+	calcDay(1, game);
+	calculateHealth(game);
+	game.weather = updateWeather(game.month);
+	game.water = waterStatus();
+
 	// display current supplies
 	$("#oxen").text(game.oxen);
 	$("#food").text(game.food);

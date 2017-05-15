@@ -91,7 +91,7 @@ $(document).ready(function(){
 						break;
 					case 8:
 						if (inTown) {
-							// location.replace("talk/talk.php");
+							location.replace("talk/talk.php");
 						}
 						else {
 							// ;location.replace("fishing/fishing.html");

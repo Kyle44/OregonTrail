@@ -4,7 +4,7 @@ document.body.onkeyup = function(e){
     }
 };
 
-function go(name, next) {
+function go(game, name, next) {
 
 
     // arriving at a landmark, the location is set based on previously visited

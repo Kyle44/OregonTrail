@@ -56,7 +56,7 @@ function calculateHealth(game) {
         case "rest":
             paceEffect += 1;
             break;
-        case "steady":
+        case "steady": case "trade":
             break;
         case "strenuous":
             paceEffect -= 1;

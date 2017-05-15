@@ -17,6 +17,8 @@ $(document).ready(function(){
 					calculateHealth(game);
 				}
 				game.pace = savePace;
+				game.weather = updateWeather(game.month);
+				game.water = waterStatus();
                 window.sessionStorage.game = JSON.stringify(game);
                 location.replace("../main.html");
             }

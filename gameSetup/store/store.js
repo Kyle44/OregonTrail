@@ -117,6 +117,7 @@ $(document).ready(function(){
 					game.miles = 0;
 
 					game.weather = updateWeather(game.month);
+					game.water = waterStatus();
 					game.pace = "steady";
 					game.rations = "filling";
 
