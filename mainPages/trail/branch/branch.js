@@ -1,3 +1,6 @@
+function directInput() {
+	document.getElementById("optionsChoice").focus();
+}
 $(document).ready(function(){
 
 	var game = JSON.parse(window.sessionStorage.game);
@@ -9,20 +12,19 @@ $(document).ready(function(){
 			if(!isNaN(choice) && choice <= 3 && choice >= 1){
 				switch(choice) {
 					case 1:
-						location.replace("../trail.php");
+						location.replace("../trail.html");
 						break;
 					case 2:
-      		 				var xmlhttp = new XMLHttpRequest();
-        					xmlhttp.open("GET", "../getNext.php?n=" + 2, true);
-        					xmlhttp.send();
-						location.replace("../trail.php");
+						game.next = game.next2;
+						window.sessionStorage.game = JSON.stringify(game);
+						location.replace("../trail.html");
 						break;
 					case 3:
 						location.replace("../map.html");
 						break;
 
 					default:
-						location.replace("branch.php");
+						location.replace("branch.html");
 				}
 			}
 		}
