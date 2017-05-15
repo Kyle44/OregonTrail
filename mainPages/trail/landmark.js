@@ -50,7 +50,7 @@ $(document).ready(function() {
 
 
     $(document).keydown(function(e) {
-        if (e.keyCode == 32) {
+        if (e.keyCode == spacebarKey) {
 		    if(game.location == 'The Dalles'){
             		location.replace("riverGameDesc.html");
 		    }
