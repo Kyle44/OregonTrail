@@ -42,14 +42,15 @@ $(document).ready(function() {
     if(game.isSound){
         var sound = new Audio();
         sound.src = "https://swe.umbc.edu/~fritzk1/OregonTrail/sounds/new_place.mp3";
+        sound.loop = true;
         sound.play();
     }
 
 
     $(document).keydown(function(e) {
-        if (e.keyCode == 32) {
+        if (e.keyCode == spacebarKey) {
             location.replace("../main.html");
         }
     });
-
+    var spacebarKey = 32, enterKey = 13;
 });

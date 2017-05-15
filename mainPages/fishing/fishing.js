@@ -9,7 +9,7 @@ $(document).ready(function(){
 
  		if(e.keyCode == spacebarKey){
  			switch(counter){
- 				case 0: 				
+ 				case 0:
  					var game = JSON.parse(window.sessionStorage.game);
  					var amount = getAmount();
  					if(amount > 0){

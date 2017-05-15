@@ -1,9 +1,13 @@
 $(document).ready(function(){
-	var game = JSON.parse(window.sessionStorage.game);
+	if(window.sessionStorage.game == undefined){
+		var game = [];
+	}
+	else{
+		var game = JSON.parse(window.sessionStorage.game);
+	}
 
 	if(typeof game.isSound == 'undefined'){
 		game.isSound = true;
- 		window.sessionStorage.game = JSON.stringify(game);		
 	}
 
 	if(game.isSound){
@@ -13,9 +17,12 @@ $(document).ready(function(){
 		$('#sound').text("4. Turn sound on");		
 	}
 
+	window.sessionStorage.game = JSON.stringify(game);		
+
+
 	$(document).keydown(function(e){
 		if (e.keyCode == enterKey){ // enter key
-			var choice = parseInt(document.getElementById('optionsChoice').value); // get chosen value
+			var choice = parseInt($('#optionsChoice').val());
 			if(choice != NaN && choice <= 6 && choice >= 1){
 				switch(choice){
 					case 1:
