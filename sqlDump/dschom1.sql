@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: studentdb-maria.gl.umbc.edu
--- Generation Time: Apr 23, 2017 at 05:38 PM
+-- Generation Time: May 15, 2017 at 07:25 PM
 -- Server version: 10.1.22-MariaDB
 -- PHP Version: 5.4.44
 
@@ -49,9 +49,7 @@ INSERT INTO `scoreboard` (`id`, `name`, `points`, `rating`, `original`) VALUES
 (70, 'Mary Bartlett', 937, 'Greenhorn', 1),
 (71, 'William Wiggins', 615, 'Greenhorn', 1),
 (72, 'Charles Hopper', 396, 'Greenhorn', 1),
-(73, 'Stephen Meek', 250, 'Greenhorn', 1),
-(94, 'John Doe', 3000, 'Adventurer', 0),
-(95, 'Jane Doe', 4000, 'Adventurer', 0);
+(73, 'Stephen Meek', 250, 'Greenhorn', 1);
 
 -- --------------------------------------------------------
 
@@ -63,17 +61,17 @@ CREATE TABLE IF NOT EXISTS `tombstone` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(25) NOT NULL,
   `message` varchar(140) NOT NULL,
-  `firsthalf` tinyint(1) NOT NULL,
+  `sector` varchar(50) NOT NULL,
+  `mile` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `tombstone`
 --
 
-INSERT INTO `tombstone` (`id`, `name`, `message`, `firsthalf`) VALUES
-(5, 'john', 'message 1', 1),
-(6, 'jane', 'message 2', 0);
+INSERT INTO `tombstone` (`id`, `name`, `message`, `sector`, `mile`) VALUES
+(9, 'John', 'message 1', 'Independence|Kansas', 5);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

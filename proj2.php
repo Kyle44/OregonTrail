@@ -32,16 +32,18 @@
     	$name = $tombstoneRow["name"];
     	$message = $tombstoneRow["message"];
     	$sector = $tombstoneRow["sector"];
-/*    	$mile = $tombstoneRow["mile"]; // The current mile on the current sector  */
+    	$mile = $tombstoneRow["mile"]; // The current mile on the current sector
 
 		echo "<script>
 			var name = ". json_encode($name).";
 			var message = ". json_encode($message).";
 			var sector = ". json_encode($sector).";
+			var mile = ". json_encode($mile).";
 			var currentTombstone = {
 				'name' : name,
 				'message' : message,
-				'sector' : sector
+				'sector' : sector,
+				'mile' : mile
 			};
 			tombstones.push(currentTombstone);
 		</script>";
