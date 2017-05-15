@@ -26,7 +26,9 @@ $(document).ready(function() {
     var name = game.location;
     var fullDate = getDate(game);
     var locationImage = "url(" + imgMap[name] + ")";
-
+    game.inTown = true;
+    window.sessionStorage.game = JSON.stringify(game);
+    
     // sets the canvas background to the image specified
     $("#picture").css("background-image", locationImage);
     // set the location and date titling
@@ -48,8 +50,16 @@ $(document).ready(function() {
 
 
     $(document).keydown(function(e) {
-        if (e.keyCode == spacebarKey) {
-            location.replace("../main.html");
+        if (e.keyCode == 32) {
+		    if(game.location == 'The Dalles'){
+            		location.replace("riverGameDesc.html");
+		    }
+		    else if(game.location == 'the Kansas River crossing' || game.location == 'the Big Blue River crossing' || game.location == 'the Green River crossing' || game.location == 'the Snake River crossing'){
+            		location.replace("crossing/crossing.html");
+		    }
+		    else{
+            		location.replace("../main.html");
+		    }
         }
     });
     var spacebarKey = 32, enterKey = 13;
