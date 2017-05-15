@@ -51,5 +51,6 @@ $(document).ready(function(){
 			// if not a yes/no response, keep the user in this section
 		}
 
-	});
+	}); // end keydown
+	
 });
