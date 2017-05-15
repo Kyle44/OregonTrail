@@ -59,23 +59,21 @@ $(document).ready(function(){
 	window.sessionStorage.game = JSON.stringify(game);
 
 	var inTown = game.inTown;
-/* location replace doesnt work with this:
 	if (inTown) {
-		var location = game.location;
-  		document.getElementById("inTown").style.display="block";
-  		document.getElementById("onTrail").style.display="none";
-		if (location == "Independence" || location == "Fort Kearney" || location == "Fort Laramie" || location == "Fort Bridger" || location == "Fort Hall" || location == "Fort Boise" || location == "Fort Walla Walla") {
+  		document.getElementById("atLandmark").style.display="block";
+  		document.getElementById("onTrail").style.display="hidden";
+		if (loc == "Independence" || loc == "Fort Kearney" || loc == "Fort Laramie" || loc == "Fort Bridger" || loc == "Fort Hall" || loc == "Fort Boise" || loc == "Fort Walla Walla") {
   			document.getElementById("canShop").style.display="block";
 		}
 		else {
-  			document.getElementById("canShop").style.display="none";
+  			document.getElementById("canShop").style.display="hidden";
 		}
 	}
 	else{
-  		document.getElementById("inTown").style.display="none";
+  		document.getElementById("atLandmark").style.display="hidden";
   		document.getElementById("onTrail").style.display="block";
-  		document.getElementById("canShop").style.display="none";
-	}*/
+  		document.getElementById("canShop").style.display="hidden";
+	}
 	$('#dateLocation').html(game.location + "<br>" + getMonth(game.month) + " " + game.day + ", " + game.year);
 
 	$("#weather").text(game.weather);
@@ -121,7 +119,9 @@ $(document).ready(function(){
 						break;
 					case 9:
 						if (inTown) {
-							location.replace("buy/buy.html");
+							if (loc == "Independence" || loc == "Fort Kearney" || loc == "Fort Laramie" || loc == "Fort Bridger" || loc == "Fort Hall" || loc == "Fort Boise" || loc == "Fort Walla Walla") {
+								location.replace("buy/buy.html");
+							}
 						}
 						break;
 					default:
