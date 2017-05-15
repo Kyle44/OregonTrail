@@ -49,22 +49,21 @@ $(document).ready(function(){
 					displayNewPage("explanationPage", null);
 				}
 				else {
-				switch(choice){
-					case 1: case 2: case 3: case 4: case 5:
-						game.month += choice;
-				}
+					switch(choice){
+						case 1: case 2: case 3: case 4: case 5:
+							game.month += choice;
+					}
 
 				window.sessionStorage.game = JSON.stringify(game);
 				location.replace("../store/storeSetup/storeSetup.html");
 
-			}
+				}
 
-		} // end enterKey if
-
+			} 
+		} // end enterkey if
 		if(e.keyCode == spacebarKey && currentPage == "explanationPage"){
             displayHome("#explanationPage");
         } // end spacebarKey if
-	}
 	}); // end keydown
 
 	var currentPage = "mainPage";

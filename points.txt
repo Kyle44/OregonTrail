@@ -13,6 +13,6 @@ Resources:
 wagon = 50
 ox = 4
 spare wagon part = set of clothing = 2
-bullets (each 50) = 1
+poles = 1
 food (each 25 lbs) = 1
 cash (each $5) = 1
