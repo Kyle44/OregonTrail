@@ -55,11 +55,11 @@ $(document).ready(function(){
 
 	var inTown = true; // must be calculated later
 
-	$('#dateLocation').html(game.location + "<br>" + getMonth(game.month) + " " + game.day + ", " + game.year);
-
+	// $('#dateLocation').html(game.location + "<br>" + getMonth(game.month) + " " + game.day + ", " + game.year);
+	$('#dateLocation').html(game.location + "<br>" + getDate(game));
 
 	$("#weather").text(game.weather);
-	$("#health").text(game.health);
+	$("#health").text(healthStatus(game.health));
 	$("#pace").text(game.pace);
 	$("#rations").text(game.rations);
 
@@ -67,7 +67,6 @@ $(document).ready(function(){
 	$("#optionsChoice").keydown(function(e) {
 		if (e.keyCode == 13) {
 			var choice = parseInt($(this).val());
-
 			if(!isNaN(choice) && choice <= 9 && choice >= 1){
 				switch(choice) {
 					case 1:
@@ -88,7 +87,7 @@ $(document).ready(function(){
 						location.replace("rest/rest.html");
 						break;
 					case 7:
-						location.replace("trade/trade.php");
+						location.replace("trade/trade.html");
 						break;
 					case 8:
 						if (inTown) {

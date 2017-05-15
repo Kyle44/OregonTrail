@@ -76,7 +76,7 @@ $(document).ready(function () {
 				}
 				// display the amount input
 				else {
-					$("#amountInput").css("display", "inline");
+					$("#amountInput").css("display", "block");
 					$(this).prop("disabled", true);
 					$("#itemName").text(items[itemSelect]);
 
@@ -118,7 +118,7 @@ $(document).ready(function () {
 					//
 					else {
 						// no space, display carry error
-						$("#carryError").css("display", "inline");
+						$("#carryError").css("display", "block");
 						$("#limit").text(limit);
 						$("#carryItme").text(itemStr);
 						$(document).keydown(function (e) {
@@ -136,7 +136,7 @@ $(document).ready(function () {
 				}
 				else {
 					// not enough money error
-					$("#costError").css("display", "inline");
+					$("#costError").css("display", "block");
 					$(document).keydown(function (e) {
 						if (e.keyCode == 32) {
 							$("#costError").css("display", "none");

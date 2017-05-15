@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     $("#oxen").text(game.oxen);
     $("#food").text(game.food);
-    $("#clothing").text(game.sets);
+    $("#sets").text(game.sets);
     $("#poles").text(game.poles);
     $("#axles").text(game.axles);
     $("#wheels").text(game.wheels);

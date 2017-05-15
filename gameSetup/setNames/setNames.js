@@ -35,7 +35,7 @@ $(document).ready(function(){
 				}
 				else{ // all names gotten
 					// save party variables in JS session storage game variable
-					game.health = [9, 9, 9, 9, 9];
+					game.health = [10, 10, 10, 10, 10];
 					game.ailment = [0, 0, 0, 0, 0];
 					window.sessionStorage.game = JSON.stringify(game);
 					location.replace("../pickMonth/pickMonth.html");
