@@ -51,15 +51,35 @@ $(document).ready(function(){
 	if(!game.location){
 		game.location = 'Independence';
 	}
+	if(game.location == 'Independence'){
+		game.next = 'the Kansas River crossing';
+		game.toGo = 102;
+	}
+
 	window.sessionStorage.game = JSON.stringify(game);
 
-	var inTown = true; // must be calculated later
-
-	// $('#dateLocation').html(game.location + "<br>" + getMonth(game.month) + " " + game.day + ", " + game.year);
-	$('#dateLocation').html(game.location + "<br>" + getDate(game));
+	var inTown = game.inTown;
+/* location replace doesnt work with this:
+	if (inTown) {
+		var location = game.location;
+  		document.getElementById("inTown").style.display="block";
+  		document.getElementById("onTrail").style.display="none";
+		if (location == "Independence" || location == "Fort Kearney" || location == "Fort Laramie" || location == "Fort Bridger" || location == "Fort Hall" || location == "Fort Boise" || location == "Fort Walla Walla") {
+  			document.getElementById("canShop").style.display="block";
+		}
+		else {
+  			document.getElementById("canShop").style.display="none";
+		}
+	}
+	else{
+  		document.getElementById("inTown").style.display="none";
+  		document.getElementById("onTrail").style.display="block";
+  		document.getElementById("canShop").style.display="none";
+	}*/
+	$('#dateLocation').html(game.location + "<br>" + getMonth(game.month) + " " + game.day + ", " + game.year);
 
 	$("#weather").text(game.weather);
-	$("#health").text(healthStatus(game.health));
+	$("#health").text(game.health);
 	$("#pace").text(game.pace);
 	$("#rations").text(game.rations);
 
@@ -67,9 +87,11 @@ $(document).ready(function(){
 	$("#optionsChoice").keydown(function(e) {
 		if (e.keyCode == 13) {
 			var choice = parseInt($(this).val());
+
 			if(!isNaN(choice) && choice <= 9 && choice >= 1){
 				switch(choice) {
 					case 1:
+						location.replace("trail/trail.html");
 						break;
 					case 2:
 						location.replace("supplies/supplies.html");
@@ -87,14 +109,14 @@ $(document).ready(function(){
 						location.replace("rest/rest.html");
 						break;
 					case 7:
-						location.replace("trade/trade.html");
+						location.replace("trade/trade.php");
 						break;
 					case 8:
 						if (inTown) {
-							location.replace("talk/talk.php");
+							location.replace("talk/talk.html");
 						}
 						else {
-							// ;location.replace("fishing/fishing.html");
+							location.replace("fishing/fishing.html");
 						}
 						break;
 					case 9:
