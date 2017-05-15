@@ -104,26 +104,23 @@ function calculateHealth(game) {
             game.ailment[i] -= 1;
         }
 
+        if (game.health[i] > 10) {
+            game.health[i] = 10;
+        }
+        if (game.health[i] <= 0) {
+            // death state; remove from game tracking variables
+            alert(game.party[i] + " has died.");
+            game.party.splice(i, 1);
+            game.health.splice(i, 1);
+            game.ailment.splice(i, 1);
+
+            // TODO: game oven when all dead
+        }
+
     }
 }
 
-function advanceDay(game) {
-    game.day += 1;
-}
-
-function calcWeather(game) {
-
-}
-
-function calcFood(game) {
-
-}
-
 function calcMiles(game) {
-
-}
-
-function calcTravelEvent(game) {
 
 }
 

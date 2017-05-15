@@ -23,6 +23,7 @@ game object keys : values {
     axles : int
 
     weather : str
+    water : str // water quality (see random.js)
     location : str // current location
     visited : array[str] // used for map drawing
     next : str
