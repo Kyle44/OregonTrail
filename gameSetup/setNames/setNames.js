@@ -1,56 +1,89 @@
-function directInput() {
-	document.getElementById("nameInput").focus();
-}
-
 $(document).ready(function(){
+	// Remove a page from view, using input string pageId
+	function removePage(pageId) {
+	  var page = $(pageId);
+	  page.attr("style", "display: none");
+	}
+
+	// Display a new page to the screen, using input string pageId
+	function displayPage(pageId) {
+	  var page = $(pageId);
+	  page.attr("style", "display: block");
+	}
+
+	function displayNewPage(oldId, newId) {
+		removePage(oldId);
+		displayPage(newId);
+	}
+
+
 	var game = JSON.parse(window.sessionStorage.game);
 	game.party = [];
 
-	var enterKey = 13;
-	var count = 1; // the number of the current party member
-	var isNameChosen = false; // flag that tells whether the new name has been chosen
-	var name = "";
 	$(document).keydown(function(e){
 
-		// get name input
-		if(e.keyCode == enterKey && !isNameChosen){
- 			console.log(count);
-			name = $('#nameInput').val(); // get chosen name
-			if(name != ""){
-				$('#text').html('<br>Is this the correct name?<br><input class="optionInput normalFont" id="nameInput" type="text" onblur="this.focus()" autofocus>');
-				$('#nameInput').focus();
-				isNameChosen = true; // name has been chosen
-			} // end inner if
+		if(e.keyCode == enterKey && counter <= 4){ // initial name input
+			names[counter] = $('#input').val();
+
+			if(name[counter] != ""){
+				counter++; // increment only when name found
+				if(counter == 1){
+					$('#text').html('<br>Who is the next member of your party?');
+				}
+				else if(counter > 4){
+					$('#text').html('<br>Are these names correct?');
+				}
+				$('#input').val("");
+
+			} // end name != "" if
 		} // end outer if
 
-		// confirm name input
-		if(e.keyCode == enterKey && isNameChosen){ // check for correct name
-			var userResponse = $('#nameInput').val(); // is the name correct
-			if(userResponse == "y" || userResponse == "yes"){
-
-				game.party.push(name);
-				if(count < 5){
-					$('#text').html('What is the name of the next member of your party?<br><input class="optionInput normalFont" id="nameInput" type="text" onblur="this.focus()" autofocus>'); // setup for next name
-					$('#nameInput').focus();
-				}
-				else{ // all names gotten
-					// save party variables in JS session storage game variable
-					game.health = [10, 10, 10, 10, 10];
-					game.ailment = [0, 0, 0, 0, 0];
-					window.sessionStorage.game = JSON.stringify(game);
-					location.replace("../pickMonth/pickMonth.html");
-				}
-				count += 1; // next name
-				isNameChosen = false; // back to switch cases
+		else if(e.keyCode == enterKey && isChoosingNumber){
+			var choice = parseInt($('#input').val());
+			if(choice != NaN && choice >= 1 && choice <= 5){
+				$('#text').html('What would you like to change the name to?<br>');
+				position = choice - 1; // position to change in names[]
+				$('#input').val("");
+				isChoosingNumber = false;
+				isChangingName = true;
 			}
+		}
+
+		else if(e.keyCode == enterKey && isChangingName){
+			var choice = $('#input').val();
+			if(choice != ""){
+				names[position] = choice;
+				$('#text').html('<br>Are these names correct?');
+				$('#input').val("");
+				isChangingName = false;
+			}
+		}
+
+		else if(e.keyCode == enterKey){ // only when counter > 4
+			var userResponse = $('#input').val(); // Are the names correct
+			if(userResponse == "y" || userResponse == "yes"){
+				// save party variables in JS session storage game variable
+				for (var i = 0; i < 5; i++){
+					game.party.push(names[i]); // push all of the names
+				}
+				game.health = [10, 10, 10, 10, 10];
+				game.ailment = [0, 0, 0, 0, 0];
+				// UNCOMMENT FOR LIST OF PARTY MEMBERS /* alert(game.party); */
+				window.sessionStorage.game = JSON.stringify(game);
+				location.replace("../pickMonth/pickMonth.html");
+			}
+
 			else if(userResponse == "n" || userResponse == "no"){
-				$('#text').html('What would you like to change this party member\'s name to?<br><input class="optionInput normalFont" id="nameInput" type="text" onblur="this.focus()" autofocus>');
-				$('#nameInput').focus();
-				isNameChosen = false; // back to switch cases
+				$('#text').html('<br>Which party member do you want to change the name of? (number)');
+				$('#input').val("");
+				isChoosingNumber = true;
 			}
 			// if not a yes/no response, keep the user in this section
 		}
-
 	}); // end keydown
-	
+	var enterKey = 13;
+	var names = [];
+	var position = -1; // used to change items in names[]
+	var counter = 0; // the number of the current position in the names array
+	var isChoosingNumber = false, isChangingName = false;
 });
