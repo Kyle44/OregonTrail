@@ -42,4 +42,21 @@ $(document).ready(function(){
 			}
 		}
 	});
+	$('#nameLocation').html(game.location);
+	$('#nextLocation').html(game.next);
+	$('#nextLocation2').html(game.next2);
+
+	$('#dateLocation').html(getDate(game));
+	$('#milesLeft').html(game.toGo);
+	$('#milesLeft2').html(game.toGo);
+
+	$('#milesGone').html(game.miles);
+	$('#milesBranch').html(game.toGo2);
+
+	$("#food").text(game.food);
+	$("#health").text(game.health);
+	$("#weather").text(game.weather);
+
+	$("#rivWidth").text(game.riverWidth);
+	$("#rivDepth").text(game.riverDepth);
 });
