@@ -22,18 +22,6 @@
   		<img id="crash" src="images/crash.png">
 	</div>
 	<script src="riverGame.js" type="text/javascript"></script>
-	<script>
-		var game = JSON.parse(window.sessionStorage.game);
-		document.body.onkeyup = function(e){
-    			if(e.keyCode == 32 && game.riverGame == 2){
-				location.replace("landmark.html");
-    			}
-    			if(e.keyCode == 13 && game.riverGame == 1){
-				location.replace("../main.html");
-    			}
-		}
-
-	</script>
 
 </body>
 </html>
