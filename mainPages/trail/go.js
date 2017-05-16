@@ -1,4 +1,5 @@
 var game = JSON.parse(window.sessionStorage.game);
+var spacebarKey = 32, enterKey = 13;
 
 //function animateCross()
 //Coding Designs from W3Schools:
@@ -49,14 +50,25 @@ function go() {
   game.weather = updateWeather(game.month);
   game.water = waterStatus();
   var gameOver = calculateHealth(game);
+
+
+  var tombstones = JSON.parse(window.sessionStorage.tombstones);
+  for(tombstone in tombstones){
+    alert(game.toGo + " " + tombstones[parseInt(tombstone)]['mile'] + " " + game.location + " " + tombstones[parseInt(tombstone)]['start']);
+    if (game.toGo <= tombstones[parseInt(tombstone)]['mile'] && game.location == tombstones[parseInt(tombstone)]['start']){
+        alert("in!");
+        location.replace('../tombstone/tombstone.html');
+        break;
+    }
+  }
+
   if (gameOver) {
       location.replace("../gameOver/gameOver.html");
   }
   else {
       if (game.toGo <= 0) {
 
-        	// arriving at a landmark, the location is set based on previously visited
-
+        // arriving at a landmark, the location is set based on previously visited
     	if (name == 'Independence') {
     		game.location = 'the Kansas River crossing';
     		game.crossing = 1;
@@ -196,15 +208,15 @@ $(document).ready(function() {
 	$("#rivDepth").text(game.riverDepth);
 
     	$(document).keydown(function(e) {
-    		if(e.keyCode == 32){
-			game.inTown = false;
-			window.sessionStorage.game = JSON.stringify(game);
-			location.replace("go.php");
+    		if(e.keyCode == spacebarKey){
+    			game.inTown = false;
+    			window.sessionStorage.game = JSON.stringify(game);
+    			location.replace("go.php");
     		}
-        	if(e.keyCode == 13){
-			game.inTown = false;
-			window.sessionStorage.game = JSON.stringify(game);
-        		location.replace("../main.html");
+        	if(e.keyCode == enterKey){
+    			game.inTown = false;
+    			window.sessionStorage.game = JSON.stringify(game);
+                location.replace("../main.html");
     		}
 	});
 });
