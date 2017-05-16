@@ -1,12 +1,13 @@
 $(document).ready(function(){
 	var game = JSON.parse(window.sessionStorage.game);
-	if(typeof game.isSound == 'undefined'){
-		game.isSound = true; // sound starts out as true
+
+	if(game.isSound === true){
+		game.isSound = false;
 	}
 	else{
-		game.isSound = !game.isSound; // change whether sound is on or off
+		game.isSound = true;
 	}
-
+	
 	if(game.isSound){
 		$('#text').html("The sound is now turned on.<br><br>You may turn the sound on or off during the program by pressing '.'");
 	}

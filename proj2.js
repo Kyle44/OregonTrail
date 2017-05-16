@@ -1,13 +1,9 @@
 $(document).ready(function(){
 	if(window.sessionStorage.game == undefined){
-		var game = [];
+		var game = {isSound : true};
 	}
 	else{
 		var game = JSON.parse(window.sessionStorage.game);
-	}
-
-	if(typeof game.isSound == 'undefined'){
-		game.isSound = true;
 	}
 
 	if(game.isSound){
@@ -16,7 +12,6 @@ $(document).ready(function(){
 	else{
 		$('#sound').text("4. Turn sound on");		
 	}
-
 	window.sessionStorage.game = JSON.stringify(game);		
 
 
