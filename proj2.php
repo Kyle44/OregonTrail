@@ -33,16 +33,22 @@
     	$message = $tombstoneRow["message"];
     	$sector = $tombstoneRow["sector"];
     	$mile = $tombstoneRow["mile"]; // The current mile on the current sector
+    	echo "<script>
+    		var sectorArray = ". json_encode($sector).".split('|');
+    		var start = sectorArray[0];
+    		var end = sectorArray[1];
 
-		echo "<script>
 			var name = ". json_encode($name).";
 			var message = ". json_encode($message).";
-			var sector = ". json_encode($sector).";
+			var sector = ". json_encode($sector).";		
 			var mile = ". json_encode($mile).";
+
 			var currentTombstone = {
 				'name' : name,
 				'message' : message,
 				'sector' : sector,
+				'start' : start,
+				'end' : end,
 				'mile' : mile
 			};
 			tombstones.push(currentTombstone);
@@ -54,7 +60,7 @@
     	 window.sessionStorage.tombstones = JSON.stringify(tombstones);
     	 </script>";
    	// UNCOMMENT NEXT LINE TO SEE WHAT tombstones HOLDS
-   	// echo "<script> alert(window.sessionStorage.tombstones); </script>";
+   	//echo "<script> alert(window.sessionStorage.tombstones); </script>";
 
 	$conn->close();
 ?>
