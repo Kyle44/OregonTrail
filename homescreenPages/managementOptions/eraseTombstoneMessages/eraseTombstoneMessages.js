@@ -9,17 +9,11 @@ document.body.onkeyup = function(e){
 
 	if (e.keyCode == enterKey){ // enter key
 		switch(choice){
-			case 'n':
-				location.replace("../managementOptions.php");
+			case 'n': case 'no':
+				location.replace("../managementOptions.html");
 				break;
-			case 'no':
-				location.replace("../managementOptions.php");
-				break;
-			case 'y':
+			case 'y': case 'yes':
 				location.replace("eraseTombstoneMessagesProcess.php");
-				break;
-			case 'yes':
-				location.replace("eraseTombstoneMessagesProcess.php");							
 				break;
 			default:
 				;

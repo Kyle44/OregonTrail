@@ -11,7 +11,7 @@ $('body').keyup(function(e){
 				$('#pointsTable tr:last').after('<tr><td>ox</td><td></td><td>4</td></tr>');
 				$('#pointsTable tr:last').after('<tr><td>spare wagon part</td><td></td><td>2</td></tr>');
 				$('#pointsTable tr:last').after('<tr><td>set of clothing</td><td></td><td>2</td></tr>');
-				$('#pointsTable tr:last').after('<tr><td>bullets (each 50)</td><td></td><td>1</td></tr>');
+				$('#pointsTable tr:last').after('<tr><td>poles</td><td></td><td>1</td></tr>');
 				$('#pointsTable tr:last').after('<tr><td>food (each 25 pounds)</td><td></td><td>1</td></tr>');
 				$('#pointsTable tr:last').after('<tr><td>cash (each 50)</td><td></td><td>1</td></tr>');		
 				break;

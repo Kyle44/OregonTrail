@@ -3,7 +3,7 @@ function checkEnteredValue(e)
 	var choice = parseInt(document.getElementById('managementOptionsChoice').value); // get chosen value
 
     if (e.keyCode == enterKey){ // if enter key pressed
-    	if(choice != NaN && choice <= 6 && choice >= 1){
+    	if(choice != NaN && choice <= 5 && choice >= 1){
     		switch(choice){
 				case 1:
 					location.replace("topTen/currentTopTen.php");
@@ -18,8 +18,6 @@ function checkEnteredValue(e)
 					location.replace("eraseTombstoneMessages/eraseTombstoneMessages.php");
 					break;
 				case 5:
-					break;
-				case 6:
 					location.replace("../../proj2.php");
 					break;
 				default:

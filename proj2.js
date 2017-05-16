@@ -38,7 +38,7 @@ $(document).ready(function(){
 						location.replace("homescreenPages/sound/sound.html");
 						break;
 					case 5:
-						location.replace("homescreenPages/managementOptions/managementOptions.php");
+						location.replace("homescreenPages/managementOptions/managementOptions.html");
 						break;
 					case 6:
 						location.replace("homescreenPages/end.html");

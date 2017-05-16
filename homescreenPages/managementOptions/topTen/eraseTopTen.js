@@ -11,10 +11,10 @@ document.body.onkeyup = function(e){
 	if (e.keyCode == enterKey){ // enter key
 		switch(choice){
 			case 'n':
-				location.replace("../managementOptions.php");
+				location.replace("../managementOptions.html");
 				break;
 			case 'no':
-				location.replace("../managementOptions.php");
+				location.replace("../managementOptions.html");
 				break;
 			case 'y':
 				location.replace("eraseProcess.php");
