@@ -53,7 +53,10 @@
 			location.replace("branch/branch.html");
 		}
 		if(game.location == 'the Kansas River crossing' || game.location == 'the Big Blue River crossing' || game.location == 'the Green River crossing' || game.location == 'the Snake River crossing'){
-            		location.replace("crossing/crossing.html");
+    	   	     	if (game.crossing == 1) {
+				game.crossing = 0;
+				location.replace("crossing/crossing.html");
+			}
 		}
 	</script>
 </body>
