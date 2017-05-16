@@ -165,6 +165,7 @@ function go() {
   }
   else{
 	window.sessionStorage.game = JSON.stringify(game);
+	getRandomEvents();
 	location.replace("go.php");
   }
 }
