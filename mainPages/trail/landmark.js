@@ -55,13 +55,14 @@ $(document).ready(function() {
     $(document).keydown(function(e) {
         if (e.keyCode == spacebarKey) {
 		    if(game.location == 'The Dalles'){
-            		location.replace("riverGameDesc.html");
+            	location.replace("riverGameDesc.html");
 		    }
-            if(name == "the Willamette Valley"){
-                // TODO: calculate points        
+            if(name == "the Willamette Valley") {
+                // game completion, calculate points
+                location.replace("../points/points.php");
             }
 		    else{
-            		location.replace("../main.html");
+            	location.replace("../main.html");
 		    }
         }
     });
