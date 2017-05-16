@@ -1,5 +1,23 @@
 var game = JSON.parse(window.sessionStorage.game);
 
+function animateCross() {
+  	var wheel = document.getElementById("wheelCanvas");   
+   
+  	var start = 300;
+ 	var time = setInterval(frame, 15);
+
+ 	function frame() {
+    		if (start == -300) {
+      			clearInterval(time);
+    		}
+    		else {
+     			start--; 
+      			wheel.style.left = start + 'px'; 
+
+    		}
+  	}
+}
+
 function checkEvent() {
 
 	if (game.location == "South Pass" && game.branch == 1){
