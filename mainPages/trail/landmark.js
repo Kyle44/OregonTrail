@@ -24,9 +24,11 @@ $(document).ready(function() {
     var game = JSON.parse(window.sessionStorage.game);
     // whatever the location variable is
     var name = game.location;
+
     game.visited.push(name);
     var fullDate = getDate(game);
     var locationImage = "url(" + imgMap[name] + ")";
+
     game.inTown = true;
     window.sessionStorage.game = JSON.stringify(game);
 
@@ -55,6 +57,9 @@ $(document).ready(function() {
 		    if(game.location == 'The Dalles'){
             		location.replace("riverGameDesc.html");
 		    }
+            if(name == "the Willamette Valley"){
+                // TODO: calculate points        
+            }
 		    else{
             		location.replace("../main.html");
 		    }

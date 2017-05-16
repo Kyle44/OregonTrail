@@ -18,6 +18,7 @@
 
 var months = ["monthsList", "January", "February", "March", "April", "May", "June",
               "July", "August", "September", "October", "November", "December"];
+var isLeaderDead = false;
 
 // create full date string from integer representation
 function getDate(game) {
@@ -114,13 +115,18 @@ function calculateHealth(game) {
         if (game.health[i] <= 0) {
             // death state; remove from game tracking variables
             alert(game.party[i] + " has died.");
+            if(i == 0){
+            	isLeaderDead = true;
+            	alert("leader did died");
+            }
             game.party.splice(i, 1);
             game.health.splice(i, 1);
             game.ailment.splice(i, 1);
-
-            // TODO: game oven when all dead
         }
 
+    } // end for
+    if(isLeaderDead){
+		location.replace("https://swe.umbc.edu/~fritzk1/OregonTrail/mainPages/gameOver/gameOver.html");
     }
 }
 
@@ -157,7 +163,7 @@ function calcDays(d, game) {
 		else {
 			game.month += 1;
 		}
-		
+
 	}
 	else if ((game.day>30) && (m==4 || m==6 || m==9 || m==11)){
 		game.day -= 30;
@@ -257,18 +263,14 @@ function updateWeather(month) {
 	if(tempRand > warmUB)cond = "hot";
 	if(preciptRand < preciptChance && cond == "cool" || preciptRand < preciptChance && cond == "warm"|| preciptRand < preciptChance && cond == "hot")cond = "rainy";
 	if(preciptRand < preciptChance && cond == "cold")cond = "snowy";
-    //document.getElementById("weather").innerHTML = cond;
 	return cond;
 }
 
 function waterStatus() {
-	water = "good";
+	var water = "good";
 	var rand = Math.random();
 	if(rand > 0.95) {
 		water = "bad";
-	}
-	else {
-		water = "good";
 	}
 	return water;
 }
