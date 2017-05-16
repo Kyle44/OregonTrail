@@ -51,7 +51,7 @@ $(document).ready(function(){
 	if(!game.location){
 		game.location = 'Independence';
 	}
-	if(game.location == 'Independence'){
+	if(game.location == 'Independence' && game.inTown == true){
 		game.next = 'the Kansas River crossing';
 		game.toGo = 102;
 	}
@@ -62,6 +62,7 @@ $(document).ready(function(){
 	var loc = game.location;
 
 	if (inTown) {
+		$('#dateLocation').html(game.location + "<br>" + getMonth(game.month) + " " + game.day + ", " + game.year);
   		document.getElementById("atLandmark").style.display="block";
   		document.getElementById("onTrail").style.display="hidden";
 		if (loc == "Independence" || loc == "Fort Kearney" || loc == "Fort Laramie" || loc == "Fort Bridger" || loc == "Fort Hall" || loc == "Fort Boise" || loc == "Fort Walla Walla") {
@@ -76,7 +77,6 @@ $(document).ready(function(){
   		document.getElementById("onTrail").style.display="block";
   		document.getElementById("canShop").style.display="hidden";
 	}
-	$('#dateLocation').html(game.location + "<br>" + getMonth(game.month) + " " + game.day + ", " + game.year);
 
 	$("#weather").text(game.weather);
 	$("#health").text(healthStatus(game.health));
