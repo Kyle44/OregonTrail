@@ -9,9 +9,10 @@ function go() {
   if (game.toGo <= 0) {
 
     // arriving at a landmark, the location is set based on previously visited
+    game.visted.push(name);
+
 	if (name == 'Independence') {
 		game.location = 'the Kansas River crossing';
-        game.visted.push(name);
 		game.riverWidth = Math.floor(Math.random() * (700 - 600) ) + 600;
 		game.riverDepth = Math.floor(Math.random() * (3 - 2) ) + 2;
 		game.next = 'the Big Blue River crossing';
@@ -19,7 +20,6 @@ function go() {
 	}
 	if (name == 'the Kansas River crossing') {
 		game.location = 'the Big Blue River crossing';
-        game.visted.push(name);
 		game.riverWidth = Math.floor(Math.random() * (300 - 200) ) + 200;
 		game.riverDepth = Math.floor(Math.random() * (2 - 1) ) + 1;
 		game.next = 'Fort Kearney';
@@ -27,31 +27,26 @@ function go() {
 	}
 	if (name == 'the Big Blue River crossing') {
 		game.location = "Fort Kearney";
-        game.visted.push(name);
 		game.next = 'Chimney Rock';
 		game.toGo = 250;
 	}
 	if (name == 'Fort Kearney') {
 		game.location = "Chimney Rock";
-        game.visted.push(name);
 		game.next = 'Fort Laramie';
 		game.toGo = 86;
 	}
 	if (name == 'Chimney Rock') {
 		game.location = "Fort Laramie";
-        game.visted.push(name);
 		game.next = 'Independence Rock';
 		game.toGo = 190;
 	}
 	if (name == 'Fort Laramie') {
 		game.location = "Independence Rock";
-        game.visted.push(name);
 		game.next = 'South Pass';
 		game.toGo = 102;
 	}
 	if (name == 'Independence Rock') {
 		game.location = "South Pass";
-        game.visted.push(name);
 		game.next = 'the Green River crossing';
 		game.next2 = 'Fort Bridger';
 		game.branch = 1;
@@ -62,7 +57,6 @@ function go() {
 
 		if (game.next == 'the Green River crossing') {
 			game.location = 'the Green River crossing';
-            game.visted.push(name);
 			game.riverWidth = Math.floor(Math.random() * (500 - 400) ) + 400;
 			game.riverDepth = Math.floor(Math.random() * (25 - 20) ) + 20;
 			game.next = 'Soda Springs';
@@ -71,32 +65,27 @@ function go() {
 		}
 		else {
 			game.location = "Fort Bridger";
-            game.visted.push(name);
 			game.next = 'Soda Springs';
 			game.toGo = 162;
 		}
 	}
 	if (name == 'the Green River crossing' || name == 'Fort Bridger') {
 		game.location = "Soda Springs";
-        game.visted.push(name);
 		game.next = 'Fort Hall';
 		game.toGo = 57;
 	}
 	if (name == 'Soda Springs') {
 		game.location = "Fort Hall";
-        game.visted.push(name);
 		game.next = 'the Snake River crossing';
 		game.toGo = 182;
 	}
 	if (name == 'Fort Hall') {
 		game.location = 'the Snake River crossing';
-        game.visted.push(name);
 		game.next = 'Fort Boise';
 		game.toGo = 113;
 	}
 	if (name == 'the Snake River crossing') {
 		game.location = "Fort Boise";
-        game.visted.push(name);
 		game.riverWidth = Math.floor(Math.random() * (1100 - 1000) ) + 1000;
 		game.riverDepth = Math.floor(Math.random() * (7 - 5) ) + 5;
 		game.next = 'the Blue Mountains';
@@ -104,7 +93,6 @@ function go() {
 	}
 	if (name == 'Fort Boise') {
 		game.location = "the Blue Mountains";
-        game.visted.push(name);
 		game.next = 'Fort Walla Walla';
 		game.next2 = 'The Dalles';
 		game.branch = 1;
@@ -115,7 +103,6 @@ function go() {
 
 		if (game.next == 'Fort Walla Walla') {
 			game.location = "Fort Walla Walla";
-            game.visted.push(name);
 			game.next = 'The Dalles';
 			game.toGo = 120;
 		}
@@ -125,7 +112,6 @@ function go() {
 	}
 	if (name == 'Fort Walla Walla') {
 		game.location = "The Dalles";
-        game.visted.push(name);
 		game.next = 'the Willamette Valley';
 		game.riverGame = 0;
 	}

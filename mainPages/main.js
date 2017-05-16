@@ -79,7 +79,7 @@ $(document).ready(function(){
 	$('#dateLocation').html(game.location + "<br>" + getMonth(game.month) + " " + game.day + ", " + game.year);
 
 	$("#weather").text(game.weather);
-	$("#health").text(game.health);
+	$("#health").text(healthStatus(game.health));
 	$("#pace").text(game.pace);
 	$("#rations").text(game.rations);
 
