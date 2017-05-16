@@ -1,5 +1,26 @@
 var game = JSON.parse(window.sessionStorage.game);
 
+function checkEvent() {
+
+	if (game.location == "South Pass" && game.branch == 1){
+		game.branch = 0;
+		window.sessionStorage.game = JSON.stringify(game);
+		location.replace("branch/branch.html");
+	}
+	if (game.location == 'the Blue Mountains' && game.branch == 1){
+		game.branch = 0;
+		window.sessionStorage.game = JSON.stringify(game);
+		location.replace("branch/branch.html");
+	}
+	if(game.location == 'the Kansas River crossing' || game.location == 'the Big Blue River crossing' || game.location == 'the Green River crossing' || game.location == 'the Snake River crossing'){
+		if (game.crossing == 1) {
+			game.crossing = 0;
+			window.sessionStorage.game = JSON.stringify(game);
+			location.replace("crossing/crossing.html");
+		}
+	}
+}
+
 function go() {
   var name = game.location;
   calcDays(1, game);
