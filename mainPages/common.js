@@ -130,22 +130,50 @@ function calculateHealth(game) {
 }
 
 function calcMiles(game) {
-	if (game.pace == 'strenuous') {
-		game.miles += 30;
-		game.toGo -= 30;
+
+    var oxen = game.oxen;
+    var healthPenalty = 0;
+
+    var pace = game.pace;
+
+    var progress;
+
+    // one mile penalty per current ailment
+    for (var i = 0; i < game.ailment.length; i++) {
+        if (game.ailment[i] > 0) {
+            healthPenalty += 1;
+        }
+    }
+
+	if (pace == 'strenuous') {
+        progress = oxen * 6
+        if (progress > 30) {
+            progress = 30;
+        }
 	}
 	else if (game.pace == 'grueling') {
-		game.miles += 40;
-		game.toGo -= 40;
+        progress = oxen * 8
+        if (progress > 40) {
+            progress = 40;
+        }
 	}
 	else {
-		game.miles += 20;
-		game.toGo -= 20;
+        progress = oxen * 4
+        if (progress > 20) {
+            progress = 20;
+        }
 	}
 
-	if (game.toGo < 0) {
+    progress -= healthPenalty;
+
+    game.miles += progress;
+    game.toGo -= progress;
+
+    if (game.toGo < 0) {
+        game.miles -= (0 - game.toGo); // take extra miles back off
 		game.toGo = 0;
 	}
+
 }
 
 function calcDays(d, game) {

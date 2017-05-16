@@ -23,7 +23,7 @@
     			</div>
   		</div>
 	</div>
-	<div class="status">
+	<div class="normalFont status">
 		Date: <span id="dateLocation"></span> <br>
 		Weather: <span id="weather"></span> <br>
 		Health: <span id="health"></span> <br>
