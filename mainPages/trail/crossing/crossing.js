@@ -1,3 +1,7 @@
+function directInput() {
+	document.getElementById("optionsChoice").focus();
+}
+
 $(document).ready(function(){
 
 	var game = JSON.parse(window.sessionStorage.game);
