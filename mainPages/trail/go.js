@@ -192,5 +192,10 @@ $(document).ready(function() {
 			window.sessionStorage.game = JSON.stringify(game);
 			location.replace("go.php");
     		}
+        	if(e.keyCode == 13){
+			game.inTown = false;
+			window.sessionStorage.game = JSON.stringify(game);
+        		location.replace("../main.html");
+    		}
 	});
 });
