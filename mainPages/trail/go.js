@@ -1,18 +1,18 @@
 var game = JSON.parse(window.sessionStorage.game);
 
 function animateCross() {
-  	var wheel = document.getElementById("wheelCanvas");   
-   
+  	var wheel = document.getElementById("wheelCanvas");
+
   	var start = 300;
- 	var time = setInterval(frame, 15);
+    var time = setInterval(frame, 15);
 
  	function frame() {
     		if (start == -300) {
       			clearInterval(time);
     		}
     		else {
-     			start--; 
-      			wheel.style.left = start + 'px'; 
+     			start--;
+      			wheel.style.left = start + 'px';
 
     		}
   	}
@@ -44,6 +44,8 @@ function go() {
   calcDays(1, game);
   calcMiles(game);
   calculateHealth(game);
+  game.weather = updateWeather(game.month);
+  game.water = waterStatus();
 
   if (game.toGo <= 0) {
 
@@ -180,12 +182,12 @@ $(document).ready(function() {
 	$('#milesBranch').html(game.toGo2);
 
 	$("#food").text(game.food);
-	$("#health").text(game.health);
+	$("#health").text(healthStatus(game.health));
 	$("#weather").text(game.weather);
 
 	$("#rivWidth").text(game.riverWidth);
 	$("#rivDepth").text(game.riverDepth);
-	
+
     	$(document).keydown(function(e) {
     		if(e.keyCode == 32){
 			game.inTown = false;

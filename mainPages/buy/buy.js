@@ -3,7 +3,7 @@ function getPrices(location) {
 			return Independence.prices;
 		}
 		else if (location == "Fort Kearney") {
-			return KearnyF.prices;
+			return KearneyF.prices;
 		}
 		else if (location == "Fort Laramie") {
 			return LaramieF.prices;

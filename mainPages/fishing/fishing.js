@@ -5,31 +5,52 @@ $(document).ready(function(){
 		return Math.floor(Math.random() * 100);
 	}
 
-	$(document).keydown(function(e){
+	var game = JSON.parse(window.sessionStorage.game);
 
- 		if(e.keyCode == spacebarKey){
- 			switch(counter){
- 				case 0:
- 					var game = JSON.parse(window.sessionStorage.game);
+	// make sure player can actually fish
+	if (game.poles == 0) {
+		$("#text").css("display", "none");
+		$(document).keydown(function(e) {
+			if (e.keyCode == spacebarKey) {
+				location.replace("../main.html");
+			}
+		});
+	} else {
+		$("#noPoles").css("display", "none");
+
+		$(document).keydown(function(e){
+
+	 		if(e.keyCode == spacebarKey){
+	 			if (counter == 0){
  					var amount = getAmount();
  					if(amount > 0){
-						$('#text').text("You caught " + amount + " pounds of fish!");						
+						$('#text').text("You caught " + amount + " pounds of fish!");
  					}
  					else{
  						$('#text').text("No fish are biting right now!");
  					}
  					game.food += amount;
+					if (game.poles > 0) {
+						game.poles -= 1;
+					}
+
+					calcDays(1, game);
+				    calculateHealth(game);
+				    game.weather = updateWeather(game.month);
+				    game.water = waterStatus();
 
  					window.sessionStorage.game = JSON.stringify(game);
  					counter++;
- 					break;
- 				case 1:
+ 				}
+				else {
  					location.replace("../main.html");
  					// TODO: go back to previous page
- 			} // end switch
-		} // end keycode
+	 			} // end switch
+			} // end keycode
 
-	}); // end keydown
+		}); // end keydown
+
+	}
 	var spacebarKey = 32, enterKey = 13;
 	var counter = 0;
 });
