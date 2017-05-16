@@ -13,6 +13,7 @@ function go() {
 
 	if (name == 'Independence') {
 		game.location = 'the Kansas River crossing';
+		game.crossing = 1;
 		game.riverWidth = Math.floor(Math.random() * (700 - 600) ) + 600;
 		game.riverDepth = Math.floor(Math.random() * (3 - 2) ) + 2;
 		game.next = 'the Big Blue River crossing';
@@ -20,6 +21,7 @@ function go() {
 	}
 	if (name == 'the Kansas River crossing') {
 		game.location = 'the Big Blue River crossing';
+		game.crossing = 1;
 		game.riverWidth = Math.floor(Math.random() * (300 - 200) ) + 200;
 		game.riverDepth = Math.floor(Math.random() * (2 - 1) ) + 1;
 		game.next = 'Fort Kearney';
@@ -57,6 +59,7 @@ function go() {
 
 		if (game.next == 'the Green River crossing') {
 			game.location = 'the Green River crossing';
+			game.crossing = 1;
 			game.riverWidth = Math.floor(Math.random() * (500 - 400) ) + 400;
 			game.riverDepth = Math.floor(Math.random() * (25 - 20) ) + 20;
 			game.next = 'Soda Springs';
@@ -81,13 +84,14 @@ function go() {
 	}
 	if (name == 'Fort Hall') {
 		game.location = 'the Snake River crossing';
+		game.crossing = 1;
+		game.riverWidth = Math.floor(Math.random() * (1100 - 1000) ) + 1000;
+		game.riverDepth = Math.floor(Math.random() * (7 - 5) ) + 5;
 		game.next = 'Fort Boise';
 		game.toGo = 113;
 	}
 	if (name == 'the Snake River crossing') {
 		game.location = "Fort Boise";
-		game.riverWidth = Math.floor(Math.random() * (1100 - 1000) ) + 1000;
-		game.riverDepth = Math.floor(Math.random() * (7 - 5) ) + 5;
 		game.next = 'the Blue Mountains';
 		game.toGo = 160;
 	}
