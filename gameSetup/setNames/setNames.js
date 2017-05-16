@@ -1,22 +1,4 @@
 $(document).ready(function(){
-	// Remove a page from view, using input string pageId
-	function removePage(pageId) {
-	  var page = $(pageId);
-	  page.attr("style", "display: none");
-	}
-
-	// Display a new page to the screen, using input string pageId
-	function displayPage(pageId) {
-	  var page = $(pageId);
-	  page.attr("style", "display: block");
-	}
-
-	function displayNewPage(oldId, newId) {
-		removePage(oldId);
-		displayPage(newId);
-	}
-
-
 	var game = JSON.parse(window.sessionStorage.game);
 	game.party = [];
 
