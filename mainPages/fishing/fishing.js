@@ -35,7 +35,10 @@ $(document).ready(function(){
 					}
 
 					calcDays(1, game);
+					var savePace = game.pace;
+					game.pace = "fish";
 				    calculateHealth(game);
+					game.pace = savePace;
 				    game.weather = updateWeather(game.month);
 				    game.water = waterStatus();
 

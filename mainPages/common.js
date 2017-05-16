@@ -56,13 +56,17 @@ function calculateHealth(game) {
         case "rest":
             paceEffect += 1;
             break;
-        case "steady": case "trade":
+        case "trade": case "fish":
+            // paceEffect is 0 for trading and fishing
             break;
-        case "strenuous":
+        case "steady":
             paceEffect -= 1;
             break;
-        case "grueling":
+        case "strenuous":
             paceEffect -= 2;
+            break;
+        case "grueling":
+            paceEffect -= 3;
             break;
     }
 
