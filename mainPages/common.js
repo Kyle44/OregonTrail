@@ -150,7 +150,6 @@ function calcDays(d, game) {
 	if ((game.day>31) && (m==1 || m==3 || m==5 || m==7 || m==8 || m==10 || m==12)){
 
 		game.day -= 31;
-
 		if (m==12){
 			game.year += 1;
 			game.month = 1;
@@ -158,6 +157,7 @@ function calcDays(d, game) {
 		else {
 			game.month += 1;
 		}
+		
 	}
 	else if ((game.day>30) && (m==4 || m==6 || m==9 || m==11)){
 		game.day -= 30;
@@ -167,14 +167,11 @@ function calcDays(d, game) {
 		game.day -= 28;
 		game.month += 1;
 	}
-	else {
-	}
-}
+} // end function
 
 /// random functions
 
 function getRandomEvents(game) {
-
     // random person out of party
 	var rand = Math.floor(Math.random() * game.party.length);
 	var rand2 = Math.floor((Math.random() * 3) + 1);
@@ -195,9 +192,7 @@ function getRandomEvents(game) {
 function updateWeather(month) {
 	var tempRand = Math.random();
 	var preciptRand = Math.random();
-	var coldUB;
-	var coolUB;
-	var warmUB;
+	var coldUB, coolUB, warmUB;
 	var preciptChance;
 	var cond;
 	switch (month) {
@@ -316,20 +311,22 @@ function oxenStatus(game) {
 	var problem="";
 	var rand = Math.random();
 	console.log(rand);
-	if(rand < 0.97) {
-		problem = "No Problems.";
-	}
-	if(rand > 0.97) {
-		problem = "One of your oxen is sick.";
-	}
-	if(rand > 0.989) {
-		problem = "One of your oxen has wandered off.";
-		--game.oxen;
-	}
 	if(rand > 0.999) {
 		problem = "One of your oxen has died.";
 		--game.oxen;
 	}
+	else if(rand > 0.989) {
+		problem = "One of your oxen has wandered off.";
+		--game.oxen;
+	}
+	else if(rand > 0.97) {
+		problem = "One of your oxen is sick.";
+	}
+	else if(rand <= 0.97) {
+		problem = "No Problems.";
+	}
+	
+	
   	document.getElementById("random").style.display="block";
 	document.getElementById("random").innerHTML = problem;
 
