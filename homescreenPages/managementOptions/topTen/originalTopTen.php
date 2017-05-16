@@ -62,9 +62,7 @@
 	$conn->close();
 ?>
 
-	<p class="spaceToContinue textAlignCenter">
-		Press SPACE BAR to continue 
-	</p>
+	<p class="title">Press SPACE BAR to continue </p>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script src="https://swe.umbc.edu/~fritzk1/OregonTrail/changeSound.js" type="text/javascript"></script>
