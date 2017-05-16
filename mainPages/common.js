@@ -173,20 +173,20 @@ function calcDays(d, game) {
 
 /// random functions
 
-var game = JSON.parse(window.sessionStorage.game);
+function getRandomEvents(game) {
 
-function getRandomEvents() {
-	var rand = Math.floor(Math.random() * 5);
+    // random person out of party
+	var rand = Math.floor(Math.random() * game.party.length);
 	var rand2 = Math.floor((Math.random() * 3) + 1);
 		switch (rand2) {
 				case 1:
-					ailments(rand, game.weather, game.water);
+					ailments(rand, game);
 					break;
 				case 2:
-					oxenStatus();
+					oxenStatus(game);
 					break;
 				case 3:
-					robbed();
+					robbed(game);
 					break;
 				default:
 		}
@@ -278,10 +278,12 @@ function waterStatus() {
 	return water;
 }
 
-function ailments(person, weather, waterStatus) {
+function ailments(person, game) {
 	var ailment;
+    var weather = game.weather;
+    var waterStatus = game.water;
 	var rand = Math.random();
-	if (rand > 0.95) {
+	if (rand > 0.90) {
 		if(weather == "cold") ailment = "Diptheria";
 		else if(waterStatus == "bad" && weather == "cool") ailment = "Cholera";
 		else if(waterStatus == "bad" && weather == "hot") ailment = "Dysentery";
@@ -292,29 +294,25 @@ function ailments(person, weather, waterStatus) {
 			switch (rand2) {
 				case 1:
 					ailment = "the measles";
-					game.ailment[person] = ailment;
-					window.sessionStorage.game = JSON.stringify(game);
 					break;
 				case 2:
 					ailment = "a snake bite";
-					game.ailment[person] = ailment;
-					window.sessionStorage.game = JSON.stringify(game);
 					break;
 				case 3:
 					ailment = "a broken leg";
-					game.ailment[person] = ailment;
-					window.sessionStorage.game = JSON.stringify(game);
 					break;
 				default:
 			}
 		}
+        // ailments cause one week of problems for person
+        game.ailment[person] = 7;
   		document.getElementById("random").style.display="block";
 		document.getElementById("random").innerHTML = game.party[person] +" has "+ ailment;
 	}
 
 }
 
-function oxenStatus() {
+function oxenStatus(game) {
 	var problem="";
 	var rand = Math.random();
 	console.log(rand);
@@ -327,23 +325,21 @@ function oxenStatus() {
 	if(rand > 0.989) {
 		problem = "One of your oxen has wandered off.";
 		--game.oxen;
-		window.sessionStorage.game = JSON.stringify(game);
 	}
 	if(rand > 0.999) {
 		problem = "One of your oxen has died.";
 		--game.oxen;
-		window.sessionStorage.game = JSON.stringify(game);
 	}
   	document.getElementById("random").style.display="block";
 	document.getElementById("random").innerHTML = problem;
 
 }
 
-function robbed() {
-	var foodCount = 2000;
-	var clothingCount = 15;
-	var bulletCount = 250;
-	var oxenCount = 18;
+function robbed(game) {
+	var foodCount = game.food;
+	var clothingCount = game.sets;
+	var poleCount = game.poles;
+	var oxenCount = game.oxen;
 	var rand = Math.random();
 	if(rand > 0.999) {
 		var intro = "A thief comes during the <br> night and steals ";
@@ -358,7 +354,6 @@ function robbed() {
 					if (game.food < 0){
 						game.food = 0;
 					}
-					window.sessionStorage.game = JSON.stringify(game);
 					break;
 				case 2:
 					amount = Math.floor((Math.random()*clothingCount) + 1);
@@ -367,16 +362,14 @@ function robbed() {
 					if (game.sets < 0){
 						game.sets = 0;
 					}
-					window.sessionStorage.game = JSON.stringify(game);
 					break;
 				case 3:
-					amount = Math.floor((Math.random()*bulletCount) + 1);
+					amount = Math.floor((Math.random()*poleCount) + 1);
 					outcome = " poles.";
 					game.poles-=amount;
 					if (game.poles < 0){
 						game.poles = 0;
 					}
-					window.sessionStorage.game = JSON.stringify(game);
 					break;
 				case 4:
 					amount = Math.floor((Math.random()*oxenCount) + 1);
@@ -385,7 +378,6 @@ function robbed() {
 					if (game.oxen < 0){
 						game.oxen = 0;
 					}
-					window.sessionStorage.game = JSON.stringify(game);
 					break;
 				default:
 			}

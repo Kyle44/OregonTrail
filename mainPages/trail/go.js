@@ -164,8 +164,8 @@ function go() {
 	location.replace("landmark.html");
   }
   else{
+    getRandomEvents(game);
 	window.sessionStorage.game = JSON.stringify(game);
-	getRandomEvents();
 	location.replace("go.php");
   }
 }
