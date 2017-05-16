@@ -29,8 +29,9 @@ $(document).ready(function(){
 					case 4:
 						var d = Math.floor(Math.random() * 5) + 1;
 						calcDays(d, game);
+						game.weather = updateWeather(game.month);
 						window.sessionStorage.game = JSON.stringify(game);
-						location.replace("crossing.php");
+						location.replace("crossing.html");
 						break;
 					case 5:
 						location.replace("crossDesc.html");
