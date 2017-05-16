@@ -50,22 +50,25 @@ function go() {
   game.weather = updateWeather(game.month);
   game.water = waterStatus();
   var gameOver = calculateHealth(game);
+  var tombstoneStop = false;
 
 
   var tombstones = JSON.parse(window.sessionStorage.tombstones);
   for(tombstone in tombstones){
-    alert(game.toGo + " " + tombstones[parseInt(tombstone)]['mile'] + " " + game.location + " " + tombstones[parseInt(tombstone)]['start']);
     if (game.toGo <= tombstones[parseInt(tombstone)]['mile'] && game.location == tombstones[parseInt(tombstone)]['start']){
-        alert("in!");
-        location.replace('../tombstone/tombstone.html');
+        tombstoneStop = true;
         break;
     }
   }
 
-  if (gameOver) {
-      location.replace("../gameOver/gameOver.html");
-  }
-  else {
+    if(gameOver) {
+        location.replace("../gameOver/gameOver.html");
+    }
+    else if(tombstoneStop){
+        window.sessionStorage.game = JSON.stringify(game);
+        location.replace('../tombstone/tombstone.html');
+    }
+    else {
       if (game.toGo <= 0) {
 
         // arriving at a landmark, the location is set based on previously visited

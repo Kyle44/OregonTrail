@@ -1,23 +1,25 @@
 $(document).ready(function(){
 	var tombstones = JSON.parse(window.sessionStorage.tombstones);
-
+	var game = JSON.parse(window.sessionStorage.game);
 	for(tombstone in tombstones){
-		if(game.toGo <= tombstone.mile && game.location == tombstone.start){
-			$('name').text(tombstone.name);
-			if(tombstone.mile > 1){
-				$('toGo').text(tombstone.mile + "miles");
+		if (game.toGo <= tombstones[parseInt(tombstone)]['mile'] && game.location == tombstones[parseInt(tombstone)]['start']){
+			var stone = tombstones[parseInt(tombstone)];
+			$('#name').text(stone['name']);
+			if(stone['#mile'] > 1){
+				$('#toGo').html(tombstones[parseInt(tombstone)]['mile'] + "miles");
 			}
 			else{
-				$('toGo').text("1 mile");			
+				$('#toGo').html("1 mile");			
 			}
-			$('location').text(tombstone.end);
-			$('message').text(tombstone.message);
-			tombstones.splice(i, 1);
+			$('#location').html(stone['end']);
+			$('#message').html(stone['message']);
+			tombstones.splice(counter, 1); 
+			window.sessionStorage.tombstones = JSON.stringify(tombstones); // update tombstones
 			break;
 		}
+		counter++;
 	}
 
-	window.sessionStorage.game = JSON.stringify(game);
 	$(document).keydown(function(e){
  		if(e.keyCode == spacebarKey){
 			location.replace("../main.html"); 
@@ -25,4 +27,5 @@ $(document).ready(function(){
 	}); // end keydown
 
 	var spacebarKey = 32, enterKey = 13;
+	var counter = 0;
 });
