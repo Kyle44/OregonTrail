@@ -5,7 +5,6 @@ document.body.onkeyup = function(e){
 }
 
 var game = JSON.parse(window.sessionStorage.game);
-
 var points = {
     "Independence" : [778, 377] ,
     "the Kansas River crossing" : [742, 370] ,

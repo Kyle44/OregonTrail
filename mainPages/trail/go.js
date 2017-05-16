@@ -50,7 +50,6 @@ function go() {
   if (game.toGo <= 0) {
 
     	// arriving at a landmark, the location is set based on previously visited
-    	game.visited.push(name);
 
 	if (name == 'Independence') {
 		game.location = 'the Kansas River crossing';

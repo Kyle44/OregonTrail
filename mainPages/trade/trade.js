@@ -96,7 +96,7 @@ $(document).ready(function() {
 	// a day passes while attempting trade
 	calcDays(1, game);
 	var savePace = game.pace;
-	game.pace = "fish";
+	game.pace = "trade";
 	calculateHealth(game);
 	game.pace = savePace;
 	game.weather = updateWeather(game.month);

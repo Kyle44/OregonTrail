@@ -24,11 +24,12 @@ $(document).ready(function() {
     var game = JSON.parse(window.sessionStorage.game);
     // whatever the location variable is
     var name = game.location;
+    game.visited.push(name);
     var fullDate = getDate(game);
     var locationImage = "url(" + imgMap[name] + ")";
     game.inTown = true;
     window.sessionStorage.game = JSON.stringify(game);
-    
+
     // sets the canvas background to the image specified
     $("#picture").css("background-image", locationImage);
     // set the location and date titling

@@ -113,7 +113,7 @@ $(document).ready(function(){
 
 					// setup remaining game variables before continuing
 					game.location = "Independence";
-					game.visited = ["Independence"];
+					game.visited = [];
 					game.miles = 0;
 
 					game.weather = updateWeather(game.month);

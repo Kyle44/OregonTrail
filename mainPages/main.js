@@ -64,18 +64,18 @@ $(document).ready(function(){
 	if (inTown) {
 		$('#dateLocation').html(game.location + "<br>" + getMonth(game.month) + " " + game.day + ", " + game.year);
   		document.getElementById("atLandmark").style.display="block";
-  		document.getElementById("onTrail").style.display="hidden";
+  		document.getElementById("onTrail").style.display="none";
 		if (loc == "Independence" || loc == "Fort Kearney" || loc == "Fort Laramie" || loc == "Fort Bridger" || loc == "Fort Hall" || loc == "Fort Boise" || loc == "Fort Walla Walla") {
   			document.getElementById("canShop").style.display="block";
 		}
 		else {
-  			document.getElementById("canShop").style.display="hidden";
+  			document.getElementById("canShop").style.display="none";
 		}
 	}
 	else{
-  		document.getElementById("atLandmark").style.display="hidden";
+  		document.getElementById("atLandmark").style.display="none";
   		document.getElementById("onTrail").style.display="block";
-  		document.getElementById("canShop").style.display="hidden";
+  		document.getElementById("canShop").style.display="none";
 	}
 
 	$("#weather").text(game.weather);
