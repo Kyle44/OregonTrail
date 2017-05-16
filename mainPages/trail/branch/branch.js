@@ -20,7 +20,7 @@ $(document).ready(function(){
 						location.replace("../trail.html");
 						break;
 					case 3:
-						location.replace("../map.html");
+						location.replace("map/map.html");
 						break;
 
 					default:
