@@ -73,6 +73,7 @@ $(document).ready(function(){
 		}
 	}
 	else{
+		$('#dateLocation').html(getMonth(game.month) + " " + game.day + ", " + game.year);
   		document.getElementById("atLandmark").style.display="none";
   		document.getElementById("onTrail").style.display="block";
   		document.getElementById("canShop").style.display="none";
