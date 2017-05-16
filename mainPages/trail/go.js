@@ -8,8 +8,8 @@ function go() {
 
   if (game.toGo <= 0) {
 
-    // arriving at a landmark, the location is set based on previously visited
-    game.visited.push(name);
+    	// arriving at a landmark, the location is set based on previously visited
+    	game.visited.push(name);
 
 	if (name == 'Independence') {
 		game.location = 'the Kansas River crossing';
@@ -142,5 +142,12 @@ $(document).ready(function() {
 
 	$("#rivWidth").text(game.riverWidth);
 	$("#rivDepth").text(game.riverDepth);
-
+	
+    	$(document).keydown(function(e) {
+    		if(e.keyCode == 32){
+			game.inTown = false;
+			window.sessionStorage.game = JSON.stringify(game);
+			location.replace("go.php");
+    		}
+	});
 });
