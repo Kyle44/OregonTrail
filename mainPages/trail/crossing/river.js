@@ -1,3 +1,6 @@
+//function animateCross()
+//Coding Designs from W3Schools:
+//https://www.w3schools.com/howto/howto_js_animate.asp
 function animateCross() {
   	var ford = document.getElementById("ford");   
   	var start = 100;
