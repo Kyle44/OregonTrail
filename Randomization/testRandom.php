@@ -1,6 +1,6 @@
 <html>
 <head>
-<script src="random.js">
+<script src="common.js">
 
 </script>
 
