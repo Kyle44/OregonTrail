@@ -15,10 +15,10 @@ $(document).ready(function(){
 				// calcuate health effects over rest period
 				for (var i = 0; i < choice; i++) {
 					calculateHealth(game);
+					game.weather = updateWeather(game.month);
+					game.water = waterStatus();
 				}
 				game.pace = savePace;
-				game.weather = updateWeather(game.month);
-				game.water = waterStatus();
                 window.sessionStorage.game = JSON.stringify(game);
                 location.replace("../main.html");
             }
