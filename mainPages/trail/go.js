@@ -1,5 +1,8 @@
 var game = JSON.parse(window.sessionStorage.game);
 
+//function animateCross()
+//Coding Designs from W3Schools:
+//https://www.w3schools.com/howto/howto_js_animate.asp
 function animateCross() {
   	var wheel = document.getElementById("wheelCanvas");
 
