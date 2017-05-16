@@ -1,12 +1,12 @@
 $(document).ready(function(){
 	var tombstones = JSON.parse(window.sessionStorage.tombstones);
 	var game = JSON.parse(window.sessionStorage.game);
-	for(tombstone in tombstones){
-		if (game.toGo <= tombstones[parseInt(tombstone)]['mile'] && game.location == tombstones[parseInt(tombstone)]['start']){
-			var stone = tombstones[parseInt(tombstone)];
+	for(var i = 0; i < tombstones.length; i++){
+		var stone = tombstones[i];
+		if (game.toGo <= stone['mile'] && game.location == stone['start']){
 			$('#name').text(stone['name']);
 			if(stone['#mile'] > 1){
-				$('#toGo').html(tombstones[parseInt(tombstone)]['mile'] + "miles");
+				$('#toGo').html(stone['mile'] + "miles");
 			}
 			else{
 				$('#toGo').html("1 mile");			

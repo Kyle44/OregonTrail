@@ -54,8 +54,8 @@ function go() {
 
 
   var tombstones = JSON.parse(window.sessionStorage.tombstones);
-  for(tombstone in tombstones){
-    if (game.toGo <= tombstones[parseInt(tombstone)]['mile'] && game.location == tombstones[parseInt(tombstone)]['start']){
+  for(var i = 0; i < tombstones.length; i++){
+    if (game.toGo <= tombstones[i]['mile'] && game.location == tombstones[i]['start']){
         tombstoneStop = true;
         break;
     }
