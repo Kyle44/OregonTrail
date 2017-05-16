@@ -34,33 +34,6 @@
 	<script src="../common.js" type="text/javascript"></script>
 	<script src="../random.js" type="text/javascript"></script>
 	<script src="go.js" type="text/javascript"></script>
-	<script>
-		var game = JSON.parse(window.sessionStorage.game);
-
-		function animateCross() {
-  			var wheel = document.getElementById("wheelCanvas");   
-   
-  			var start = 300;
- 			var time = setInterval(frame, 15);
-
- 			function frame() {
-    				if (start == -300) {
-      				clearInterval(time);
-    				}
-    				else {
-     					start--; 
-      					wheel.style.left = start + 'px'; 
-
-    				}
-  			}
-		}
-		document.body.onkeyup = function(e){
-        		if(e.keyCode == 13){
-				game.inTown = false;
-        			location.replace("../main.html");
-    			}
-		};
-	</script>
 
 </body>
 </html>
