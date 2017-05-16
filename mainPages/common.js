@@ -18,7 +18,6 @@
 
 var months = ["monthsList", "January", "February", "March", "April", "May", "June",
               "July", "August", "September", "October", "November", "December"];
-var isLeaderDead = false;
 
 // create full date string from integer representation
 function getDate(game) {
@@ -51,6 +50,7 @@ function calculateHealth(game) {
     var paceEffect = 0;
     var rationsEffect = 0;
     var rationsUse = 0;
+    var isLeaderDead = false;
 
     // pace effects
     switch (game.pace) {
@@ -117,7 +117,8 @@ function calculateHealth(game) {
             alert(game.party[i] + " has died.");
             if(i == 0){
             	isLeaderDead = true;
-            	alert("leader did died");
+            	//alert("leader did died");
+                break;
             }
             game.party.splice(i, 1);
             game.health.splice(i, 1);
@@ -125,9 +126,7 @@ function calculateHealth(game) {
         }
 
     } // end for
-    if(isLeaderDead){
-		location.replace("https://swe.umbc.edu/~fritzk1/OregonTrail/mainPages/gameOver/gameOver.html");
-    }
+    return isLeaderDead;
 }
 
 function calcMiles(game) {
@@ -327,8 +326,8 @@ function oxenStatus(game) {
 	else if(rand <= 0.97) {
 		problem = "No Problems.";
 	}
-	
-	
+
+
   	document.getElementById("random").style.display="block";
 	document.getElementById("random").innerHTML = problem;
 
