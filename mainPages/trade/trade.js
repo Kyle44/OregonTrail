@@ -101,6 +101,7 @@ $(document).ready(function() {
 	game.pace = savePace;
 	game.weather = updateWeather(game.month);
 	game.water = waterStatus();
+	window.sessionStorage.game = JSON.stringify(game);
 
 	// display current supplies
 	$("#oxen").text(game.oxen);
