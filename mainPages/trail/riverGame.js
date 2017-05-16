@@ -42,11 +42,17 @@ var board = {
     }
 }
 
+//function start()
+//Coding Designs from W3Schools:
+//https://www.w3schools.com/graphics/game_intro.asp
 function start() {
     wagon = new sprite(30, 30, "images/ford.png", 500, 150);
     board.start();
 }
 
+//function sprite()
+//Coding Designs from W3Schools:
+//https://www.w3schools.com/graphics/game_intro.asp
 function sprite(width, height, img, x, y) {
     this.image = new Image();
     this.image.src = img;
@@ -95,6 +101,9 @@ function sprite(width, height, img, x, y) {
     }
 }
 
+//function refresh()
+//Coding Designs from W3Schools:
+//https://www.w3schools.com/graphics/game_intro.asp
 function refresh() {
   if (debris.length >= 100) {
 	var image = document.getElementById('will');
@@ -147,6 +156,9 @@ function refresh() {
   }
 }
 
+//function checkInt()
+//Coding Designs from W3Schools:
+//https://www.w3schools.com/graphics/game_intro.asp
 function checkInt(n) {
     if ((board.frameNum / n) % 1 == 0) {return true;}
     return false;
