@@ -7,6 +7,9 @@
 </head>
 
 <body onload="go(); animateCross();">
+	<div class="rest normalFont" id="info">
+		<span id="random" style="display: none"></span>
+	</div>
 	<div class="title" id="space">Press RETURN to size up the situation</div>
 	<div class="trailCanvas">
 
