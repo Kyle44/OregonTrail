@@ -1,4 +1,16 @@
 var game = JSON.parse(window.sessionStorage.game);
+document.body.onkeyup = function(e){
+    	if(e.keyCode == 32 && game.riverGame == 2){
+			location.replace("landmark.html");
+    	}
+    	else if(e.keyCode == 13 && game.riverGame == 1){
+			location.replace("../main.html");
+    	}
+    	else if(e.keyCode == 13){
+			location.replace("riverGame.html");
+    	}
+	else{}
+}
 var wagon;
 var debris = [];
 var board = {
@@ -88,6 +100,7 @@ function refresh() {
 	var image = document.getElementById('will');
 	ctx.drawImage(image, 0, 0, 1000, 300);
 	game.riverGame = 2;
+	game.location = "the Willamette Valley";
  	window.sessionStorage.game = JSON.stringify(game);
 	return;
   }
