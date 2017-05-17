@@ -21,7 +21,7 @@
 	</div>
 
 	<div class="centerParagraph normalFont">
-		<p>There may be one tombstone on the first half of the trail and one tombstone on the second half.  If you erase the tombstone messages, they will not be replaced until team leaders die along the trail.</p><br><br>
+		<p>There may be one tombstone on the first half of the trail and one tombstone on the second half.  If you erase the tombstone messages, they will not be replaced.</p><br><br>
 		Do you want to do this? 
 		<input id="inputEraseTombstoneMessages" class="optionInput normalFont" type="text" name="quantity" onblur="this.focus()" autofocus>
 	</div>
