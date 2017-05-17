@@ -1,11 +1,9 @@
 $(document).ready(function(){
-	// creatin a new game object
-	var game = {job : "" , money : 0};
+	var game = JSON.parse(window.sessionStorage.game); // pull game variables from session storage
 	var enterKey = 13;
 
 
 	$("#optionsChoice").keydown(function(e){
-
  		if(e.keyCode == enterKey){
 			var choice = parseInt($(this).val()); // get chosen value
 			if(choice != NaN && choice <= 4 && choice >= 1){
@@ -26,14 +24,11 @@ $(document).ready(function(){
 							game.job = "farmer";
 							game.money = 400;
 							break;
-					}
-
+					} // end switch
 				window.sessionStorage.game = JSON.stringify(game);
 				location.replace("setNames/setNames.html");
-
-			}
-
-		}
-		}
-	});
+				} // end inner else
+			} // end outer if
+		}// end keycode
+	}); // end keydown
 });

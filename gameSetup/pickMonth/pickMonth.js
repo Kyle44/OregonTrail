@@ -19,6 +19,7 @@ $(document).ready(function(){
 		page.attr("style", "display: block");
 	}
 
+	// Focus on a give input tag's id and reset its value
 	function focusOnInput(input) {
 		if(input != null){
 			$(input).val(""); // reset it
@@ -34,6 +35,8 @@ $(document).ready(function(){
 		currentPage = "mainPage";
 	}
 
+	// Input: ID of the page to display, input tag ID
+	// Output: remove the main page, focus on the given input, set currentPage
 	function displayNewPage(pageToDisplay, input) {
 		removePage("#mainPage");
 		displayPage("#" + pageToDisplay);
@@ -52,12 +55,10 @@ $(document).ready(function(){
 					switch(choice){
 						case 1: case 2: case 3: case 4: case 5:
 							game.month += choice;
-					}
-
+					} // end switch
 				window.sessionStorage.game = JSON.stringify(game);
 				location.replace("../store/storeSetup/storeSetup.html");
-
-				}
+				} // end else
 
 			} 
 		} // end enterkey if

@@ -1,10 +1,8 @@
 $(document).ready(function(){
 
-	// pull game variables from session storage
-	var game = JSON.parse(window.sessionStorage.game);
+	var game = JSON.parse(window.sessionStorage.game); // pull game variables from session storage
 
-	// display how much money the player has
-	$("#playerMoney").text("$" + (game.money.toFixed(2)).toString());
+	$("#playerMoney").text("$" + (game.money.toFixed(2)).toString()); // display how much money the player has
 
 	// always start on the first of month, map month name to number
 	switch (game.month) {
@@ -37,6 +35,7 @@ $(document).ready(function(){
 	  page.attr("style", "display: block");
 	}
 
+	// Focus on a give input tag's id and reset its value
 	function focusOnInput(input) {
 		if(input != null){
 			$(input).val(""); // reset it
@@ -44,7 +43,8 @@ $(document).ready(function(){
 		}
 	}
 
-	// Display the main options page of the store
+	// Input: ID of the page to remove
+	// Output: Display the main options page of the store
 	function displayHome(pageToRemove) {
 		calculateNewBill(); // calculate for the homescreen
 		removePage(pageToRemove);
@@ -53,6 +53,8 @@ $(document).ready(function(){
 		currentPage = "mainPage";
 	}
 
+	// Input: ID of the page to display, input tag ID, and what you want to the currentPage to
+	// Output: remove the main options page, focus on the given input, set currentPage
 	function displayNewPage(pageToDisplay, input, currPage) {
 		removePage("#mainOptions");
 		displayPage(pageToDisplay);
@@ -60,6 +62,7 @@ $(document).ready(function(){
 		currentPage = currPage;
 	}
 
+	// Calculate the user's total bill, then put it on the main options page
 	function calculateNewBill() {
 		totalBill = numOxen * oxenPrice + numFood * foodPrice + numClothing * clothingPrice + numPoles * polePrice + (numWheels + numAxles + numTongues) * partsPrice;
 		$("#storeTable")[0].rows[7].cells[1].innerHTML = "$" + (totalBill.toFixed(2)).toString();
@@ -71,7 +74,7 @@ $(document).ready(function(){
 	}
 
 	// Check if the user has bought oxen or not. User can only leave the store if oxen has been bought.
-	function checkHasOxen(inputId) {
+	function checkHasOxen() {
 		if(numOxen >= 1){
 			return true;
 		}
@@ -79,6 +82,7 @@ $(document).ready(function(){
 	}
 
 	// Get the user input for the amount of the item that they want from the store, and setting up the html for it on the store page
+	// if user input is outside of min & max, return -1
 	function getValuesAndSetupHomepage(inputId, itemPrice, min, max, rowIndex){
 		amount = parseInt($(inputId).val());
 		if(amount != NaN && amount <= max && amount >= min){
@@ -88,9 +92,11 @@ $(document).ready(function(){
 		return -1;
 	}
 
-	function checkValue(numItem, pageToDisplay) {
+	// Input: the amount of a given item, the page to remove
+	// Output: Display the homepage if numItem != -1
+	function checkValue(numItem, pageToRemove) {
 		if(numItem != -1){
-			displayHome(pageToDisplay);
+			displayHome(pageToRemove);
 		}
 	}
 
@@ -103,7 +109,7 @@ $(document).ready(function(){
 	        	}
 	        	else {
 	        		game.money -= totalBill;
-	        		game.oxen = numOxen * 2;
+	        		game.oxen = numOxen * 2; // 2 oxen = 1 yoke
 					game.food = numFood;
 					game.sets = numClothing;
 					game.poles = numPoles;
@@ -123,8 +129,7 @@ $(document).ready(function(){
 
 					window.sessionStorage.game = JSON.stringify(game);
 					displayNewPage("#afterPage", null, "afterPage");
-
-				}
+				} // end else
 
         	} // end inner if
         	else if(currentPage == "errorPage"){
@@ -200,7 +205,7 @@ $(document).ready(function(){
     }); // end keydown
 
 
-  var currentPage = "mainPage";
+  var currentPage = "mainPage"; // initially main options are displayed, keep track of the current page that the user is on
   var spacebarKey = 32, enterKey = 13;
   var numOxen = 0, numFood = 0, numClothing = 0, numPoles = 0, numWheels = 0, numAxles = 0, numTongues = 0;
   var oxenPrice = 40, foodPrice = 0.2, clothingPrice = 10, polePrice = 2, partsPrice = 10;

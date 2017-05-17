@@ -16,13 +16,13 @@ $(document).ready(function(){
 					$('#text').html('<br>Are these names correct?');
 				}
 				$('#input').val("");
-
 			} // end name != "" if
+
 		} // end outer if
 
 		else if(e.keyCode == enterKey && isChoosingNumber){
 			var choice = parseInt($('#input').val());
-			if(choice != NaN && choice >= 1 && choice <= 5){
+			if(choice != NaN && choice >= 1 && choice <= 5){ // only 5 names to choose from
 				$('#text').html('What would you like to change the name to?<br>');
 				position = choice - 1; // position to change in names[]
 				$('#input').val("");
@@ -60,8 +60,7 @@ $(document).ready(function(){
 				$('#input').val("");
 				isChoosingNumber = true;
 			}
-			// if not a yes/no response, keep the user in this section
-		}
+		} // end else if, if not a yes/no response, keep the user in this section
 	}); // end keydown
 	var enterKey = 13;
 	var names = [];

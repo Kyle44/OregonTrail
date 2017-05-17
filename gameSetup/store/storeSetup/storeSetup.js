@@ -5,6 +5,7 @@ $(document).ready(function(){
 
     $(document).keydown(function(e){
         if(e.keyCode == spacebarKey){
+            // Changing the text on the page...
             pageNum++;
             switch(pageNum){
                 case 2:
@@ -25,9 +26,9 @@ $(document).ready(function(){
 
             } // end switch
         } // end if
-    });
+    }); // end keydown
     var spacebarKey = 32;
-    var pageNum = 1; // storeSetup.html is pageNum = 1
+    var pageNum = 1; // storeSetup.html text is pageNum = 1
     var paragraph = $('#text'); // to change the paragraph
     var paragraphHead = $('#paragraphHead');
 });
