@@ -1,20 +1,24 @@
+var game = JSON.parse(window.sessionStorage.game);
+
 //function animateCross()
 //Coding Designs from W3Schools:
 //https://www.w3schools.com/howto/howto_js_animate.asp
 function animateCross() {
-  	var ford = document.getElementById("ford");   
+  	var ford = document.getElementById("ford");
   	var start = 100;
  	var time = setInterval(frame, 15);
 
  	function frame() {
     		if (start == -250) {
       			clearInterval(time);
-			location.replace("../trail.html");
+                getRiverEvent();
+                window.sessionStorage.game = JSON.stringify(game);
+			    location.replace("../trail.html");
     		}
     		else {
-     			start--; 
-      			ford.style.top = start + 'px'; 
-      			ford.style.left = start + 'px'; 
+     			start--;
+      			ford.style.top = start + 'px';
+      			ford.style.left = start + 'px';
     		}
   	}
 }
@@ -62,11 +66,11 @@ function getRiverPen(){
 					window.sessionStorage.game = JSON.stringify(game);
 					break;
 				default:
-		
-		}
-  		document.getElementById("river").style.display="block";
-		document.getElementById("river").innerHTML = intro +amount +outcome;
 
+		}
+  		//document.getElementById("river").style.display="block";
+		//document.getElementById("river").innerHTML = intro +amount +outcome;
+        alert(intro +amount +outcome);
 }
 
 function getRiverEvent(){
@@ -81,8 +85,9 @@ function getRiverEvent(){
 			getRiverPen();
 		}
 		else{
-  			document.getElementById("river").style.display="block";
-			document.getElementById("river").innerHTML = "You had no problem crossing the river";
+  			//document.getElementById("river").style.display="block";
+			//document.getElementById("river").innerHTML = "You had no problem crossing the river";
+            alert("You had no problem crossing the river");
 		}
 	}
 	else if (game.riverChoice == 2 && game.riverDepth <= 2.5) {
@@ -94,8 +99,9 @@ function getRiverEvent(){
 			getRiverPen();
 		}
 		else{
-  			document.getElementById("river").style.display="block";
-			document.getElementById("river").innerHTML = "You had no problem crossing the river";
+  	// 		document.getElementById("river").style.display="block";
+			// document.getElementById("river").innerHTML = "You had no problem crossing the river";
+            alert("You had no problem crossing the river");
 		}
 	}
 	else if (game.riverChoice == 3 && game.riverDepth <= 2.5) {
@@ -104,8 +110,9 @@ function getRiverEvent(){
 			getRiverPen();
 		}
 		else{
-  			document.getElementById("river").style.display="block";
-			document.getElementById("river").innerHTML = "You had no problem crossing the river";
+  	// 		document.getElementById("river").style.display="block";
+			// document.getElementById("river").innerHTML = "You had no problem crossing the river";
+            alert("You had no problem crossing the river");
 		}
 	}
 	else{}
