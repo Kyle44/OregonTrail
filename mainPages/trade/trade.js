@@ -26,6 +26,7 @@ var supplyLimits = {
 
 };
 
+// odds that a trader is available
 function traderAvailable() {
 	var chance = Math.random();
 
@@ -35,6 +36,7 @@ function traderAvailable() {
 	return false;
 }
 
+// randomly select some item desired
 function traderWants() {
 	var itemNum = Math.floor(Math.random() * items.length);
 	var item = items[itemNum];
@@ -43,6 +45,7 @@ function traderWants() {
 	return {"item" : itemNum , "amount" : amount};
 }
 
+// randomly select some item to trade that wasn't the same being asked for
 function traderGives(wantItem, game) {
 
 	// make sure trade isn't for the same thing
@@ -154,6 +157,7 @@ $(document).ready(function() {
 		$("#noTrader").css("display", "block");
 	}
 
+	// only allow yes/no if trade is possible
 	if (trader && canTrade) {
 
 		$(document).keydown(function(e){
@@ -177,9 +181,10 @@ $(document).ready(function() {
 				}
 			}
 		});
+
+	//  if can't trade, just space to return
 	} else {
 
-		// space to return
 		$(document).keydown(function(e) {
 			if (e.keyCode == spaceKey) {
 				location.replace("../main.html");

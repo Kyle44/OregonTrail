@@ -1,3 +1,5 @@
+
+// space to return
 document.body.onkeyup = function(e){
         if(e.keyCode == 32){
         location.replace("../main.html");
@@ -5,6 +7,8 @@ document.body.onkeyup = function(e){
 }
 
 var game = JSON.parse(window.sessionStorage.game);
+
+// individual points as found in the 900X500 pixel canvas
 var points = {
     "Independence" : [778, 377] ,
     "the Kansas River crossing" : [742, 370] ,
@@ -26,9 +30,11 @@ var points = {
     "the Willamette Valley" : [190, 149]
 };
 
+// get the context of the map canvas
 var mapctx = document.getElementById("map").getContext("2d");
 mapctx.strokeStyle = "red";
 mapctx.lineWidth = 2.5;
+
 // always start from Independence
 mapctx.moveTo(points["Independence"][0], points["Independence"][1]);
 

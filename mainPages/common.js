@@ -1,4 +1,5 @@
 /*
+    File for common functions across several files
 
     start at 10 HP (very good)
     9 - 10 vg
@@ -12,7 +13,6 @@
     rations -> +1, 0, -1
     ailment -> -1 (for 1 week)
 
-    File for common functions across files
     day -> food | weather -> health
 */
 
@@ -25,6 +25,7 @@ function getDate(game) {
     return month + " " + game.day.toString() + ", " + game.year.toString();
 }
 
+// compute the average health of the party overall
 function healthStatus(healthArr) {
     var hAvg = 0;
     for (var i = 0; i < healthArr.length; i++) {
@@ -45,6 +46,8 @@ function healthStatus(healthArr) {
     }
 }
 
+// determine the health level of individual party members
+//  based on food availability, ailments, etc.
 function calculateHealth(game) {
 
     var paceEffect = 0;
@@ -129,6 +132,8 @@ function calculateHealth(game) {
     return isLeaderDead;
 }
 
+// calculate progress ability based on number of oxen
+//  and party member ailments ailments
 function calcMiles(game) {
 
     var oxen = game.oxen;
@@ -145,6 +150,7 @@ function calcMiles(game) {
         }
     }
 
+    // oxen have a flat rate effect up to effectively 5 oxen
 	if (pace == 'strenuous') {
         progress = oxen * 6
         if (progress > 30) {
@@ -169,13 +175,15 @@ function calcMiles(game) {
     game.miles += progress;
     game.toGo -= progress;
 
+    // take extra miles back off
     if (game.toGo < 0) {
-        game.miles -= (0 - game.toGo); // take extra miles back off
+        game.miles -= (0 - game.toGo);
 		game.toGo = 0;
 	}
 
 }
 
+// day and month advancement
 function calcDays(d, game) {
 	game.day += d;
       	var m = game.month;
@@ -202,8 +210,10 @@ function calcDays(d, game) {
 	}
 } // end function
 
-/// random functions
+/// random functions /////////
 
+
+// check to see if a bad thing happens
 function getRandomEvents(game) {
     // random person out of party
 	var rand = Math.floor(Math.random() * game.party.length);
@@ -222,6 +232,7 @@ function getRandomEvents(game) {
 		}
 }
 
+// month-based weather generation
 function updateWeather(month) {
 	var tempRand = Math.random();
 	var preciptRand = Math.random();
@@ -293,6 +304,7 @@ function updateWeather(month) {
 	return cond;
 }
 
+//
 function waterStatus() {
 	var water = "good";
 	var rand = Math.random();
@@ -302,6 +314,7 @@ function waterStatus() {
 	return water;
 }
 
+// weather- and water-based ailment determination
 function ailments(person, game) {
 	var ailment;
     var weather = game.weather;
@@ -361,13 +374,14 @@ function oxenStatus(game) {
 
 }
 
+// robbery contents determination
 function robbed(game) {
 	var foodCount = game.food;
 	var clothingCount = game.sets;
 	var poleCount = game.poles;
 	var oxenCount = game.oxen;
 	var rand = Math.random();
-	if(rand > 0.999) {
+	if(rand > 0.90) {
 		var intro = "A thief comes during the <br> night and steals ";
 		var amount;
 		var outcome;

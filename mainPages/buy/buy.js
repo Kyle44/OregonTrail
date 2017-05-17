@@ -1,3 +1,5 @@
+
+// use the landmarkInfo file to pull the appropriate prices
 function getPrices(location) {
 		if (location == "Independence") {
 			return Independence.prices;
@@ -116,6 +118,7 @@ $(document).ready(function () {
 						$("#optionsChoice").val("");
 						$("#optionsChoice").focus();
 
+						// update the money display
 						$("#playerMoney").text(game.money.toFixed(2).toString());
 
 

@@ -12,7 +12,7 @@ $(document).ready(function(){
 				calcDays(choice, game);
 				var savePace = game.pace;
 				game.pace = "rest";
-				// calcuate health effects over rest period
+				// calcuate health effects and weather over rest period
 				for (var i = 0; i < choice; i++) {
 					calculateHealth(game);
 					game.weather = updateWeather(game.month);

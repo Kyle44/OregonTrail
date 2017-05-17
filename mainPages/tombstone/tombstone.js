@@ -5,15 +5,15 @@ $(document).ready(function(){
 		var stone = tombstones[i];
 		if (game.toGo <= stone['mile'] && game.location == stone['start']){
 			$('#name').text(stone['name']);
-			if(stone['#mile'] > 1){
+			if(stone['mile'] > 1){
 				$('#toGo').html(stone['mile'] + "miles");
 			}
 			else{
-				$('#toGo').html("1 mile");			
+				$('#toGo').html("1 mile");
 			}
 			$('#location').html(stone['end']);
 			$('#message').html(stone['message']);
-			tombstones.splice(counter, 1); 
+			tombstones.splice(counter, 1);
 			window.sessionStorage.tombstones = JSON.stringify(tombstones); // update tombstones
 			break;
 		}
@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 	$(document).keydown(function(e){
  		if(e.keyCode == spacebarKey){
-			location.replace("../main.html"); 
+			location.replace("../main.html");
 		} // end keycode
 	}); // end keydown
 
