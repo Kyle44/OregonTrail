@@ -55,8 +55,15 @@
 
 	<div class="bordered normalFont">
 		Congratulations!  Type your name as you would like to see it on the Oregon Top Ten list.
-		<input class="optionInput normalFont" id="username" type="text"
-		onkeypress="checkEnteredValue(event)" onblur="this.focus()" autofocus></input>
+		<form action="insertProcess.php" method="post">
+		
+		<input class="optionInput normalFont" type="text" name="name" onblur="this.focus()" autofocus><br>
+		<input class="optionInput normalFont" type="text" id="myText0" name="points"><br>
+		<input class="optionInput normalFont" type="text" id="myText1" name="rate">
+		
+		<input type="submit" style="height: 0px; width: 0px; border: none; padding: 0px;" hidefocus="true">
+
+		</form>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>

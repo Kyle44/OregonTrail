@@ -87,4 +87,5 @@ document.getElementById('totalPts').innerHTML = jobMulti*((goodPts)+(fairPts)+(p
 total = jobMulti*((goodPts)+(fairPts)+(poorPts)+(vpoorPts)+(game.oxen*4)+(part*2)+(game.sets*2)+(game.poles*1)+(Math.floor(game.food/25))+(Math.floor(game.money.toFixed(2)/5)));
 
 
+
 var spacebarKey = 32;

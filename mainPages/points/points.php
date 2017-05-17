@@ -18,17 +18,17 @@
 	// Check connection
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error ." <br><br>Did you use the right username/password/dbname?");
-	}
+	} 
 
 	//Did they make Top Ten?
 	$sql = "SELECT * FROM scoreboard ORDER BY points desc LIMIT 9,1";
 	$result = $conn->query($sql);
-
+	
 	echo "<script>
 			var dbscore = [];
 		</script>";
-
-
+	
+    
 	while($scoreboardRow = $result->fetch_assoc()){
     	$points = $scoreboardRow["points"];
 
@@ -49,14 +49,14 @@
    	// echo "<script> alert(window.sessionStorage.dbscore); </script>";
 
 	$conn->close();
-
+	
 ?>
 
 
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="https://swe.umbc.edu/~fritzk1/OregonTrail/proj2.css">
+	<link rel="stylesheet" type="text/css" href="https://swe.umbc.edu/~fritzk1/OregonTrail/proj2.css">	
 </head>
 
 <body>
@@ -128,11 +128,11 @@
 			</tr>
 		</table>
 	</div>
-
+	
 	<br>
 
 	<p class="spaceToContinue textAlignCenter">
-			Press SPACE BAR to continue
+			Press SPACE BAR to continue 
 	</p>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
