@@ -6,6 +6,21 @@ $(document).ready(function(){
 
 	var game = JSON.parse(window.sessionStorage.game);
 
+	function getRiverDepth(game) {
+		if(game.weather == 'rainy' || game.weather == 'very rainy'){
+			game.riverDepth += Math.random() * .7;
+		}
+		else{
+			game.riverDepth -= Math.random() * .7;
+		}
+
+		if(game.riverDepth < 1.5){
+			game.riverDepth = 1.5;
+		}
+		game.riverDepth = game.riverDepth.toFixed(1);
+
+	}
+
 	// get option set
 	$("#optionsChoice").keydown(function(e) {
         	if(e.keyCode == 13){
@@ -32,9 +47,10 @@ $(document).ready(function(){
 						location.replace("riverCross.html");
 						break;
 					case 4:
-						var d = Math.floor(Math.random() * 5) + 1;
+						var d = 1;
 						calcDays(d, game);
 						game.weather = updateWeather(game.month);
+						getRiverDepth(game);
 						window.sessionStorage.game = JSON.stringify(game);
 						location.replace("crossing.html");
 						break;
